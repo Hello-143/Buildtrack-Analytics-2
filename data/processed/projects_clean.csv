@@ -1,0 +1,36 @@
+project_id,project_name,project_type,start_date,planned_end_date,actual_end_date,budgeted_cost,actual_cost,status
+1,Gupta Fabrication Project 1,Fabrication,2025-01-15,2025-03-19,2025-04-26,1128000,1128000.0,Completed
+2,Gupta Fabrication Project 2,Fabrication,2025-01-12,2025-05-27,2025-05-22,1484000,1484000.0,Completed
+3,Gupta Fabrication Project 3,Fabrication,2025-01-26,2025-06-18,,2521000,1106959.38772475,Ongoing
+4,Gupta Residential Project 4,Residential,2025-01-21,2025-06-19,2025-06-17,1469000,1541354.473816376,Completed
+5,Gupta Residential Project 5,Residential,2025-02-18,2025-05-01,2025-05-10,1690000,1615046.062310205,Completed
+6,Gupta Fabrication Project 6,Fabrication,2025-01-16,2025-05-04,2025-05-10,3329000,3545746.952954612,Completed
+7,Gupta Fabrication Project 7,Fabrication,2025-01-25,2025-06-24,,3979000,3153798.215354578,Ongoing
+8,Gupta Residential Project 8,Residential,2025-01-13,2025-05-01,,2142000,1039063.815782181,Ongoing
+9,Gupta Residential Project 9,Residential,2025-03-27,2025-06-29,,821000,506958.5873048933,Ongoing
+10,Gupta Fabrication Project 10,Fabrication,2025-02-01,2025-04-22,2025-04-24,4664000,4848046.358637286,Completed
+11,Gupta Fabrication Project 11,Fabrication,2025-02-11,2025-04-19,2025-04-20,1920000,1890828.122643535,Completed
+12,Gupta Fabrication Project 12,Fabrication,2025-02-10,2025-05-08,2025-05-31,4615000,5605900.324922711,Completed
+13,Gupta Residential Project 13,Residential,2025-02-01,2025-06-12,,2428000,1436808.970884026,Ongoing
+14,Gupta Building Contract Project 14,Building Contract,2025-01-29,2025-04-16,2025-04-16,712000,686549.1235052571,Completed
+15,Gupta Fabrication Project 15,Fabrication,2025-02-24,2025-07-10,2025-07-05,4983000,5076604.981611771,Completed
+16,Gupta Fabrication Project 16,Fabrication,2025-01-15,2025-06-11,,3959000,4811171.315364375,Delayed
+17,Gupta Building Contract Project 17,Building Contract,2025-02-25,2025-05-16,,4441000,4681882.400670127,Delayed
+18,Gupta Fabrication Project 18,Fabrication,2025-01-23,2025-05-27,,1843000,2393883.497330653,Delayed
+19,Gupta Fabrication Project 19,Fabrication,2025-01-26,2025-04-15,2025-04-10,4791000,5125969.61843148,Completed
+20,Gupta Fabrication Project 20,Fabrication,2025-02-11,2025-06-13,,4454000,5024630.97481071,Delayed
+21,Gupta Building Contract Project 21,Building Contract,2025-01-31,2025-04-08,,854000,568724.542998656,Ongoing
+22,Gupta Residential Project 22,Residential,2025-03-10,2025-05-25,,2974000,1286339.207233868,Ongoing
+23,Gupta Fabrication Project 23,Fabrication,2025-02-24,2025-05-22,,3604000,4755931.067451232,Delayed
+24,Gupta Building Contract Project 24,Building Contract,2025-03-27,2025-08-17,,2532000,2664240.611794303,Delayed
+25,Gupta Residential Project 25,Residential,2025-02-13,2025-04-16,2025-04-12,1491000,1430210.589861131,Completed
+26,Gupta Residential Project 26,Residential,2025-01-09,2025-03-14,2025-04-04,1571000,1990841.022425864,Completed
+27,Gupta Fabrication Project 27,Fabrication,2025-01-17,2025-05-30,2025-05-28,2628000,2635667.965242056,Completed
+28,Gupta Residential Project 28,Residential,2025-03-26,2025-07-19,,4387000,1434924.499193766,Ongoing
+29,Gupta Fabrication Project 29,Fabrication,2025-03-24,2025-06-04,,4103000,1455065.419650215,Ongoing
+30,Gupta Residential Project 30,Residential,2025-01-25,2025-06-02,,1753000,744855.351568661,Ongoing
+31,Gupta Residential Project 31,Residential,2025-02-26,2025-07-06,,2933000,901542.3965508714,Ongoing
+32,Gupta Residential Project 32,Residential,2025-01-31,2025-04-22,,4391000,3298613.311228409,Ongoing
+33,Gupta Residential Project 33,Residential,2025-02-18,2025-04-19,2025-05-17,4028000,4888993.425910518,Completed
+34,Gupta Fabrication Project 34,Fabrication,2025-03-13,2025-08-04,2025-09-06,1835000,2462895.421179601,Completed
+35,Gupta Fabrication Project 35,Fabrication,2025-03-11,2025-05-17,2025-06-28,3129000,3835254.71203879,Completed

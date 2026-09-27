@@ -1,0 +1,2729 @@
+record_id,project_id,site_name,date,workers_expected,workers_present,attendance_pct
+1,1,Noida Express Way Site,2025-01-15,43,33,76.74
+2,1,Noida Express Way Site,2025-01-16,33,26,78.79
+3,1,Noida Express Way Site,2025-01-17,46,34,73.91
+4,1,Noida Express Way Site,2025-01-18,29,22,75.86
+5,1,Noida Express Way Site,2025-01-19,22,17,77.27
+6,1,Noida Express Way Site,2025-01-20,29,22,75.86
+7,1,Noida Express Way Site,2025-01-21,39,31,79.49
+8,1,Noida Express Way Site,2025-01-22,25,20,80.0
+9,1,Noida Express Way Site,2025-01-23,31,24,77.42
+10,1,Noida Express Way Site,2025-01-24,43,35,81.4
+11,1,Noida Express Way Site,2025-01-25,31,24,77.42
+12,1,Noida Express Way Site,2025-01-26,33,25,75.76
+13,1,Noida Express Way Site,2025-01-27,45,37,82.22
+14,1,Noida Express Way Site,2025-01-28,22,17,77.27
+15,1,Noida Express Way Site,2025-01-29,32,24,75.0
+16,1,Noida Express Way Site,2025-01-30,45,36,80.0
+17,1,Noida Express Way Site,2025-01-31,25,20,80.0
+18,1,Noida Express Way Site,2025-02-01,24,19,79.17
+19,1,Noida Express Way Site,2025-02-02,41,33,80.49
+20,1,Noida Express Way Site,2025-02-03,21,15,71.43
+21,1,Noida Express Way Site,2025-02-04,27,22,81.48
+22,1,Noida Express Way Site,2025-02-05,31,23,74.19
+23,1,Noida Express Way Site,2025-02-06,50,39,78.0
+24,1,Noida Express Way Site,2025-02-07,39,29,74.36
+25,1,Noida Express Way Site,2025-02-08,34,28,82.35
+26,1,Noida Express Way Site,2025-02-09,31,24,77.42
+27,1,Noida Express Way Site,2025-02-10,22,17,77.27
+28,1,Noida Express Way Site,2025-02-11,36,27,75.0
+29,1,Noida Express Way Site,2025-02-12,30,24,80.0
+30,1,Noida Express Way Site,2025-02-13,27,22,81.48
+31,1,Noida Express Way Site,2025-02-14,20,16,80.0
+32,1,Noida Express Way Site,2025-02-15,35,27,77.14
+33,1,Noida Express Way Site,2025-02-16,49,38,77.55
+34,1,Noida Express Way Site,2025-02-17,28,22,78.57
+35,1,Noida Express Way Site,2025-02-18,42,32,76.19
+36,1,Noida Express Way Site,2025-02-19,39,29,74.36
+37,1,Noida Express Way Site,2025-02-20,49,40,81.63
+38,1,Noida Express Way Site,2025-02-21,26,19,73.08
+39,1,Noida Express Way Site,2025-02-22,47,34,72.34
+40,1,Noida Express Way Site,2025-02-23,25,20,80.0
+41,1,Noida Express Way Site,2025-02-24,34,28,82.35
+42,1,Noida Express Way Site,2025-02-25,45,36,80.0
+43,1,Noida Express Way Site,2025-02-26,47,39,82.98
+44,1,Noida Express Way Site,2025-02-27,41,31,75.61
+45,1,Noida Express Way Site,2025-02-28,22,17,77.27
+46,1,Noida Express Way Site,2025-03-01,29,24,82.76
+47,1,Noida Express Way Site,2025-03-02,47,35,74.47
+48,1,Noida Express Way Site,2025-03-03,42,34,80.95
+49,1,Noida Express Way Site,2025-03-04,40,30,75.0
+50,1,Noida Express Way Site,2025-03-05,31,24,77.42
+51,1,Noida Express Way Site,2025-03-06,23,19,82.61
+52,1,Noida Express Way Site,2025-03-07,45,33,73.33
+53,1,Noida Express Way Site,2025-03-08,45,35,77.78
+54,1,Noida Express Way Site,2025-03-09,31,24,77.42
+55,1,Noida Express Way Site,2025-03-10,31,24,77.42
+56,1,Noida Express Way Site,2025-03-11,37,27,72.97
+57,1,Noida Express Way Site,2025-03-12,48,35,72.92
+58,1,Noida Express Way Site,2025-03-13,29,22,75.86
+59,1,Noida Express Way Site,2025-03-14,42,33,78.57
+60,1,Noida Express Way Site,2025-03-15,36,27,75.0
+61,1,Noida Express Way Site,2025-03-16,33,27,81.82
+62,1,Noida Express Way Site,2025-03-17,22,16,72.73
+63,2,Greater Noida Depot,2025-01-12,40,32,80.0
+64,2,Greater Noida Depot,2025-01-13,34,29,85.29
+65,2,Greater Noida Depot,2025-01-14,31,25,80.65
+66,2,Greater Noida Depot,2025-01-15,46,40,86.96
+67,2,Greater Noida Depot,2025-01-16,40,34,85.0
+68,2,Greater Noida Depot,2025-01-17,44,39,88.64
+69,2,Greater Noida Depot,2025-01-18,33,28,84.85
+70,2,Greater Noida Depot,2025-01-19,47,37,78.72
+71,2,Greater Noida Depot,2025-01-20,23,19,82.61
+72,2,Greater Noida Depot,2025-01-21,29,23,79.31
+73,2,Greater Noida Depot,2025-01-22,30,26,86.67
+74,2,Greater Noida Depot,2025-01-23,27,22,81.48
+75,2,Greater Noida Depot,2025-01-24,50,42,84.0
+76,2,Greater Noida Depot,2025-01-25,29,25,86.21
+77,2,Greater Noida Depot,2025-01-26,28,23,82.14
+78,2,Greater Noida Depot,2025-01-27,50,42,84.0
+79,2,Greater Noida Depot,2025-01-28,24,20,83.33
+80,2,Greater Noida Depot,2025-01-29,39,33,84.62
+81,2,Greater Noida Depot,2025-01-30,36,31,86.11
+82,2,Greater Noida Depot,2025-01-31,38,33,86.84
+83,2,Greater Noida Depot,2025-02-01,24,19,79.17
+84,2,Greater Noida Depot,2025-02-02,39,33,84.62
+85,2,Greater Noida Depot,2025-02-03,39,32,82.05
+86,2,Greater Noida Depot,2025-02-04,49,41,83.67
+87,2,Greater Noida Depot,2025-02-05,46,40,86.96
+88,2,Greater Noida Depot,2025-02-06,22,17,77.27
+89,2,Greater Noida Depot,2025-02-07,40,35,87.5
+90,2,Greater Noida Depot,2025-02-08,28,24,85.71
+91,2,Greater Noida Depot,2025-02-09,44,37,84.09
+92,2,Greater Noida Depot,2025-02-10,39,33,84.62
+93,2,Greater Noida Depot,2025-02-11,35,31,88.57
+94,2,Greater Noida Depot,2025-02-12,37,30,81.08
+95,2,Greater Noida Depot,2025-02-13,50,41,82.0
+96,2,Greater Noida Depot,2025-02-14,27,23,85.19
+97,2,Greater Noida Depot,2025-02-15,41,34,82.93
+98,2,Greater Noida Depot,2025-02-16,34,27,79.41
+99,2,Greater Noida Depot,2025-02-17,21,17,80.95
+100,2,Greater Noida Depot,2025-02-18,33,28,84.85
+101,2,Greater Noida Depot,2025-02-19,26,21,80.77
+102,2,Greater Noida Depot,2025-02-20,24,20,83.33
+103,2,Greater Noida Depot,2025-02-21,42,34,80.95
+104,2,Greater Noida Depot,2025-02-22,47,39,82.98
+105,2,Greater Noida Depot,2025-02-23,32,26,81.25
+106,2,Greater Noida Depot,2025-02-24,31,26,83.87
+107,2,Greater Noida Depot,2025-02-25,23,19,82.61
+108,2,Greater Noida Depot,2025-02-26,34,27,79.41
+109,2,Greater Noida Depot,2025-02-27,34,28,82.35
+110,2,Greater Noida Depot,2025-02-28,23,18,78.26
+111,2,Greater Noida Depot,2025-03-01,50,41,82.0
+112,2,Greater Noida Depot,2025-03-02,39,32,82.05
+113,2,Greater Noida Depot,2025-03-03,50,44,88.0
+114,2,Greater Noida Depot,2025-03-04,25,22,88.0
+115,2,Greater Noida Depot,2025-03-05,49,41,83.67
+116,2,Greater Noida Depot,2025-03-06,30,24,80.0
+117,2,Greater Noida Depot,2025-03-07,25,21,84.0
+118,2,Greater Noida Depot,2025-03-08,36,30,83.33
+119,2,Greater Noida Depot,2025-03-09,48,39,81.25
+120,2,Greater Noida Depot,2025-03-10,20,16,80.0
+121,2,Greater Noida Depot,2025-03-11,32,27,84.38
+122,2,Greater Noida Depot,2025-03-12,50,40,80.0
+123,2,Greater Noida Depot,2025-03-13,38,31,81.58
+124,2,Greater Noida Depot,2025-03-14,21,17,80.95
+125,2,Greater Noida Depot,2025-03-15,39,34,87.18
+126,2,Greater Noida Depot,2025-03-16,40,34,85.0
+127,2,Greater Noida Depot,2025-03-17,29,24,82.76
+128,2,Greater Noida Depot,2025-03-18,47,37,78.72
+129,2,Greater Noida Depot,2025-03-19,24,21,87.5
+130,2,Greater Noida Depot,2025-03-20,43,35,81.4
+131,2,Greater Noida Depot,2025-03-21,32,26,81.25
+132,2,Greater Noida Depot,2025-03-22,32,25,78.12
+133,3,Noida Sec 150 Site,2025-01-26,26,20,76.92
+134,3,Noida Sec 150 Site,2025-01-27,29,21,72.41
+135,3,Noida Sec 150 Site,2025-01-28,36,28,77.78
+136,3,Noida Sec 150 Site,2025-01-29,37,28,75.68
+137,3,Noida Sec 150 Site,2025-01-30,39,31,79.49
+138,3,Noida Sec 150 Site,2025-01-31,23,17,73.91
+139,3,Noida Sec 150 Site,2025-02-01,23,18,78.26
+140,3,Noida Sec 150 Site,2025-02-02,45,37,82.22
+141,3,Noida Sec 150 Site,2025-02-03,37,30,81.08
+142,3,Noida Sec 150 Site,2025-02-04,44,33,75.0
+143,3,Noida Sec 150 Site,2025-02-05,39,30,76.92
+144,3,Noida Sec 150 Site,2025-02-06,36,26,72.22
+145,3,Noida Sec 150 Site,2025-02-07,21,16,76.19
+146,3,Noida Sec 150 Site,2025-02-08,30,24,80.0
+147,3,Noida Sec 150 Site,2025-02-09,36,28,77.78
+148,3,Noida Sec 150 Site,2025-02-10,39,32,82.05
+149,3,Noida Sec 150 Site,2025-02-11,24,18,75.0
+150,3,Noida Sec 150 Site,2025-02-12,39,30,76.92
+151,3,Noida Sec 150 Site,2025-02-13,32,27,84.38
+152,3,Noida Sec 150 Site,2025-02-14,43,35,81.4
+153,3,Noida Sec 150 Site,2025-02-15,38,29,76.32
+154,3,Noida Sec 150 Site,2025-02-16,46,36,78.26
+155,3,Noida Sec 150 Site,2025-02-17,35,28,80.0
+156,3,Noida Sec 150 Site,2025-02-18,29,23,79.31
+157,3,Noida Sec 150 Site,2025-02-19,20,15,75.0
+158,3,Noida Sec 150 Site,2025-02-20,41,30,73.17
+159,3,Noida Sec 150 Site,2025-02-21,33,26,78.79
+160,3,Noida Sec 150 Site,2025-02-22,45,37,82.22
+161,3,Noida Sec 150 Site,2025-02-23,47,38,80.85
+162,3,Noida Sec 150 Site,2025-02-24,20,16,80.0
+163,3,Noida Sec 150 Site,2025-02-25,28,23,82.14
+164,3,Noida Sec 150 Site,2025-02-26,45,37,82.22
+165,3,Noida Sec 150 Site,2025-02-27,38,30,78.95
+166,3,Noida Sec 150 Site,2025-02-28,43,32,74.42
+167,3,Noida Sec 150 Site,2025-03-01,35,26,74.29
+168,3,Noida Sec 150 Site,2025-03-02,40,32,80.0
+169,3,Noida Sec 150 Site,2025-03-03,44,36,81.82
+170,3,Noida Sec 150 Site,2025-03-04,24,19,79.17
+171,3,Noida Sec 150 Site,2025-03-05,27,20,74.07
+172,3,Noida Sec 150 Site,2025-03-06,50,40,80.0
+173,3,Noida Sec 150 Site,2025-03-07,26,19,73.08
+174,3,Noida Sec 150 Site,2025-03-08,30,23,76.67
+175,3,Noida Sec 150 Site,2025-03-09,33,26,78.79
+176,3,Noida Sec 150 Site,2025-03-10,33,26,78.79
+177,3,Noida Sec 150 Site,2025-03-11,39,32,82.05
+178,3,Noida Sec 150 Site,2025-03-12,47,38,80.85
+179,3,Noida Sec 150 Site,2025-03-13,43,32,74.42
+180,3,Noida Sec 150 Site,2025-03-14,24,19,79.17
+181,3,Noida Sec 150 Site,2025-03-15,37,28,75.68
+182,3,Noida Sec 150 Site,2025-03-16,41,32,78.05
+183,3,Noida Sec 150 Site,2025-03-17,32,24,75.0
+184,3,Noida Sec 150 Site,2025-03-18,25,19,76.0
+185,3,Noida Sec 150 Site,2025-03-19,37,28,75.68
+186,3,Noida Sec 150 Site,2025-03-20,31,25,80.65
+187,3,Noida Sec 150 Site,2025-03-21,47,38,80.85
+188,3,Noida Sec 150 Site,2025-03-22,40,32,80.0
+189,3,Noida Sec 150 Site,2025-03-23,28,22,78.57
+190,3,Noida Sec 150 Site,2025-03-24,26,21,80.77
+191,3,Noida Sec 150 Site,2025-03-25,28,22,78.57
+192,3,Noida Sec 150 Site,2025-03-26,27,22,81.48
+193,3,Noida Sec 150 Site,2025-03-27,29,23,79.31
+194,3,Noida Sec 150 Site,2025-03-28,42,32,76.19
+195,3,Noida Sec 150 Site,2025-03-29,42,33,78.57
+196,3,Noida Sec 150 Site,2025-03-30,35,27,77.14
+197,3,Noida Sec 150 Site,2025-03-31,49,40,81.63
+198,3,Noida Sec 150 Site,2025-04-01,43,33,76.74
+199,3,Noida Sec 150 Site,2025-04-02,23,18,78.26
+200,3,Noida Sec 150 Site,2025-04-03,37,28,75.68
+201,3,Noida Sec 150 Site,2025-04-04,32,26,81.25
+202,3,Noida Sec 150 Site,2025-04-05,50,40,80.0
+203,3,Noida Sec 150 Site,2025-04-06,24,18,75.0
+204,3,Noida Sec 150 Site,2025-04-07,29,24,82.76
+205,3,Noida Sec 150 Site,2025-04-08,22,17,77.27
+206,3,Noida Sec 150 Site,2025-04-09,34,27,79.41
+207,3,Noida Sec 150 Site,2025-04-10,43,33,76.74
+208,3,Noida Sec 150 Site,2025-04-11,26,21,80.77
+209,3,Noida Sec 150 Site,2025-04-12,28,23,82.14
+210,4,Noida Sec 62 Site,2025-01-21,28,22,78.57
+211,4,Noida Sec 62 Site,2025-01-22,39,34,87.18
+212,4,Noida Sec 62 Site,2025-01-23,27,22,81.48
+213,4,Noida Sec 62 Site,2025-01-24,41,36,87.8
+214,4,Noida Sec 62 Site,2025-01-25,27,23,85.19
+215,4,Noida Sec 62 Site,2025-01-26,21,17,80.95
+216,4,Noida Sec 62 Site,2025-01-27,30,26,86.67
+217,4,Noida Sec 62 Site,2025-01-28,23,20,86.96
+218,4,Noida Sec 62 Site,2025-01-29,24,19,79.17
+219,4,Noida Sec 62 Site,2025-01-30,37,33,89.19
+220,4,Noida Sec 62 Site,2025-01-31,25,21,84.0
+221,4,Noida Sec 62 Site,2025-02-01,49,43,87.76
+222,4,Noida Sec 62 Site,2025-02-02,35,29,82.86
+223,4,Noida Sec 62 Site,2025-02-03,26,22,84.62
+224,4,Noida Sec 62 Site,2025-02-04,29,24,82.76
+225,4,Noida Sec 62 Site,2025-02-05,40,32,80.0
+226,4,Noida Sec 62 Site,2025-02-06,44,35,79.55
+227,4,Noida Sec 62 Site,2025-02-07,38,31,81.58
+228,4,Noida Sec 62 Site,2025-02-08,43,37,86.05
+229,4,Noida Sec 62 Site,2025-02-09,49,39,79.59
+230,4,Noida Sec 62 Site,2025-02-10,49,39,79.59
+231,4,Noida Sec 62 Site,2025-02-11,48,42,87.5
+232,4,Noida Sec 62 Site,2025-02-12,49,43,87.76
+233,4,Noida Sec 62 Site,2025-02-13,46,38,82.61
+234,4,Noida Sec 62 Site,2025-02-14,35,28,80.0
+235,4,Noida Sec 62 Site,2025-02-15,43,38,88.37
+236,4,Noida Sec 62 Site,2025-02-16,49,40,81.63
+237,4,Noida Sec 62 Site,2025-02-17,21,17,80.95
+238,4,Noida Sec 62 Site,2025-02-18,38,32,84.21
+239,4,Noida Sec 62 Site,2025-02-19,49,43,87.76
+240,4,Noida Sec 62 Site,2025-02-20,29,24,82.76
+241,4,Noida Sec 62 Site,2025-02-21,40,34,85.0
+242,4,Noida Sec 62 Site,2025-02-22,35,31,88.57
+243,4,Noida Sec 62 Site,2025-02-23,24,21,87.5
+244,4,Noida Sec 62 Site,2025-02-24,34,28,82.35
+245,4,Noida Sec 62 Site,2025-02-25,45,36,80.0
+246,4,Noida Sec 62 Site,2025-02-26,25,21,84.0
+247,4,Noida Sec 62 Site,2025-02-27,40,32,80.0
+248,4,Noida Sec 62 Site,2025-02-28,25,20,80.0
+249,4,Noida Sec 62 Site,2025-03-01,30,26,86.67
+250,4,Noida Sec 62 Site,2025-03-02,38,32,84.21
+251,4,Noida Sec 62 Site,2025-03-03,26,21,80.77
+252,4,Noida Sec 62 Site,2025-03-04,47,40,85.11
+253,4,Noida Sec 62 Site,2025-03-05,32,28,87.5
+254,4,Noida Sec 62 Site,2025-03-06,36,29,80.56
+255,4,Noida Sec 62 Site,2025-03-07,32,27,84.38
+256,4,Noida Sec 62 Site,2025-03-08,25,22,88.0
+257,4,Noida Sec 62 Site,2025-03-09,35,29,82.86
+258,4,Noida Sec 62 Site,2025-03-10,27,21,77.78
+259,4,Noida Sec 62 Site,2025-03-11,32,26,81.25
+260,4,Noida Sec 62 Site,2025-03-12,44,36,81.82
+261,4,Noida Sec 62 Site,2025-03-13,30,24,80.0
+262,4,Noida Sec 62 Site,2025-03-14,43,36,83.72
+263,4,Noida Sec 62 Site,2025-03-15,28,24,85.71
+264,4,Noida Sec 62 Site,2025-03-16,42,34,80.95
+265,4,Noida Sec 62 Site,2025-03-17,41,33,80.49
+266,4,Noida Sec 62 Site,2025-03-18,29,23,79.31
+267,4,Noida Sec 62 Site,2025-03-19,41,34,82.93
+268,4,Noida Sec 62 Site,2025-03-20,48,42,87.5
+269,4,Noida Sec 62 Site,2025-03-21,44,36,81.82
+270,4,Noida Sec 62 Site,2025-03-22,23,20,86.96
+271,4,Noida Sec 62 Site,2025-03-23,50,41,82.0
+272,4,Noida Sec 62 Site,2025-03-24,39,31,79.49
+273,4,Noida Sec 62 Site,2025-03-25,50,40,80.0
+274,4,Noida Sec 62 Site,2025-03-26,24,20,83.33
+275,4,Noida Sec 62 Site,2025-03-27,39,32,82.05
+276,4,Noida Sec 62 Site,2025-03-28,42,35,83.33
+277,4,Noida Sec 62 Site,2025-03-29,35,30,85.71
+278,4,Noida Sec 62 Site,2025-03-30,45,38,84.44
+279,4,Noida Sec 62 Site,2025-03-31,26,22,84.62
+280,4,Noida Sec 62 Site,2025-04-01,41,35,85.37
+281,4,Noida Sec 62 Site,2025-04-02,47,41,87.23
+282,4,Noida Sec 62 Site,2025-04-03,36,30,83.33
+283,4,Noida Sec 62 Site,2025-04-04,42,35,83.33
+284,4,Noida Sec 62 Site,2025-04-05,49,41,83.67
+285,4,Noida Sec 62 Site,2025-04-06,21,18,85.71
+286,4,Noida Sec 62 Site,2025-04-07,48,40,83.33
+287,4,Noida Sec 62 Site,2025-04-08,38,32,84.21
+288,4,Noida Sec 62 Site,2025-04-09,25,20,80.0
+289,4,Noida Sec 62 Site,2025-04-10,36,30,83.33
+290,4,Noida Sec 62 Site,2025-04-11,41,33,80.49
+291,4,Noida Sec 62 Site,2025-04-12,38,32,84.21
+292,5,Noida Express Way Site,2025-02-18,36,30,83.33
+293,5,Noida Express Way Site,2025-02-19,21,18,85.71
+294,5,Noida Express Way Site,2025-02-20,36,30,83.33
+295,5,Noida Express Way Site,2025-02-21,38,31,81.58
+296,5,Noida Express Way Site,2025-02-22,34,29,85.29
+297,5,Noida Express Way Site,2025-02-23,29,25,86.21
+298,5,Noida Express Way Site,2025-02-24,32,26,81.25
+299,5,Noida Express Way Site,2025-02-25,20,17,85.0
+300,5,Noida Express Way Site,2025-02-26,38,31,81.58
+301,5,Noida Express Way Site,2025-02-27,33,27,81.82
+302,5,Noida Express Way Site,2025-02-28,22,19,86.36
+303,5,Noida Express Way Site,2025-03-01,21,19,90.48
+304,5,Noida Express Way Site,2025-03-02,22,20,90.91
+305,5,Noida Express Way Site,2025-03-03,35,28,80.0
+306,5,Noida Express Way Site,2025-03-04,33,27,81.82
+307,5,Noida Express Way Site,2025-03-05,24,21,87.5
+308,5,Noida Express Way Site,2025-03-06,43,37,86.05
+309,5,Noida Express Way Site,2025-03-07,33,28,84.85
+310,5,Noida Express Way Site,2025-03-08,48,40,83.33
+311,5,Noida Express Way Site,2025-03-09,47,42,89.36
+312,5,Noida Express Way Site,2025-03-10,32,27,84.38
+313,5,Noida Express Way Site,2025-03-11,41,37,90.24
+314,5,Noida Express Way Site,2025-03-12,47,40,85.11
+315,5,Noida Express Way Site,2025-03-13,40,35,87.5
+316,5,Noida Express Way Site,2025-03-14,23,19,82.61
+317,5,Noida Express Way Site,2025-03-15,37,31,83.78
+318,5,Noida Express Way Site,2025-03-16,24,21,87.5
+319,5,Noida Express Way Site,2025-03-17,27,24,88.89
+320,5,Noida Express Way Site,2025-03-18,44,35,79.55
+321,5,Noida Express Way Site,2025-03-19,29,24,82.76
+322,5,Noida Express Way Site,2025-03-20,43,37,86.05
+323,5,Noida Express Way Site,2025-03-21,37,31,83.78
+324,5,Noida Express Way Site,2025-03-22,27,22,81.48
+325,5,Noida Express Way Site,2025-03-23,31,25,80.65
+326,5,Noida Express Way Site,2025-03-24,26,23,88.46
+327,5,Noida Express Way Site,2025-03-25,43,38,88.37
+328,5,Noida Express Way Site,2025-03-26,21,18,85.71
+329,5,Noida Express Way Site,2025-03-27,33,28,84.85
+330,5,Noida Express Way Site,2025-03-28,49,43,87.76
+331,5,Noida Express Way Site,2025-03-29,20,16,80.0
+332,5,Noida Express Way Site,2025-03-30,22,18,81.82
+333,5,Noida Express Way Site,2025-03-31,21,18,85.71
+334,5,Noida Express Way Site,2025-04-01,41,36,87.8
+335,5,Noida Express Way Site,2025-04-02,21,17,80.95
+336,5,Noida Express Way Site,2025-04-03,21,18,85.71
+337,5,Noida Express Way Site,2025-04-04,27,23,85.19
+338,5,Noida Express Way Site,2025-04-05,44,39,88.64
+339,5,Noida Express Way Site,2025-04-06,21,17,80.95
+340,5,Noida Express Way Site,2025-04-07,29,24,82.76
+341,5,Noida Express Way Site,2025-04-08,49,43,87.76
+342,5,Noida Express Way Site,2025-04-09,30,26,86.67
+343,5,Noida Express Way Site,2025-04-10,44,38,86.36
+344,5,Noida Express Way Site,2025-04-11,30,25,83.33
+345,5,Noida Express Way Site,2025-04-12,48,39,81.25
+346,5,Noida Express Way Site,2025-04-13,41,35,85.37
+347,5,Noida Express Way Site,2025-04-14,33,27,81.82
+348,5,Noida Express Way Site,2025-04-15,21,18,85.71
+349,5,Noida Express Way Site,2025-04-16,38,34,89.47
+350,5,Noida Express Way Site,2025-04-17,49,40,81.63
+351,5,Noida Express Way Site,2025-04-18,41,34,82.93
+352,5,Noida Express Way Site,2025-04-19,35,28,80.0
+353,5,Noida Express Way Site,2025-04-20,31,28,90.32
+354,5,Noida Express Way Site,2025-04-21,41,34,82.93
+355,5,Noida Express Way Site,2025-04-22,36,30,83.33
+356,5,Noida Express Way Site,2025-04-23,33,28,84.85
+357,5,Noida Express Way Site,2025-04-24,29,24,82.76
+358,5,Noida Express Way Site,2025-04-25,44,37,84.09
+359,5,Noida Express Way Site,2025-04-26,27,24,88.89
+360,5,Noida Express Way Site,2025-04-27,29,26,89.66
+361,5,Noida Express Way Site,2025-04-28,24,21,87.5
+362,5,Noida Express Way Site,2025-04-29,49,39,79.59
+363,5,Noida Express Way Site,2025-04-30,33,30,90.91
+364,5,Noida Express Way Site,2025-05-01,37,31,83.78
+365,5,Noida Express Way Site,2025-05-02,32,26,81.25
+366,5,Noida Express Way Site,2025-05-03,26,22,84.62
+367,5,Noida Express Way Site,2025-05-04,22,20,90.91
+368,5,Noida Express Way Site,2025-05-05,47,39,82.98
+369,5,Noida Express Way Site,2025-05-06,37,32,86.49
+370,5,Noida Express Way Site,2025-05-07,26,21,80.77
+371,5,Noida Express Way Site,2025-05-08,32,28,87.5
+372,5,Noida Express Way Site,2025-05-09,39,31,79.49
+373,5,Noida Express Way Site,2025-05-10,22,18,81.82
+374,5,Noida Express Way Site,2025-05-11,44,38,86.36
+375,5,Noida Express Way Site,2025-05-12,41,35,85.37
+376,5,Noida Express Way Site,2025-05-13,35,29,82.86
+377,5,Noida Express Way Site,2025-05-14,49,41,83.67
+378,5,Noida Express Way Site,2025-05-15,50,44,88.0
+379,5,Noida Express Way Site,2025-05-16,26,23,88.46
+380,6,Greater Noida Depot,2025-01-16,43,37,86.05
+381,6,Greater Noida Depot,2025-01-17,44,40,90.91
+382,6,Greater Noida Depot,2025-01-18,27,25,92.59
+383,6,Greater Noida Depot,2025-01-19,42,37,88.1
+384,6,Greater Noida Depot,2025-01-20,49,43,87.76
+385,6,Greater Noida Depot,2025-01-21,30,28,93.33
+386,6,Greater Noida Depot,2025-01-22,32,29,90.62
+387,6,Greater Noida Depot,2025-01-23,40,36,90.0
+388,6,Greater Noida Depot,2025-01-24,28,25,89.29
+389,6,Greater Noida Depot,2025-01-25,48,43,89.58
+390,6,Greater Noida Depot,2025-01-26,23,21,91.3
+391,6,Greater Noida Depot,2025-01-27,43,39,90.7
+392,6,Greater Noida Depot,2025-01-28,46,41,89.13
+393,6,Greater Noida Depot,2025-01-29,26,23,88.46
+394,6,Greater Noida Depot,2025-01-30,33,28,84.85
+395,6,Greater Noida Depot,2025-01-31,47,41,87.23
+396,6,Greater Noida Depot,2025-02-01,24,21,87.5
+397,6,Greater Noida Depot,2025-02-02,37,35,94.59
+398,6,Greater Noida Depot,2025-02-03,38,35,92.11
+399,6,Greater Noida Depot,2025-02-04,29,25,86.21
+400,6,Greater Noida Depot,2025-02-05,30,26,86.67
+401,6,Greater Noida Depot,2025-02-06,38,36,94.74
+402,6,Greater Noida Depot,2025-02-07,35,32,91.43
+403,6,Greater Noida Depot,2025-02-08,50,46,92.0
+404,6,Greater Noida Depot,2025-02-09,28,26,92.86
+405,6,Greater Noida Depot,2025-02-10,35,33,94.29
+406,6,Greater Noida Depot,2025-02-11,40,37,92.5
+407,6,Greater Noida Depot,2025-02-12,34,30,88.24
+408,6,Greater Noida Depot,2025-02-13,45,40,88.89
+409,6,Greater Noida Depot,2025-02-14,24,22,91.67
+410,6,Greater Noida Depot,2025-02-15,35,31,88.57
+411,6,Greater Noida Depot,2025-02-16,48,44,91.67
+412,6,Greater Noida Depot,2025-02-17,40,38,95.0
+413,6,Greater Noida Depot,2025-02-18,36,31,86.11
+414,6,Greater Noida Depot,2025-02-19,47,40,85.11
+415,6,Greater Noida Depot,2025-02-20,46,42,91.3
+416,6,Greater Noida Depot,2025-02-21,44,38,86.36
+417,6,Greater Noida Depot,2025-02-22,24,23,95.83
+418,6,Greater Noida Depot,2025-02-23,27,23,85.19
+419,6,Greater Noida Depot,2025-02-24,24,21,87.5
+420,6,Greater Noida Depot,2025-02-25,36,32,88.89
+421,6,Greater Noida Depot,2025-02-26,21,19,90.48
+422,6,Greater Noida Depot,2025-02-27,41,39,95.12
+423,6,Greater Noida Depot,2025-02-28,49,44,89.8
+424,6,Greater Noida Depot,2025-03-01,35,30,85.71
+425,6,Greater Noida Depot,2025-03-02,37,34,91.89
+426,6,Greater Noida Depot,2025-03-03,20,17,85.0
+427,6,Greater Noida Depot,2025-03-04,43,38,88.37
+428,6,Greater Noida Depot,2025-03-05,29,25,86.21
+429,6,Greater Noida Depot,2025-03-06,46,43,93.48
+430,6,Greater Noida Depot,2025-03-07,33,31,93.94
+431,6,Greater Noida Depot,2025-03-08,49,43,87.76
+432,6,Greater Noida Depot,2025-03-09,49,42,85.71
+433,6,Greater Noida Depot,2025-03-10,24,21,87.5
+434,6,Greater Noida Depot,2025-03-11,39,35,89.74
+435,6,Greater Noida Depot,2025-03-12,46,41,89.13
+436,6,Greater Noida Depot,2025-03-13,45,40,88.89
+437,6,Greater Noida Depot,2025-03-14,31,29,93.55
+438,6,Greater Noida Depot,2025-03-15,34,31,91.18
+439,6,Greater Noida Depot,2025-03-16,42,37,88.1
+440,6,Greater Noida Depot,2025-03-17,41,38,92.68
+441,6,Greater Noida Depot,2025-03-18,22,20,90.91
+442,6,Greater Noida Depot,2025-03-19,47,43,91.49
+443,6,Greater Noida Depot,2025-03-20,21,18,85.71
+444,6,Greater Noida Depot,2025-03-21,32,29,90.62
+445,6,Greater Noida Depot,2025-03-22,35,30,85.71
+446,6,Greater Noida Depot,2025-03-23,20,18,90.0
+447,6,Greater Noida Depot,2025-03-24,22,20,90.91
+448,6,Greater Noida Depot,2025-03-25,33,30,90.91
+449,6,Greater Noida Depot,2025-03-26,30,27,90.0
+450,6,Greater Noida Depot,2025-03-27,47,45,95.74
+451,6,Greater Noida Depot,2025-03-28,48,44,91.67
+452,6,Greater Noida Depot,2025-03-29,21,18,85.71
+453,6,Greater Noida Depot,2025-03-30,48,45,93.75
+454,6,Greater Noida Depot,2025-03-31,48,44,91.67
+455,6,Greater Noida Depot,2025-04-01,28,24,85.71
+456,6,Greater Noida Depot,2025-04-02,22,20,90.91
+457,6,Greater Noida Depot,2025-04-03,28,26,92.86
+458,6,Greater Noida Depot,2025-04-04,38,35,92.11
+459,6,Greater Noida Depot,2025-04-05,25,24,96.0
+460,6,Greater Noida Depot,2025-04-06,30,26,86.67
+461,6,Greater Noida Depot,2025-04-07,26,24,92.31
+462,6,Greater Noida Depot,2025-04-08,44,41,93.18
+463,6,Greater Noida Depot,2025-04-09,46,41,89.13
+464,6,Greater Noida Depot,2025-04-10,22,19,86.36
+465,6,Greater Noida Depot,2025-04-11,38,33,86.84
+466,6,Greater Noida Depot,2025-04-12,46,43,93.48
+467,6,Greater Noida Depot,2025-04-13,41,39,95.12
+468,6,Greater Noida Depot,2025-04-14,30,27,90.0
+469,6,Greater Noida Depot,2025-04-15,43,37,86.05
+470,7,Noida Sec 150 Site,2025-01-25,43,37,86.05
+471,7,Noida Sec 150 Site,2025-01-26,43,41,95.35
+472,7,Noida Sec 150 Site,2025-01-27,21,18,85.71
+473,7,Noida Sec 150 Site,2025-01-28,27,25,92.59
+474,7,Noida Sec 150 Site,2025-01-29,30,27,90.0
+475,7,Noida Sec 150 Site,2025-01-30,39,37,94.87
+476,7,Noida Sec 150 Site,2025-01-31,32,30,93.75
+477,7,Noida Sec 150 Site,2025-02-01,30,26,86.67
+478,7,Noida Sec 150 Site,2025-02-02,28,26,92.86
+479,7,Noida Sec 150 Site,2025-02-03,34,31,91.18
+480,7,Noida Sec 150 Site,2025-02-04,31,28,90.32
+481,7,Noida Sec 150 Site,2025-02-05,32,29,90.62
+482,7,Noida Sec 150 Site,2025-02-06,41,38,92.68
+483,7,Noida Sec 150 Site,2025-02-07,32,28,87.5
+484,7,Noida Sec 150 Site,2025-02-08,39,35,89.74
+485,7,Noida Sec 150 Site,2025-02-09,27,25,92.59
+486,7,Noida Sec 150 Site,2025-02-10,22,19,86.36
+487,7,Noida Sec 150 Site,2025-02-11,32,30,93.75
+488,7,Noida Sec 150 Site,2025-02-12,40,35,87.5
+489,7,Noida Sec 150 Site,2025-02-13,32,28,87.5
+490,7,Noida Sec 150 Site,2025-02-14,23,20,86.96
+491,7,Noida Sec 150 Site,2025-02-15,50,44,88.0
+492,7,Noida Sec 150 Site,2025-02-16,31,29,93.55
+493,7,Noida Sec 150 Site,2025-02-17,23,20,86.96
+494,7,Noida Sec 150 Site,2025-02-18,25,22,88.0
+495,7,Noida Sec 150 Site,2025-02-19,37,34,91.89
+496,7,Noida Sec 150 Site,2025-02-20,33,29,87.88
+497,7,Noida Sec 150 Site,2025-02-21,22,20,90.91
+498,7,Noida Sec 150 Site,2025-02-22,22,20,90.91
+499,7,Noida Sec 150 Site,2025-02-23,45,40,88.89
+500,7,Noida Sec 150 Site,2025-02-24,32,27,84.38
+501,7,Noida Sec 150 Site,2025-02-25,33,30,90.91
+502,7,Noida Sec 150 Site,2025-02-26,22,20,90.91
+503,7,Noida Sec 150 Site,2025-02-27,37,35,94.59
+504,7,Noida Sec 150 Site,2025-02-28,27,25,92.59
+505,7,Noida Sec 150 Site,2025-03-01,25,23,92.0
+506,7,Noida Sec 150 Site,2025-03-02,25,22,88.0
+507,7,Noida Sec 150 Site,2025-03-03,29,26,89.66
+508,7,Noida Sec 150 Site,2025-03-04,24,21,87.5
+509,7,Noida Sec 150 Site,2025-03-05,33,29,87.88
+510,7,Noida Sec 150 Site,2025-03-06,29,26,89.66
+511,7,Noida Sec 150 Site,2025-03-07,22,20,90.91
+512,7,Noida Sec 150 Site,2025-03-08,50,44,88.0
+513,7,Noida Sec 150 Site,2025-03-09,40,36,90.0
+514,7,Noida Sec 150 Site,2025-03-10,39,34,87.18
+515,7,Noida Sec 150 Site,2025-03-11,23,20,86.96
+516,7,Noida Sec 150 Site,2025-03-12,20,19,95.0
+517,7,Noida Sec 150 Site,2025-03-13,30,28,93.33
+518,7,Noida Sec 150 Site,2025-03-14,32,30,93.75
+519,7,Noida Sec 150 Site,2025-03-15,30,27,90.0
+520,7,Noida Sec 150 Site,2025-03-16,33,31,93.94
+521,7,Noida Sec 150 Site,2025-03-17,47,43,91.49
+522,7,Noida Sec 150 Site,2025-03-18,39,34,87.18
+523,7,Noida Sec 150 Site,2025-03-19,30,27,90.0
+524,7,Noida Sec 150 Site,2025-03-20,42,37,88.1
+525,7,Noida Sec 150 Site,2025-03-21,30,26,86.67
+526,7,Noida Sec 150 Site,2025-03-22,32,30,93.75
+527,7,Noida Sec 150 Site,2025-03-23,29,27,93.1
+528,7,Noida Sec 150 Site,2025-03-24,40,36,90.0
+529,7,Noida Sec 150 Site,2025-03-25,38,36,94.74
+530,7,Noida Sec 150 Site,2025-03-26,30,27,90.0
+531,7,Noida Sec 150 Site,2025-03-27,46,43,93.48
+532,7,Noida Sec 150 Site,2025-03-28,31,27,87.1
+533,7,Noida Sec 150 Site,2025-03-29,38,33,86.84
+534,7,Noida Sec 150 Site,2025-03-30,37,32,86.49
+535,7,Noida Sec 150 Site,2025-03-31,44,40,90.91
+536,7,Noida Sec 150 Site,2025-04-01,50,46,92.0
+537,7,Noida Sec 150 Site,2025-04-02,50,46,92.0
+538,7,Noida Sec 150 Site,2025-04-03,34,32,94.12
+539,7,Noida Sec 150 Site,2025-04-04,46,43,93.48
+540,7,Noida Sec 150 Site,2025-04-05,46,43,93.48
+541,7,Noida Sec 150 Site,2025-04-06,45,40,88.89
+542,7,Noida Sec 150 Site,2025-04-07,35,30,85.71
+543,7,Noida Sec 150 Site,2025-04-08,29,26,89.66
+544,7,Noida Sec 150 Site,2025-04-09,41,36,87.8
+545,7,Noida Sec 150 Site,2025-04-10,33,31,93.94
+546,7,Noida Sec 150 Site,2025-04-11,22,20,90.91
+547,7,Noida Sec 150 Site,2025-04-12,39,35,89.74
+548,7,Noida Sec 150 Site,2025-04-13,32,29,90.62
+549,7,Noida Sec 150 Site,2025-04-14,49,46,93.88
+550,7,Noida Sec 150 Site,2025-04-15,42,38,90.48
+551,7,Noida Sec 150 Site,2025-04-16,21,20,95.24
+552,8,Noida Sec 62 Site,2025-01-13,42,38,90.48
+553,8,Noida Sec 62 Site,2025-01-14,37,32,86.49
+554,8,Noida Sec 62 Site,2025-01-15,49,40,81.63
+555,8,Noida Sec 62 Site,2025-01-16,44,37,84.09
+556,8,Noida Sec 62 Site,2025-01-17,41,35,85.37
+557,8,Noida Sec 62 Site,2025-01-18,40,35,87.5
+558,8,Noida Sec 62 Site,2025-01-19,38,35,92.11
+559,8,Noida Sec 62 Site,2025-01-20,41,36,87.8
+560,8,Noida Sec 62 Site,2025-01-21,50,44,88.0
+561,8,Noida Sec 62 Site,2025-01-22,50,45,90.0
+562,8,Noida Sec 62 Site,2025-01-23,23,19,82.61
+563,8,Noida Sec 62 Site,2025-01-24,28,23,82.14
+564,8,Noida Sec 62 Site,2025-01-25,43,37,86.05
+565,8,Noida Sec 62 Site,2025-01-26,38,34,89.47
+566,8,Noida Sec 62 Site,2025-01-27,27,23,85.19
+567,8,Noida Sec 62 Site,2025-01-28,32,28,87.5
+568,8,Noida Sec 62 Site,2025-01-29,41,36,87.8
+569,8,Noida Sec 62 Site,2025-01-30,36,30,83.33
+570,8,Noida Sec 62 Site,2025-01-31,20,17,85.0
+571,8,Noida Sec 62 Site,2025-02-01,29,25,86.21
+572,8,Noida Sec 62 Site,2025-02-02,50,41,82.0
+573,8,Noida Sec 62 Site,2025-02-03,46,42,91.3
+574,8,Noida Sec 62 Site,2025-02-04,24,20,83.33
+575,8,Noida Sec 62 Site,2025-02-05,30,26,86.67
+576,8,Noida Sec 62 Site,2025-02-06,26,23,88.46
+577,8,Noida Sec 62 Site,2025-02-07,31,27,87.1
+578,8,Noida Sec 62 Site,2025-02-08,34,30,88.24
+579,8,Noida Sec 62 Site,2025-02-09,34,29,85.29
+580,8,Noida Sec 62 Site,2025-02-10,29,24,82.76
+581,8,Noida Sec 62 Site,2025-02-11,42,35,83.33
+582,8,Noida Sec 62 Site,2025-02-12,47,40,85.11
+583,8,Noida Sec 62 Site,2025-02-13,23,20,86.96
+584,8,Noida Sec 62 Site,2025-02-14,25,23,92.0
+585,8,Noida Sec 62 Site,2025-02-15,43,36,83.72
+586,8,Noida Sec 62 Site,2025-02-16,25,22,88.0
+587,8,Noida Sec 62 Site,2025-02-17,30,26,86.67
+588,8,Noida Sec 62 Site,2025-02-18,50,43,86.0
+589,8,Noida Sec 62 Site,2025-02-19,45,38,84.44
+590,8,Noida Sec 62 Site,2025-02-20,25,21,84.0
+591,8,Noida Sec 62 Site,2025-02-21,41,35,85.37
+592,8,Noida Sec 62 Site,2025-02-22,20,18,90.0
+593,8,Noida Sec 62 Site,2025-02-23,48,40,83.33
+594,8,Noida Sec 62 Site,2025-02-24,38,33,86.84
+595,8,Noida Sec 62 Site,2025-02-25,20,18,90.0
+596,8,Noida Sec 62 Site,2025-02-26,26,22,84.62
+597,8,Noida Sec 62 Site,2025-02-27,42,38,90.48
+598,8,Noida Sec 62 Site,2025-02-28,22,19,86.36
+599,8,Noida Sec 62 Site,2025-03-01,45,41,91.11
+600,8,Noida Sec 62 Site,2025-03-02,25,21,84.0
+601,8,Noida Sec 62 Site,2025-03-03,26,22,84.62
+602,8,Noida Sec 62 Site,2025-03-04,28,25,89.29
+603,8,Noida Sec 62 Site,2025-03-05,35,30,85.71
+604,8,Noida Sec 62 Site,2025-03-06,40,34,85.0
+605,8,Noida Sec 62 Site,2025-03-07,32,28,87.5
+606,8,Noida Sec 62 Site,2025-03-08,38,31,81.58
+607,8,Noida Sec 62 Site,2025-03-09,31,28,90.32
+608,8,Noida Sec 62 Site,2025-03-10,39,32,82.05
+609,8,Noida Sec 62 Site,2025-03-11,41,36,87.8
+610,8,Noida Sec 62 Site,2025-03-12,29,26,89.66
+611,8,Noida Sec 62 Site,2025-03-13,38,31,81.58
+612,8,Noida Sec 62 Site,2025-03-14,24,20,83.33
+613,8,Noida Sec 62 Site,2025-03-15,27,23,85.19
+614,8,Noida Sec 62 Site,2025-03-16,25,21,84.0
+615,8,Noida Sec 62 Site,2025-03-17,24,21,87.5
+616,8,Noida Sec 62 Site,2025-03-18,33,29,87.88
+617,8,Noida Sec 62 Site,2025-03-19,38,32,84.21
+618,8,Noida Sec 62 Site,2025-03-20,25,22,88.0
+619,8,Noida Sec 62 Site,2025-03-21,37,33,89.19
+620,8,Noida Sec 62 Site,2025-03-22,40,36,90.0
+621,8,Noida Sec 62 Site,2025-03-23,25,22,88.0
+622,8,Noida Sec 62 Site,2025-03-24,35,30,85.71
+623,9,Noida Express Way Site,2025-03-27,30,24,80.0
+624,9,Noida Express Way Site,2025-03-28,39,29,74.36
+625,9,Noida Express Way Site,2025-03-29,31,26,83.87
+626,9,Noida Express Way Site,2025-03-30,35,26,74.29
+627,9,Noida Express Way Site,2025-03-31,46,35,76.09
+628,9,Noida Express Way Site,2025-04-01,37,29,78.38
+629,9,Noida Express Way Site,2025-04-02,35,27,77.14
+630,9,Noida Express Way Site,2025-04-03,35,27,77.14
+631,9,Noida Express Way Site,2025-04-04,46,36,78.26
+632,9,Noida Express Way Site,2025-04-05,25,18,72.0
+633,9,Noida Express Way Site,2025-04-06,20,16,80.0
+634,9,Noida Express Way Site,2025-04-07,27,20,74.07
+635,9,Noida Express Way Site,2025-04-08,28,21,75.0
+636,9,Noida Express Way Site,2025-04-09,29,22,75.86
+637,9,Noida Express Way Site,2025-04-10,34,27,79.41
+638,9,Noida Express Way Site,2025-04-11,44,35,79.55
+639,9,Noida Express Way Site,2025-04-12,37,29,78.38
+640,9,Noida Express Way Site,2025-04-13,38,28,73.68
+641,9,Noida Express Way Site,2025-04-14,44,34,77.27
+642,9,Noida Express Way Site,2025-04-15,31,24,77.42
+643,9,Noida Express Way Site,2025-04-16,44,32,72.73
+644,9,Noida Express Way Site,2025-04-17,43,33,76.74
+645,9,Noida Express Way Site,2025-04-18,26,22,84.62
+646,9,Noida Express Way Site,2025-04-19,23,18,78.26
+647,9,Noida Express Way Site,2025-04-20,40,32,80.0
+648,9,Noida Express Way Site,2025-04-21,29,24,82.76
+649,9,Noida Express Way Site,2025-04-22,21,16,76.19
+650,9,Noida Express Way Site,2025-04-23,31,25,80.65
+651,9,Noida Express Way Site,2025-04-24,22,17,77.27
+652,9,Noida Express Way Site,2025-04-25,23,19,82.61
+653,9,Noida Express Way Site,2025-04-26,27,20,74.07
+654,9,Noida Express Way Site,2025-04-27,43,34,79.07
+655,9,Noida Express Way Site,2025-04-28,31,25,80.65
+656,9,Noida Express Way Site,2025-04-29,39,31,79.49
+657,9,Noida Express Way Site,2025-04-30,25,20,80.0
+658,9,Noida Express Way Site,2025-05-01,45,34,75.56
+659,9,Noida Express Way Site,2025-05-02,26,21,80.77
+660,9,Noida Express Way Site,2025-05-03,38,29,76.32
+661,9,Noida Express Way Site,2025-05-04,28,22,78.57
+662,9,Noida Express Way Site,2025-05-05,25,19,76.0
+663,9,Noida Express Way Site,2025-05-06,42,32,76.19
+664,9,Noida Express Way Site,2025-05-07,38,29,76.32
+665,9,Noida Express Way Site,2025-05-08,47,37,78.72
+666,9,Noida Express Way Site,2025-05-09,48,38,79.17
+667,9,Noida Express Way Site,2025-05-10,23,17,73.91
+668,9,Noida Express Way Site,2025-05-11,44,36,81.82
+669,9,Noida Express Way Site,2025-05-12,49,36,73.47
+670,9,Noida Express Way Site,2025-05-13,28,23,82.14
+671,9,Noida Express Way Site,2025-05-14,24,19,79.17
+672,9,Noida Express Way Site,2025-05-15,24,18,75.0
+673,9,Noida Express Way Site,2025-05-16,42,32,76.19
+674,9,Noida Express Way Site,2025-05-17,27,22,81.48
+675,9,Noida Express Way Site,2025-05-18,41,32,78.05
+676,9,Noida Express Way Site,2025-05-19,24,19,79.17
+677,9,Noida Express Way Site,2025-05-20,28,22,78.57
+678,9,Noida Express Way Site,2025-05-21,32,25,78.12
+679,9,Noida Express Way Site,2025-05-22,40,32,80.0
+680,9,Noida Express Way Site,2025-05-23,44,33,75.0
+681,9,Noida Express Way Site,2025-05-24,36,29,80.56
+682,9,Noida Express Way Site,2025-05-25,42,35,83.33
+683,9,Noida Express Way Site,2025-05-26,31,24,77.42
+684,9,Noida Express Way Site,2025-05-27,35,27,77.14
+685,9,Noida Express Way Site,2025-05-28,20,16,80.0
+686,9,Noida Express Way Site,2025-05-29,47,38,80.85
+687,9,Noida Express Way Site,2025-05-30,43,36,83.72
+688,10,Greater Noida Depot,2025-02-01,41,35,85.37
+689,10,Greater Noida Depot,2025-02-02,47,37,78.72
+690,10,Greater Noida Depot,2025-02-03,37,30,81.08
+691,10,Greater Noida Depot,2025-02-04,50,41,82.0
+692,10,Greater Noida Depot,2025-02-05,26,22,84.62
+693,10,Greater Noida Depot,2025-02-06,30,26,86.67
+694,10,Greater Noida Depot,2025-02-07,30,25,83.33
+695,10,Greater Noida Depot,2025-02-08,24,20,83.33
+696,10,Greater Noida Depot,2025-02-09,35,30,85.71
+697,10,Greater Noida Depot,2025-02-10,48,41,85.42
+698,10,Greater Noida Depot,2025-02-11,21,16,76.19
+699,10,Greater Noida Depot,2025-02-12,40,34,85.0
+700,10,Greater Noida Depot,2025-02-13,34,26,76.47
+701,10,Greater Noida Depot,2025-02-14,49,42,85.71
+702,10,Greater Noida Depot,2025-02-15,34,28,82.35
+703,10,Greater Noida Depot,2025-02-16,50,41,82.0
+704,10,Greater Noida Depot,2025-02-17,42,36,85.71
+705,10,Greater Noida Depot,2025-02-18,48,40,83.33
+706,10,Greater Noida Depot,2025-02-19,25,22,88.0
+707,10,Greater Noida Depot,2025-02-20,48,39,81.25
+708,10,Greater Noida Depot,2025-02-21,40,33,82.5
+709,10,Greater Noida Depot,2025-02-22,22,18,81.82
+710,10,Greater Noida Depot,2025-02-23,48,40,83.33
+711,10,Greater Noida Depot,2025-02-24,21,17,80.95
+712,10,Greater Noida Depot,2025-02-25,29,25,86.21
+713,10,Greater Noida Depot,2025-02-26,44,35,79.55
+714,10,Greater Noida Depot,2025-02-27,40,31,77.5
+715,10,Greater Noida Depot,2025-02-28,23,18,78.26
+716,10,Greater Noida Depot,2025-03-01,35,27,77.14
+717,10,Greater Noida Depot,2025-03-02,38,30,78.95
+718,10,Greater Noida Depot,2025-03-03,41,34,82.93
+719,10,Greater Noida Depot,2025-03-04,20,17,85.0
+720,10,Greater Noida Depot,2025-03-05,46,36,78.26
+721,10,Greater Noida Depot,2025-03-06,47,39,82.98
+722,10,Greater Noida Depot,2025-03-07,24,20,83.33
+723,10,Greater Noida Depot,2025-03-08,27,22,81.48
+724,10,Greater Noida Depot,2025-03-09,43,37,86.05
+725,10,Greater Noida Depot,2025-03-10,23,19,82.61
+726,10,Greater Noida Depot,2025-03-11,48,39,81.25
+727,10,Greater Noida Depot,2025-03-12,32,27,84.38
+728,10,Greater Noida Depot,2025-03-13,44,38,86.36
+729,10,Greater Noida Depot,2025-03-14,40,35,87.5
+730,10,Greater Noida Depot,2025-03-15,24,19,79.17
+731,10,Greater Noida Depot,2025-03-16,38,30,78.95
+732,10,Greater Noida Depot,2025-03-17,40,32,80.0
+733,10,Greater Noida Depot,2025-03-18,31,26,83.87
+734,10,Greater Noida Depot,2025-03-19,40,34,85.0
+735,10,Greater Noida Depot,2025-03-20,49,40,81.63
+736,10,Greater Noida Depot,2025-03-21,41,34,82.93
+737,10,Greater Noida Depot,2025-03-22,26,20,76.92
+738,10,Greater Noida Depot,2025-03-23,23,18,78.26
+739,10,Greater Noida Depot,2025-03-24,23,19,82.61
+740,10,Greater Noida Depot,2025-03-25,32,26,81.25
+741,10,Greater Noida Depot,2025-03-26,33,27,81.82
+742,10,Greater Noida Depot,2025-03-27,24,19,79.17
+743,10,Greater Noida Depot,2025-03-28,40,31,77.5
+744,10,Greater Noida Depot,2025-03-29,37,31,83.78
+745,10,Greater Noida Depot,2025-03-30,43,36,83.72
+746,10,Greater Noida Depot,2025-03-31,44,38,86.36
+747,10,Greater Noida Depot,2025-04-01,20,17,85.0
+748,10,Greater Noida Depot,2025-04-02,41,35,85.37
+749,10,Greater Noida Depot,2025-04-03,26,22,84.62
+750,10,Greater Noida Depot,2025-04-04,36,29,80.56
+751,10,Greater Noida Depot,2025-04-05,32,26,81.25
+752,10,Greater Noida Depot,2025-04-06,21,18,85.71
+753,10,Greater Noida Depot,2025-04-07,45,39,86.67
+754,10,Greater Noida Depot,2025-04-08,35,29,82.86
+755,10,Greater Noida Depot,2025-04-09,27,22,81.48
+756,10,Greater Noida Depot,2025-04-10,39,31,79.49
+757,10,Greater Noida Depot,2025-04-11,48,42,87.5
+758,10,Greater Noida Depot,2025-04-12,31,27,87.1
+759,10,Greater Noida Depot,2025-04-13,24,20,83.33
+760,10,Greater Noida Depot,2025-04-14,46,38,82.61
+761,10,Greater Noida Depot,2025-04-15,31,26,83.87
+762,10,Greater Noida Depot,2025-04-16,25,21,84.0
+763,10,Greater Noida Depot,2025-04-17,50,44,88.0
+764,10,Greater Noida Depot,2025-04-18,22,17,77.27
+765,10,Greater Noida Depot,2025-04-19,22,17,77.27
+766,10,Greater Noida Depot,2025-04-20,26,20,76.92
+767,10,Greater Noida Depot,2025-04-21,21,18,85.71
+768,11,Noida Sec 150 Site,2025-02-11,36,31,86.11
+769,11,Noida Sec 150 Site,2025-02-12,42,37,88.1
+770,11,Noida Sec 150 Site,2025-02-13,33,29,87.88
+771,11,Noida Sec 150 Site,2025-02-14,32,27,84.38
+772,11,Noida Sec 150 Site,2025-02-15,37,32,86.49
+773,11,Noida Sec 150 Site,2025-02-16,24,20,83.33
+774,11,Noida Sec 150 Site,2025-02-17,29,24,82.76
+775,11,Noida Sec 150 Site,2025-02-18,49,41,83.67
+776,11,Noida Sec 150 Site,2025-02-19,45,38,84.44
+777,11,Noida Sec 150 Site,2025-02-20,30,26,86.67
+778,11,Noida Sec 150 Site,2025-02-21,40,36,90.0
+779,11,Noida Sec 150 Site,2025-02-22,40,36,90.0
+780,11,Noida Sec 150 Site,2025-02-23,22,19,86.36
+781,11,Noida Sec 150 Site,2025-02-24,33,30,90.91
+782,11,Noida Sec 150 Site,2025-02-25,47,40,85.11
+783,11,Noida Sec 150 Site,2025-02-26,27,22,81.48
+784,11,Noida Sec 150 Site,2025-02-27,33,28,84.85
+785,11,Noida Sec 150 Site,2025-02-28,39,35,89.74
+786,11,Noida Sec 150 Site,2025-03-01,29,26,89.66
+787,11,Noida Sec 150 Site,2025-03-02,41,37,90.24
+788,11,Noida Sec 150 Site,2025-03-03,23,19,82.61
+789,11,Noida Sec 150 Site,2025-03-04,24,21,87.5
+790,11,Noida Sec 150 Site,2025-03-05,25,22,88.0
+791,11,Noida Sec 150 Site,2025-03-06,31,27,87.1
+792,11,Noida Sec 150 Site,2025-03-07,45,41,91.11
+793,11,Noida Sec 150 Site,2025-03-08,28,24,85.71
+794,11,Noida Sec 150 Site,2025-03-09,24,22,91.67
+795,11,Noida Sec 150 Site,2025-03-10,47,40,85.11
+796,11,Noida Sec 150 Site,2025-03-11,48,40,83.33
+797,11,Noida Sec 150 Site,2025-03-12,48,40,83.33
+798,11,Noida Sec 150 Site,2025-03-13,45,39,86.67
+799,11,Noida Sec 150 Site,2025-03-14,36,30,83.33
+800,11,Noida Sec 150 Site,2025-03-15,42,39,92.86
+801,11,Noida Sec 150 Site,2025-03-16,40,33,82.5
+802,11,Noida Sec 150 Site,2025-03-17,34,30,88.24
+803,11,Noida Sec 150 Site,2025-03-18,21,18,85.71
+804,11,Noida Sec 150 Site,2025-03-19,38,32,84.21
+805,11,Noida Sec 150 Site,2025-03-20,25,21,84.0
+806,11,Noida Sec 150 Site,2025-03-21,23,21,91.3
+807,11,Noida Sec 150 Site,2025-03-22,41,37,90.24
+808,11,Noida Sec 150 Site,2025-03-23,27,24,88.89
+809,11,Noida Sec 150 Site,2025-03-24,20,17,85.0
+810,11,Noida Sec 150 Site,2025-03-25,47,39,82.98
+811,11,Noida Sec 150 Site,2025-03-26,21,18,85.71
+812,11,Noida Sec 150 Site,2025-03-27,32,29,90.62
+813,11,Noida Sec 150 Site,2025-03-28,25,23,92.0
+814,11,Noida Sec 150 Site,2025-03-29,47,39,82.98
+815,11,Noida Sec 150 Site,2025-03-30,45,41,91.11
+816,11,Noida Sec 150 Site,2025-03-31,43,38,88.37
+817,11,Noida Sec 150 Site,2025-04-01,27,23,85.19
+818,11,Noida Sec 150 Site,2025-04-02,33,30,90.91
+819,11,Noida Sec 150 Site,2025-04-03,30,26,86.67
+820,11,Noida Sec 150 Site,2025-04-04,22,19,86.36
+821,11,Noida Sec 150 Site,2025-04-05,23,20,86.96
+822,11,Noida Sec 150 Site,2025-04-06,48,40,83.33
+823,11,Noida Sec 150 Site,2025-04-07,27,24,88.89
+824,11,Noida Sec 150 Site,2025-04-08,21,19,90.48
+825,11,Noida Sec 150 Site,2025-04-09,22,20,90.91
+826,11,Noida Sec 150 Site,2025-04-10,47,40,85.11
+827,11,Noida Sec 150 Site,2025-04-11,47,40,85.11
+828,11,Noida Sec 150 Site,2025-04-12,22,19,86.36
+829,11,Noida Sec 150 Site,2025-04-13,20,17,85.0
+830,11,Noida Sec 150 Site,2025-04-14,29,26,89.66
+831,11,Noida Sec 150 Site,2025-04-15,29,26,89.66
+832,11,Noida Sec 150 Site,2025-04-16,27,24,88.89
+833,11,Noida Sec 150 Site,2025-04-17,38,35,92.11
+834,11,Noida Sec 150 Site,2025-04-18,44,40,90.91
+835,11,Noida Sec 150 Site,2025-04-19,43,39,90.7
+836,11,Noida Sec 150 Site,2025-04-20,44,40,90.91
+837,11,Noida Sec 150 Site,2025-04-21,24,20,83.33
+838,11,Noida Sec 150 Site,2025-04-22,33,27,81.82
+839,11,Noida Sec 150 Site,2025-04-23,37,32,86.49
+840,12,Noida Sec 62 Site,2025-02-10,42,35,83.33
+841,12,Noida Sec 62 Site,2025-02-11,50,39,78.0
+842,12,Noida Sec 62 Site,2025-02-12,44,35,79.55
+843,12,Noida Sec 62 Site,2025-02-13,47,38,80.85
+844,12,Noida Sec 62 Site,2025-02-14,29,22,75.86
+845,12,Noida Sec 62 Site,2025-02-15,36,30,83.33
+846,12,Noida Sec 62 Site,2025-02-16,33,26,78.79
+847,12,Noida Sec 62 Site,2025-02-17,21,18,85.71
+848,12,Noida Sec 62 Site,2025-02-18,24,19,79.17
+849,12,Noida Sec 62 Site,2025-02-19,22,16,72.73
+850,12,Noida Sec 62 Site,2025-02-20,27,22,81.48
+851,12,Noida Sec 62 Site,2025-02-21,36,28,77.78
+852,12,Noida Sec 62 Site,2025-02-22,48,37,77.08
+853,12,Noida Sec 62 Site,2025-02-23,43,32,74.42
+854,12,Noida Sec 62 Site,2025-02-24,23,18,78.26
+855,12,Noida Sec 62 Site,2025-02-25,40,33,82.5
+856,12,Noida Sec 62 Site,2025-02-26,22,18,81.82
+857,12,Noida Sec 62 Site,2025-02-27,21,16,76.19
+858,12,Noida Sec 62 Site,2025-02-28,50,38,76.0
+859,12,Noida Sec 62 Site,2025-03-01,29,22,75.86
+860,12,Noida Sec 62 Site,2025-03-02,30,25,83.33
+861,12,Noida Sec 62 Site,2025-03-03,32,26,81.25
+862,12,Noida Sec 62 Site,2025-03-04,43,33,76.74
+863,12,Noida Sec 62 Site,2025-03-05,34,26,76.47
+864,12,Noida Sec 62 Site,2025-03-06,22,18,81.82
+865,12,Noida Sec 62 Site,2025-03-07,24,20,83.33
+866,12,Noida Sec 62 Site,2025-03-08,38,28,73.68
+867,12,Noida Sec 62 Site,2025-03-09,23,17,73.91
+868,12,Noida Sec 62 Site,2025-03-10,34,26,76.47
+869,12,Noida Sec 62 Site,2025-03-11,23,18,78.26
+870,12,Noida Sec 62 Site,2025-03-12,50,41,82.0
+871,12,Noida Sec 62 Site,2025-03-13,34,26,76.47
+872,12,Noida Sec 62 Site,2025-03-14,28,23,82.14
+873,12,Noida Sec 62 Site,2025-03-15,22,17,77.27
+874,12,Noida Sec 62 Site,2025-03-16,41,32,78.05
+875,12,Noida Sec 62 Site,2025-03-17,42,34,80.95
+876,12,Noida Sec 62 Site,2025-03-18,21,16,76.19
+877,12,Noida Sec 62 Site,2025-03-19,47,36,76.6
+878,12,Noida Sec 62 Site,2025-03-20,22,18,81.82
+879,12,Noida Sec 62 Site,2025-03-21,50,39,78.0
+880,12,Noida Sec 62 Site,2025-03-22,36,27,75.0
+881,12,Noida Sec 62 Site,2025-03-23,29,22,75.86
+882,12,Noida Sec 62 Site,2025-03-24,25,19,76.0
+883,12,Noida Sec 62 Site,2025-03-25,32,26,81.25
+884,12,Noida Sec 62 Site,2025-03-26,37,30,81.08
+885,12,Noida Sec 62 Site,2025-03-27,27,20,74.07
+886,12,Noida Sec 62 Site,2025-03-28,23,19,82.61
+887,12,Noida Sec 62 Site,2025-03-29,24,18,75.0
+888,12,Noida Sec 62 Site,2025-03-30,21,17,80.95
+889,12,Noida Sec 62 Site,2025-03-31,27,20,74.07
+890,12,Noida Sec 62 Site,2025-04-01,46,36,78.26
+891,12,Noida Sec 62 Site,2025-04-02,41,33,80.49
+892,12,Noida Sec 62 Site,2025-04-03,40,30,75.0
+893,12,Noida Sec 62 Site,2025-04-04,38,29,76.32
+894,12,Noida Sec 62 Site,2025-04-05,46,34,73.91
+895,12,Noida Sec 62 Site,2025-04-06,22,17,77.27
+896,12,Noida Sec 62 Site,2025-04-07,40,31,77.5
+897,12,Noida Sec 62 Site,2025-04-08,24,18,75.0
+898,12,Noida Sec 62 Site,2025-04-09,47,39,82.98
+899,12,Noida Sec 62 Site,2025-04-10,30,23,76.67
+900,12,Noida Sec 62 Site,2025-04-11,50,39,78.0
+901,12,Noida Sec 62 Site,2025-04-12,25,21,84.0
+902,12,Noida Sec 62 Site,2025-04-13,33,27,81.82
+903,12,Noida Sec 62 Site,2025-04-14,32,25,78.12
+904,12,Noida Sec 62 Site,2025-04-15,32,26,81.25
+905,12,Noida Sec 62 Site,2025-04-16,25,19,76.0
+906,12,Noida Sec 62 Site,2025-04-17,49,37,75.51
+907,12,Noida Sec 62 Site,2025-04-18,28,22,78.57
+908,12,Noida Sec 62 Site,2025-04-19,24,18,75.0
+909,12,Noida Sec 62 Site,2025-04-20,39,31,79.49
+910,12,Noida Sec 62 Site,2025-04-21,40,31,77.5
+911,12,Noida Sec 62 Site,2025-04-22,33,27,81.82
+912,12,Noida Sec 62 Site,2025-04-23,35,26,74.29
+913,12,Noida Sec 62 Site,2025-04-24,28,22,78.57
+914,12,Noida Sec 62 Site,2025-04-25,33,25,75.76
+915,12,Noida Sec 62 Site,2025-04-26,48,39,81.25
+916,12,Noida Sec 62 Site,2025-04-27,27,22,81.48
+917,12,Noida Sec 62 Site,2025-04-28,45,36,80.0
+918,12,Noida Sec 62 Site,2025-04-29,20,17,85.0
+919,12,Noida Sec 62 Site,2025-04-30,45,36,80.0
+920,12,Noida Sec 62 Site,2025-05-01,35,28,80.0
+921,12,Noida Sec 62 Site,2025-05-02,35,27,77.14
+922,12,Noida Sec 62 Site,2025-05-03,38,30,78.95
+923,12,Noida Sec 62 Site,2025-05-04,32,25,78.12
+924,12,Noida Sec 62 Site,2025-05-05,20,15,75.0
+925,12,Noida Sec 62 Site,2025-05-06,27,20,74.07
+926,13,Noida Express Way Site,2025-02-01,44,35,79.55
+927,13,Noida Express Way Site,2025-02-02,45,39,86.67
+928,13,Noida Express Way Site,2025-02-03,36,29,80.56
+929,13,Noida Express Way Site,2025-02-04,38,33,86.84
+930,13,Noida Express Way Site,2025-02-05,25,19,76.0
+931,13,Noida Express Way Site,2025-02-06,41,32,78.05
+932,13,Noida Express Way Site,2025-02-07,37,31,83.78
+933,13,Noida Express Way Site,2025-02-08,49,41,83.67
+934,13,Noida Express Way Site,2025-02-09,44,38,86.36
+935,13,Noida Express Way Site,2025-02-10,27,22,81.48
+936,13,Noida Express Way Site,2025-02-11,45,36,80.0
+937,13,Noida Express Way Site,2025-02-12,49,41,83.67
+938,13,Noida Express Way Site,2025-02-13,47,37,78.72
+939,13,Noida Express Way Site,2025-02-14,27,22,81.48
+940,13,Noida Express Way Site,2025-02-15,45,38,84.44
+941,13,Noida Express Way Site,2025-02-16,31,26,83.87
+942,13,Noida Express Way Site,2025-02-17,20,17,85.0
+943,13,Noida Express Way Site,2025-02-18,31,27,87.1
+944,13,Noida Express Way Site,2025-02-19,38,30,78.95
+945,13,Noida Express Way Site,2025-02-20,50,39,78.0
+946,13,Noida Express Way Site,2025-02-21,45,38,84.44
+947,13,Noida Express Way Site,2025-02-22,35,29,82.86
+948,13,Noida Express Way Site,2025-02-23,25,20,80.0
+949,13,Noida Express Way Site,2025-02-24,22,17,77.27
+950,13,Noida Express Way Site,2025-02-25,39,31,79.49
+951,13,Noida Express Way Site,2025-02-26,36,29,80.56
+952,13,Noida Express Way Site,2025-02-27,30,26,86.67
+953,13,Noida Express Way Site,2025-02-28,26,22,84.62
+954,13,Noida Express Way Site,2025-03-01,30,25,83.33
+955,13,Noida Express Way Site,2025-03-02,49,41,83.67
+956,13,Noida Express Way Site,2025-03-03,47,37,78.72
+957,13,Noida Express Way Site,2025-03-04,20,16,80.0
+958,13,Noida Express Way Site,2025-03-05,42,36,85.71
+959,13,Noida Express Way Site,2025-03-06,44,34,77.27
+960,13,Noida Express Way Site,2025-03-07,36,31,86.11
+961,13,Noida Express Way Site,2025-03-08,50,38,76.0
+962,13,Noida Express Way Site,2025-03-09,42,36,85.71
+963,13,Noida Express Way Site,2025-03-10,32,26,81.25
+964,13,Noida Express Way Site,2025-03-11,30,24,80.0
+965,13,Noida Express Way Site,2025-03-12,24,21,87.5
+966,13,Noida Express Way Site,2025-03-13,43,37,86.05
+967,13,Noida Express Way Site,2025-03-14,45,37,82.22
+968,13,Noida Express Way Site,2025-03-15,35,29,82.86
+969,13,Noida Express Way Site,2025-03-16,25,21,84.0
+970,13,Noida Express Way Site,2025-03-17,37,31,83.78
+971,13,Noida Express Way Site,2025-03-18,49,40,81.63
+972,13,Noida Express Way Site,2025-03-19,31,24,77.42
+973,13,Noida Express Way Site,2025-03-20,38,32,84.21
+974,13,Noida Express Way Site,2025-03-21,32,25,78.12
+975,13,Noida Express Way Site,2025-03-22,42,33,78.57
+976,13,Noida Express Way Site,2025-03-23,25,21,84.0
+977,13,Noida Express Way Site,2025-03-24,50,42,84.0
+978,13,Noida Express Way Site,2025-03-25,38,30,78.95
+979,13,Noida Express Way Site,2025-03-26,44,38,86.36
+980,13,Noida Express Way Site,2025-03-27,21,16,76.19
+981,13,Noida Express Way Site,2025-03-28,30,26,86.67
+982,13,Noida Express Way Site,2025-03-29,50,41,82.0
+983,13,Noida Express Way Site,2025-03-30,40,33,82.5
+984,13,Noida Express Way Site,2025-03-31,49,40,81.63
+985,13,Noida Express Way Site,2025-04-01,30,25,83.33
+986,13,Noida Express Way Site,2025-04-02,27,22,81.48
+987,13,Noida Express Way Site,2025-04-03,30,23,76.67
+988,13,Noida Express Way Site,2025-04-04,48,41,85.42
+989,13,Noida Express Way Site,2025-04-05,46,38,82.61
+990,13,Noida Express Way Site,2025-04-06,40,33,82.5
+991,13,Noida Express Way Site,2025-04-07,30,24,80.0
+992,13,Noida Express Way Site,2025-04-08,28,22,78.57
+993,13,Noida Express Way Site,2025-04-09,42,32,76.19
+994,13,Noida Express Way Site,2025-04-10,28,24,85.71
+995,13,Noida Express Way Site,2025-04-11,43,33,76.74
+996,13,Noida Express Way Site,2025-04-12,32,26,81.25
+997,13,Noida Express Way Site,2025-04-13,33,28,84.85
+998,13,Noida Express Way Site,2025-04-14,48,39,81.25
+999,13,Noida Express Way Site,2025-04-15,48,38,79.17
+1000,13,Noida Express Way Site,2025-04-16,37,30,81.08
+1001,13,Noida Express Way Site,2025-04-17,46,37,80.43
+1002,13,Noida Express Way Site,2025-04-18,47,39,82.98
+1003,13,Noida Express Way Site,2025-04-19,44,37,84.09
+1004,13,Noida Express Way Site,2025-04-20,25,20,80.0
+1005,13,Noida Express Way Site,2025-04-21,45,38,84.44
+1006,13,Noida Express Way Site,2025-04-22,29,22,75.86
+1007,13,Noida Express Way Site,2025-04-23,28,24,85.71
+1008,13,Noida Express Way Site,2025-04-24,22,18,81.82
+1009,13,Noida Express Way Site,2025-04-25,48,38,79.17
+1010,13,Noida Express Way Site,2025-04-26,43,33,76.74
+1011,14,Greater Noida Depot,2025-01-29,48,42,87.5
+1012,14,Greater Noida Depot,2025-01-30,30,25,83.33
+1013,14,Greater Noida Depot,2025-01-31,39,33,84.62
+1014,14,Greater Noida Depot,2025-02-01,42,32,76.19
+1015,14,Greater Noida Depot,2025-02-02,50,42,84.0
+1016,14,Greater Noida Depot,2025-02-03,39,33,84.62
+1017,14,Greater Noida Depot,2025-02-04,25,19,76.0
+1018,14,Greater Noida Depot,2025-02-05,30,24,80.0
+1019,14,Greater Noida Depot,2025-02-06,26,21,80.77
+1020,14,Greater Noida Depot,2025-02-07,37,31,83.78
+1021,14,Greater Noida Depot,2025-02-08,43,35,81.4
+1022,14,Greater Noida Depot,2025-02-09,41,33,80.49
+1023,14,Greater Noida Depot,2025-02-10,27,21,77.78
+1024,14,Greater Noida Depot,2025-02-11,32,26,81.25
+1025,14,Greater Noida Depot,2025-02-12,46,38,82.61
+1026,14,Greater Noida Depot,2025-02-13,21,17,80.95
+1027,14,Greater Noida Depot,2025-02-14,33,26,78.79
+1028,14,Greater Noida Depot,2025-02-15,46,38,82.61
+1029,14,Greater Noida Depot,2025-02-16,39,32,82.05
+1030,14,Greater Noida Depot,2025-02-17,23,18,78.26
+1031,14,Greater Noida Depot,2025-02-18,25,21,84.0
+1032,14,Greater Noida Depot,2025-02-19,22,18,81.82
+1033,14,Greater Noida Depot,2025-02-20,23,18,78.26
+1034,14,Greater Noida Depot,2025-02-21,32,26,81.25
+1035,14,Greater Noida Depot,2025-02-22,48,40,83.33
+1036,14,Greater Noida Depot,2025-02-23,22,18,81.82
+1037,14,Greater Noida Depot,2025-02-24,32,25,78.12
+1038,14,Greater Noida Depot,2025-02-25,48,39,81.25
+1039,14,Greater Noida Depot,2025-02-26,25,20,80.0
+1040,14,Greater Noida Depot,2025-02-27,28,23,82.14
+1041,14,Greater Noida Depot,2025-02-28,28,22,78.57
+1042,14,Greater Noida Depot,2025-03-01,28,23,82.14
+1043,14,Greater Noida Depot,2025-03-02,24,20,83.33
+1044,14,Greater Noida Depot,2025-03-03,41,32,78.05
+1045,14,Greater Noida Depot,2025-03-04,41,33,80.49
+1046,14,Greater Noida Depot,2025-03-05,37,30,81.08
+1047,14,Greater Noida Depot,2025-03-06,44,36,81.82
+1048,14,Greater Noida Depot,2025-03-07,37,29,78.38
+1049,14,Greater Noida Depot,2025-03-08,32,27,84.38
+1050,14,Greater Noida Depot,2025-03-09,33,29,87.88
+1051,14,Greater Noida Depot,2025-03-10,41,35,85.37
+1052,14,Greater Noida Depot,2025-03-11,35,29,82.86
+1053,14,Greater Noida Depot,2025-03-12,27,22,81.48
+1054,14,Greater Noida Depot,2025-03-13,22,18,81.82
+1055,14,Greater Noida Depot,2025-03-14,47,39,82.98
+1056,14,Greater Noida Depot,2025-03-15,36,30,83.33
+1057,14,Greater Noida Depot,2025-03-16,36,31,86.11
+1058,14,Greater Noida Depot,2025-03-17,41,36,87.8
+1059,14,Greater Noida Depot,2025-03-18,24,19,79.17
+1060,14,Greater Noida Depot,2025-03-19,44,36,81.82
+1061,14,Greater Noida Depot,2025-03-20,50,43,86.0
+1062,14,Greater Noida Depot,2025-03-21,26,22,84.62
+1063,14,Greater Noida Depot,2025-03-22,24,19,79.17
+1064,14,Greater Noida Depot,2025-03-23,22,19,86.36
+1065,14,Greater Noida Depot,2025-03-24,33,26,78.79
+1066,14,Greater Noida Depot,2025-03-25,46,38,82.61
+1067,14,Greater Noida Depot,2025-03-26,46,38,82.61
+1068,14,Greater Noida Depot,2025-03-27,30,26,86.67
+1069,14,Greater Noida Depot,2025-03-28,49,42,85.71
+1070,14,Greater Noida Depot,2025-03-29,22,18,81.82
+1071,14,Greater Noida Depot,2025-03-30,32,26,81.25
+1072,14,Greater Noida Depot,2025-03-31,47,37,78.72
+1073,14,Greater Noida Depot,2025-04-01,34,29,85.29
+1074,14,Greater Noida Depot,2025-04-02,20,17,85.0
+1075,14,Greater Noida Depot,2025-04-03,39,32,82.05
+1076,14,Greater Noida Depot,2025-04-04,45,36,80.0
+1077,14,Greater Noida Depot,2025-04-05,33,26,78.79
+1078,14,Greater Noida Depot,2025-04-06,38,31,81.58
+1079,14,Greater Noida Depot,2025-04-07,44,38,86.36
+1080,14,Greater Noida Depot,2025-04-08,23,20,86.96
+1081,14,Greater Noida Depot,2025-04-09,38,32,84.21
+1082,14,Greater Noida Depot,2025-04-10,45,36,80.0
+1083,14,Greater Noida Depot,2025-04-11,37,32,86.49
+1084,14,Greater Noida Depot,2025-04-12,48,39,81.25
+1085,14,Greater Noida Depot,2025-04-13,32,27,84.38
+1086,14,Greater Noida Depot,2025-04-14,38,32,84.21
+1087,14,Greater Noida Depot,2025-04-15,21,16,76.19
+1088,14,Greater Noida Depot,2025-04-16,32,25,78.12
+1089,14,Greater Noida Depot,2025-04-17,39,33,84.62
+1090,14,Greater Noida Depot,2025-04-18,32,25,78.12
+1091,14,Greater Noida Depot,2025-04-19,48,41,85.42
+1092,14,Greater Noida Depot,2025-04-20,42,33,78.57
+1093,14,Greater Noida Depot,2025-04-21,43,35,81.4
+1094,14,Greater Noida Depot,2025-04-22,28,24,85.71
+1095,14,Greater Noida Depot,2025-04-23,20,16,80.0
+1096,14,Greater Noida Depot,2025-04-24,45,36,80.0
+1097,14,Greater Noida Depot,2025-04-25,28,24,85.71
+1098,14,Greater Noida Depot,2025-04-26,47,39,82.98
+1099,14,Greater Noida Depot,2025-04-27,23,20,86.96
+1100,14,Greater Noida Depot,2025-04-28,27,21,77.78
+1101,15,Noida Sec 150 Site,2025-02-24,34,32,94.12
+1102,15,Noida Sec 150 Site,2025-02-25,30,27,90.0
+1103,15,Noida Sec 150 Site,2025-02-26,33,30,90.91
+1104,15,Noida Sec 150 Site,2025-02-27,22,19,86.36
+1105,15,Noida Sec 150 Site,2025-02-28,26,25,96.15
+1106,15,Noida Sec 150 Site,2025-03-01,33,31,93.94
+1107,15,Noida Sec 150 Site,2025-03-02,44,40,90.91
+1108,15,Noida Sec 150 Site,2025-03-03,31,29,93.55
+1109,15,Noida Sec 150 Site,2025-03-04,36,34,94.44
+1110,15,Noida Sec 150 Site,2025-03-05,22,20,90.91
+1111,15,Noida Sec 150 Site,2025-03-06,36,32,88.89
+1112,15,Noida Sec 150 Site,2025-03-07,44,41,93.18
+1113,15,Noida Sec 150 Site,2025-03-08,48,44,91.67
+1114,15,Noida Sec 150 Site,2025-03-09,25,22,88.0
+1115,15,Noida Sec 150 Site,2025-03-10,46,40,86.96
+1116,15,Noida Sec 150 Site,2025-03-11,21,19,90.48
+1117,15,Noida Sec 150 Site,2025-03-12,34,29,85.29
+1118,15,Noida Sec 150 Site,2025-03-13,31,29,93.55
+1119,15,Noida Sec 150 Site,2025-03-14,28,25,89.29
+1120,15,Noida Sec 150 Site,2025-03-15,34,31,91.18
+1121,15,Noida Sec 150 Site,2025-03-16,40,38,95.0
+1122,15,Noida Sec 150 Site,2025-03-17,41,35,85.37
+1123,15,Noida Sec 150 Site,2025-03-18,31,28,90.32
+1124,15,Noida Sec 150 Site,2025-03-19,34,30,88.24
+1125,15,Noida Sec 150 Site,2025-03-20,47,43,91.49
+1126,15,Noida Sec 150 Site,2025-03-21,37,33,89.19
+1127,15,Noida Sec 150 Site,2025-03-22,25,24,96.0
+1128,15,Noida Sec 150 Site,2025-03-23,28,26,92.86
+1129,15,Noida Sec 150 Site,2025-03-24,42,36,85.71
+1130,15,Noida Sec 150 Site,2025-03-25,20,18,90.0
+1131,15,Noida Sec 150 Site,2025-03-26,25,24,96.0
+1132,15,Noida Sec 150 Site,2025-03-27,44,42,95.45
+1133,15,Noida Sec 150 Site,2025-03-28,47,41,87.23
+1134,15,Noida Sec 150 Site,2025-03-29,27,25,92.59
+1135,15,Noida Sec 150 Site,2025-03-30,28,26,92.86
+1136,15,Noida Sec 150 Site,2025-03-31,36,31,86.11
+1137,15,Noida Sec 150 Site,2025-04-01,44,42,95.45
+1138,15,Noida Sec 150 Site,2025-04-02,41,35,85.37
+1139,15,Noida Sec 150 Site,2025-04-03,49,43,87.76
+1140,15,Noida Sec 150 Site,2025-04-04,25,23,92.0
+1141,15,Noida Sec 150 Site,2025-04-05,20,18,90.0
+1142,15,Noida Sec 150 Site,2025-04-06,39,37,94.87
+1143,15,Noida Sec 150 Site,2025-04-07,29,27,93.1
+1144,15,Noida Sec 150 Site,2025-04-08,42,39,92.86
+1145,15,Noida Sec 150 Site,2025-04-09,33,31,93.94
+1146,15,Noida Sec 150 Site,2025-04-10,47,42,89.36
+1147,15,Noida Sec 150 Site,2025-04-11,28,25,89.29
+1148,15,Noida Sec 150 Site,2025-04-12,29,27,93.1
+1149,15,Noida Sec 150 Site,2025-04-13,46,42,91.3
+1150,15,Noida Sec 150 Site,2025-04-14,38,33,86.84
+1151,15,Noida Sec 150 Site,2025-04-15,36,34,94.44
+1152,15,Noida Sec 150 Site,2025-04-16,50,47,94.0
+1153,15,Noida Sec 150 Site,2025-04-17,31,28,90.32
+1154,15,Noida Sec 150 Site,2025-04-18,39,36,92.31
+1155,15,Noida Sec 150 Site,2025-04-19,29,27,93.1
+1156,15,Noida Sec 150 Site,2025-04-20,35,30,85.71
+1157,15,Noida Sec 150 Site,2025-04-21,28,26,92.86
+1158,15,Noida Sec 150 Site,2025-04-22,47,42,89.36
+1159,15,Noida Sec 150 Site,2025-04-23,40,37,92.5
+1160,15,Noida Sec 150 Site,2025-04-24,48,44,91.67
+1161,15,Noida Sec 150 Site,2025-04-25,26,23,88.46
+1162,15,Noida Sec 150 Site,2025-04-26,44,39,88.64
+1163,15,Noida Sec 150 Site,2025-04-27,21,20,95.24
+1164,15,Noida Sec 150 Site,2025-04-28,45,42,93.33
+1165,15,Noida Sec 150 Site,2025-04-29,32,30,93.75
+1166,15,Noida Sec 150 Site,2025-04-30,41,36,87.8
+1167,15,Noida Sec 150 Site,2025-05-01,20,18,90.0
+1168,15,Noida Sec 150 Site,2025-05-02,29,26,89.66
+1169,15,Noida Sec 150 Site,2025-05-03,33,30,90.91
+1170,15,Noida Sec 150 Site,2025-05-04,43,37,86.05
+1171,15,Noida Sec 150 Site,2025-05-05,42,40,95.24
+1172,15,Noida Sec 150 Site,2025-05-06,46,40,86.96
+1173,15,Noida Sec 150 Site,2025-05-07,43,40,93.02
+1174,15,Noida Sec 150 Site,2025-05-08,41,37,90.24
+1175,15,Noida Sec 150 Site,2025-05-09,45,41,91.11
+1176,15,Noida Sec 150 Site,2025-05-10,50,46,92.0
+1177,15,Noida Sec 150 Site,2025-05-11,36,32,88.89
+1178,15,Noida Sec 150 Site,2025-05-12,25,24,96.0
+1179,15,Noida Sec 150 Site,2025-05-13,48,44,91.67
+1180,15,Noida Sec 150 Site,2025-05-14,29,25,86.21
+1181,15,Noida Sec 150 Site,2025-05-15,24,22,91.67
+1182,15,Noida Sec 150 Site,2025-05-16,43,40,93.02
+1183,15,Noida Sec 150 Site,2025-05-17,44,42,95.45
+1184,16,Noida Sec 62 Site,2025-01-15,41,32,78.05
+1185,16,Noida Sec 62 Site,2025-01-16,40,28,70.0
+1186,16,Noida Sec 62 Site,2025-01-17,31,22,70.97
+1187,16,Noida Sec 62 Site,2025-01-18,47,34,72.34
+1188,16,Noida Sec 62 Site,2025-01-19,45,35,77.78
+1189,16,Noida Sec 62 Site,2025-01-20,31,22,70.97
+1190,16,Noida Sec 62 Site,2025-01-21,29,21,72.41
+1191,16,Noida Sec 62 Site,2025-01-22,23,17,73.91
+1192,16,Noida Sec 62 Site,2025-01-23,47,36,76.6
+1193,16,Noida Sec 62 Site,2025-01-24,38,30,78.95
+1194,16,Noida Sec 62 Site,2025-01-25,22,16,72.73
+1195,16,Noida Sec 62 Site,2025-01-26,26,19,73.08
+1196,16,Noida Sec 62 Site,2025-01-27,47,36,76.6
+1197,16,Noida Sec 62 Site,2025-01-28,36,26,72.22
+1198,16,Noida Sec 62 Site,2025-01-29,21,16,76.19
+1199,16,Noida Sec 62 Site,2025-01-30,24,17,70.83
+1200,16,Noida Sec 62 Site,2025-01-31,26,19,73.08
+1201,16,Noida Sec 62 Site,2025-02-01,38,30,78.95
+1202,16,Noida Sec 62 Site,2025-02-02,34,24,70.59
+1203,16,Noida Sec 62 Site,2025-02-03,47,36,76.6
+1204,16,Noida Sec 62 Site,2025-02-04,44,31,70.45
+1205,16,Noida Sec 62 Site,2025-02-05,30,23,76.67
+1206,16,Noida Sec 62 Site,2025-02-06,25,18,72.0
+1207,16,Noida Sec 62 Site,2025-02-07,21,15,71.43
+1208,16,Noida Sec 62 Site,2025-02-08,28,20,71.43
+1209,16,Noida Sec 62 Site,2025-02-09,44,31,70.45
+1210,16,Noida Sec 62 Site,2025-02-10,44,31,70.45
+1211,16,Noida Sec 62 Site,2025-02-11,45,35,77.78
+1212,16,Noida Sec 62 Site,2025-02-12,22,16,72.73
+1213,16,Noida Sec 62 Site,2025-02-13,33,25,75.76
+1214,16,Noida Sec 62 Site,2025-02-14,32,24,75.0
+1215,16,Noida Sec 62 Site,2025-02-15,35,26,74.29
+1216,16,Noida Sec 62 Site,2025-02-16,21,16,76.19
+1217,16,Noida Sec 62 Site,2025-02-17,43,31,72.09
+1218,16,Noida Sec 62 Site,2025-02-18,20,16,80.0
+1219,16,Noida Sec 62 Site,2025-02-19,44,34,77.27
+1220,16,Noida Sec 62 Site,2025-02-20,26,18,69.23
+1221,16,Noida Sec 62 Site,2025-02-21,20,15,75.0
+1222,16,Noida Sec 62 Site,2025-02-22,27,19,70.37
+1223,16,Noida Sec 62 Site,2025-02-23,48,35,72.92
+1224,16,Noida Sec 62 Site,2025-02-24,24,17,70.83
+1225,16,Noida Sec 62 Site,2025-02-25,36,27,75.0
+1226,16,Noida Sec 62 Site,2025-02-26,25,17,68.0
+1227,16,Noida Sec 62 Site,2025-02-27,21,15,71.43
+1228,16,Noida Sec 62 Site,2025-02-28,29,21,72.41
+1229,16,Noida Sec 62 Site,2025-03-01,36,27,75.0
+1230,16,Noida Sec 62 Site,2025-03-02,30,22,73.33
+1231,16,Noida Sec 62 Site,2025-03-03,41,32,78.05
+1232,16,Noida Sec 62 Site,2025-03-04,30,24,80.0
+1233,16,Noida Sec 62 Site,2025-03-05,35,26,74.29
+1234,16,Noida Sec 62 Site,2025-03-06,26,18,69.23
+1235,16,Noida Sec 62 Site,2025-03-07,49,38,77.55
+1236,16,Noida Sec 62 Site,2025-03-08,32,22,68.75
+1237,16,Noida Sec 62 Site,2025-03-09,27,21,77.78
+1238,16,Noida Sec 62 Site,2025-03-10,24,17,70.83
+1239,16,Noida Sec 62 Site,2025-03-11,20,15,75.0
+1240,16,Noida Sec 62 Site,2025-03-12,25,18,72.0
+1241,16,Noida Sec 62 Site,2025-03-13,42,32,76.19
+1242,16,Noida Sec 62 Site,2025-03-14,21,15,71.43
+1243,16,Noida Sec 62 Site,2025-03-15,40,29,72.5
+1244,16,Noida Sec 62 Site,2025-03-16,37,28,75.68
+1245,16,Noida Sec 62 Site,2025-03-17,39,31,79.49
+1246,16,Noida Sec 62 Site,2025-03-18,41,29,70.73
+1247,16,Noida Sec 62 Site,2025-03-19,46,32,69.57
+1248,16,Noida Sec 62 Site,2025-03-20,42,30,71.43
+1249,16,Noida Sec 62 Site,2025-03-21,34,25,73.53
+1250,16,Noida Sec 62 Site,2025-03-22,37,27,72.97
+1251,16,Noida Sec 62 Site,2025-03-23,42,30,71.43
+1252,16,Noida Sec 62 Site,2025-03-24,42,32,76.19
+1253,16,Noida Sec 62 Site,2025-03-25,20,14,70.0
+1254,16,Noida Sec 62 Site,2025-03-26,41,29,70.73
+1255,16,Noida Sec 62 Site,2025-03-27,36,26,72.22
+1256,16,Noida Sec 62 Site,2025-03-28,39,30,76.92
+1257,16,Noida Sec 62 Site,2025-03-29,33,26,78.79
+1258,16,Noida Sec 62 Site,2025-03-30,23,17,73.91
+1259,16,Noida Sec 62 Site,2025-03-31,39,27,69.23
+1260,16,Noida Sec 62 Site,2025-04-01,23,18,78.26
+1261,16,Noida Sec 62 Site,2025-04-02,35,25,71.43
+1262,16,Noida Sec 62 Site,2025-04-03,26,20,76.92
+1263,16,Noida Sec 62 Site,2025-04-04,46,34,73.91
+1264,16,Noida Sec 62 Site,2025-04-05,26,19,73.08
+1265,16,Noida Sec 62 Site,2025-04-06,33,24,72.73
+1266,16,Noida Sec 62 Site,2025-04-07,21,16,76.19
+1267,16,Noida Sec 62 Site,2025-04-08,49,35,71.43
+1268,16,Noida Sec 62 Site,2025-04-09,49,36,73.47
+1269,16,Noida Sec 62 Site,2025-04-10,27,19,70.37
+1270,16,Noida Sec 62 Site,2025-04-11,41,29,70.73
+1271,16,Noida Sec 62 Site,2025-04-12,23,18,78.26
+1272,16,Noida Sec 62 Site,2025-04-13,41,30,73.17
+1273,16,Noida Sec 62 Site,2025-04-14,50,35,70.0
+1274,17,Noida Express Way Site,2025-02-25,22,19,86.36
+1275,17,Noida Express Way Site,2025-02-26,23,20,86.96
+1276,17,Noida Express Way Site,2025-02-27,40,32,80.0
+1277,17,Noida Express Way Site,2025-02-28,29,23,79.31
+1278,17,Noida Express Way Site,2025-03-01,21,17,80.95
+1279,17,Noida Express Way Site,2025-03-02,25,22,88.0
+1280,17,Noida Express Way Site,2025-03-03,47,38,80.85
+1281,17,Noida Express Way Site,2025-03-04,45,38,84.44
+1282,17,Noida Express Way Site,2025-03-05,33,28,84.85
+1283,17,Noida Express Way Site,2025-03-06,23,20,86.96
+1284,17,Noida Express Way Site,2025-03-07,48,38,79.17
+1285,17,Noida Express Way Site,2025-03-08,47,37,78.72
+1286,17,Noida Express Way Site,2025-03-09,40,32,80.0
+1287,17,Noida Express Way Site,2025-03-10,31,27,87.1
+1288,17,Noida Express Way Site,2025-03-11,50,42,84.0
+1289,17,Noida Express Way Site,2025-03-12,48,41,85.42
+1290,17,Noida Express Way Site,2025-03-13,31,27,87.1
+1291,17,Noida Express Way Site,2025-03-14,25,20,80.0
+1292,17,Noida Express Way Site,2025-03-15,32,28,87.5
+1293,17,Noida Express Way Site,2025-03-16,28,24,85.71
+1294,17,Noida Express Way Site,2025-03-17,42,36,85.71
+1295,17,Noida Express Way Site,2025-03-18,45,37,82.22
+1296,17,Noida Express Way Site,2025-03-19,48,41,85.42
+1297,17,Noida Express Way Site,2025-03-20,23,18,78.26
+1298,17,Noida Express Way Site,2025-03-21,43,34,79.07
+1299,17,Noida Express Way Site,2025-03-22,50,43,86.0
+1300,17,Noida Express Way Site,2025-03-23,23,19,82.61
+1301,17,Noida Express Way Site,2025-03-24,38,31,81.58
+1302,17,Noida Express Way Site,2025-03-25,38,32,84.21
+1303,17,Noida Express Way Site,2025-03-26,25,21,84.0
+1304,17,Noida Express Way Site,2025-03-27,44,36,81.82
+1305,17,Noida Express Way Site,2025-03-28,20,17,85.0
+1306,17,Noida Express Way Site,2025-03-29,48,41,85.42
+1307,17,Noida Express Way Site,2025-03-30,48,38,79.17
+1308,17,Noida Express Way Site,2025-03-31,49,41,83.67
+1309,17,Noida Express Way Site,2025-04-01,48,39,81.25
+1310,17,Noida Express Way Site,2025-04-02,21,16,76.19
+1311,17,Noida Express Way Site,2025-04-03,40,32,80.0
+1312,17,Noida Express Way Site,2025-04-04,42,36,85.71
+1313,17,Noida Express Way Site,2025-04-05,36,31,86.11
+1314,17,Noida Express Way Site,2025-04-06,38,32,84.21
+1315,17,Noida Express Way Site,2025-04-07,27,24,88.89
+1316,17,Noida Express Way Site,2025-04-08,41,36,87.8
+1317,17,Noida Express Way Site,2025-04-09,36,30,83.33
+1318,17,Noida Express Way Site,2025-04-10,42,35,83.33
+1319,17,Noida Express Way Site,2025-04-11,33,28,84.85
+1320,17,Noida Express Way Site,2025-04-12,27,22,81.48
+1321,17,Noida Express Way Site,2025-04-13,41,35,85.37
+1322,17,Noida Express Way Site,2025-04-14,32,25,78.12
+1323,17,Noida Express Way Site,2025-04-15,46,38,82.61
+1324,17,Noida Express Way Site,2025-04-16,39,31,79.49
+1325,17,Noida Express Way Site,2025-04-17,40,35,87.5
+1326,17,Noida Express Way Site,2025-04-18,36,31,86.11
+1327,17,Noida Express Way Site,2025-04-19,47,39,82.98
+1328,17,Noida Express Way Site,2025-04-20,25,20,80.0
+1329,17,Noida Express Way Site,2025-04-21,35,28,80.0
+1330,17,Noida Express Way Site,2025-04-22,30,26,86.67
+1331,17,Noida Express Way Site,2025-04-23,21,17,80.95
+1332,17,Noida Express Way Site,2025-04-24,37,31,83.78
+1333,17,Noida Express Way Site,2025-04-25,32,28,87.5
+1334,17,Noida Express Way Site,2025-04-26,22,18,81.82
+1335,17,Noida Express Way Site,2025-04-27,45,38,84.44
+1336,17,Noida Express Way Site,2025-04-28,22,19,86.36
+1337,17,Noida Express Way Site,2025-04-29,34,28,82.35
+1338,17,Noida Express Way Site,2025-04-30,35,30,85.71
+1339,17,Noida Express Way Site,2025-05-01,20,16,80.0
+1340,17,Noida Express Way Site,2025-05-02,33,26,78.79
+1341,17,Noida Express Way Site,2025-05-03,37,29,78.38
+1342,17,Noida Express Way Site,2025-05-04,22,19,86.36
+1343,17,Noida Express Way Site,2025-05-05,50,42,84.0
+1344,17,Noida Express Way Site,2025-05-06,29,25,86.21
+1345,17,Noida Express Way Site,2025-05-07,37,30,81.08
+1346,17,Noida Express Way Site,2025-05-08,41,34,82.93
+1347,17,Noida Express Way Site,2025-05-09,30,24,80.0
+1348,17,Noida Express Way Site,2025-05-10,21,18,85.71
+1349,17,Noida Express Way Site,2025-05-11,47,39,82.98
+1350,18,Greater Noida Depot,2025-01-23,44,33,75.0
+1351,18,Greater Noida Depot,2025-01-24,35,27,77.14
+1352,18,Greater Noida Depot,2025-01-25,31,24,77.42
+1353,18,Greater Noida Depot,2025-01-26,23,16,69.57
+1354,18,Greater Noida Depot,2025-01-27,41,29,70.73
+1355,18,Greater Noida Depot,2025-01-28,30,22,73.33
+1356,18,Greater Noida Depot,2025-01-29,40,31,77.5
+1357,18,Greater Noida Depot,2025-01-30,29,22,75.86
+1358,18,Greater Noida Depot,2025-01-31,31,23,74.19
+1359,18,Greater Noida Depot,2025-02-01,21,16,76.19
+1360,18,Greater Noida Depot,2025-02-02,35,25,71.43
+1361,18,Greater Noida Depot,2025-02-03,42,32,76.19
+1362,18,Greater Noida Depot,2025-02-04,33,23,69.7
+1363,18,Greater Noida Depot,2025-02-05,39,28,71.79
+1364,18,Greater Noida Depot,2025-02-06,23,18,78.26
+1365,18,Greater Noida Depot,2025-02-07,32,23,71.88
+1366,18,Greater Noida Depot,2025-02-08,46,35,76.09
+1367,18,Greater Noida Depot,2025-02-09,42,30,71.43
+1368,18,Greater Noida Depot,2025-02-10,44,32,72.73
+1369,18,Greater Noida Depot,2025-02-11,49,37,75.51
+1370,18,Greater Noida Depot,2025-02-12,41,31,75.61
+1371,18,Greater Noida Depot,2025-02-13,44,34,77.27
+1372,18,Greater Noida Depot,2025-02-14,34,26,76.47
+1373,18,Greater Noida Depot,2025-02-15,50,37,74.0
+1374,18,Greater Noida Depot,2025-02-16,50,37,74.0
+1375,18,Greater Noida Depot,2025-02-17,36,27,75.0
+1376,18,Greater Noida Depot,2025-02-18,37,29,78.38
+1377,18,Greater Noida Depot,2025-02-19,46,34,73.91
+1378,18,Greater Noida Depot,2025-02-20,49,36,73.47
+1379,18,Greater Noida Depot,2025-02-21,49,38,77.55
+1380,18,Greater Noida Depot,2025-02-22,42,31,73.81
+1381,18,Greater Noida Depot,2025-02-23,43,33,76.74
+1382,18,Greater Noida Depot,2025-02-24,23,17,73.91
+1383,18,Greater Noida Depot,2025-02-25,39,29,74.36
+1384,18,Greater Noida Depot,2025-02-26,30,22,73.33
+1385,18,Greater Noida Depot,2025-02-27,32,23,71.88
+1386,18,Greater Noida Depot,2025-02-28,39,30,76.92
+1387,18,Greater Noida Depot,2025-03-01,44,31,70.45
+1388,18,Greater Noida Depot,2025-03-02,32,25,78.12
+1389,18,Greater Noida Depot,2025-03-03,29,21,72.41
+1390,18,Greater Noida Depot,2025-03-04,24,17,70.83
+1391,18,Greater Noida Depot,2025-03-05,39,30,76.92
+1392,18,Greater Noida Depot,2025-03-06,43,32,74.42
+1393,18,Greater Noida Depot,2025-03-07,46,35,76.09
+1394,18,Greater Noida Depot,2025-03-08,47,34,72.34
+1395,18,Greater Noida Depot,2025-03-09,43,34,79.07
+1396,18,Greater Noida Depot,2025-03-10,40,28,70.0
+1397,18,Greater Noida Depot,2025-03-11,26,19,73.08
+1398,18,Greater Noida Depot,2025-03-12,29,22,75.86
+1399,18,Greater Noida Depot,2025-03-13,49,37,75.51
+1400,18,Greater Noida Depot,2025-03-14,42,32,76.19
+1401,18,Greater Noida Depot,2025-03-15,50,35,70.0
+1402,18,Greater Noida Depot,2025-03-16,37,28,75.68
+1403,18,Greater Noida Depot,2025-03-17,30,23,76.67
+1404,18,Greater Noida Depot,2025-03-18,44,32,72.73
+1405,18,Greater Noida Depot,2025-03-19,35,26,74.29
+1406,18,Greater Noida Depot,2025-03-20,50,38,76.0
+1407,18,Greater Noida Depot,2025-03-21,33,25,75.76
+1408,18,Greater Noida Depot,2025-03-22,48,37,77.08
+1409,18,Greater Noida Depot,2025-03-23,29,22,75.86
+1410,18,Greater Noida Depot,2025-03-24,33,25,75.76
+1411,18,Greater Noida Depot,2025-03-25,36,25,69.44
+1412,18,Greater Noida Depot,2025-03-26,32,22,68.75
+1413,18,Greater Noida Depot,2025-03-27,41,28,68.29
+1414,18,Greater Noida Depot,2025-03-28,28,21,75.0
+1415,18,Greater Noida Depot,2025-03-29,25,20,80.0
+1416,18,Greater Noida Depot,2025-03-30,41,29,70.73
+1417,18,Greater Noida Depot,2025-03-31,46,32,69.57
+1418,18,Greater Noida Depot,2025-04-01,45,32,71.11
+1419,18,Greater Noida Depot,2025-04-02,44,33,75.0
+1420,18,Greater Noida Depot,2025-04-03,31,24,77.42
+1421,18,Greater Noida Depot,2025-04-04,23,17,73.91
+1422,18,Greater Noida Depot,2025-04-05,41,31,75.61
+1423,18,Greater Noida Depot,2025-04-06,47,33,70.21
+1424,18,Greater Noida Depot,2025-04-07,40,30,75.0
+1425,18,Greater Noida Depot,2025-04-08,27,20,74.07
+1426,18,Greater Noida Depot,2025-04-09,45,35,77.78
+1427,19,Noida Sec 150 Site,2025-01-26,42,36,85.71
+1428,19,Noida Sec 150 Site,2025-01-27,49,41,83.67
+1429,19,Noida Sec 150 Site,2025-01-28,33,29,87.88
+1430,19,Noida Sec 150 Site,2025-01-29,41,34,82.93
+1431,19,Noida Sec 150 Site,2025-01-30,37,30,81.08
+1432,19,Noida Sec 150 Site,2025-01-31,43,35,81.4
+1433,19,Noida Sec 150 Site,2025-02-01,39,34,87.18
+1434,19,Noida Sec 150 Site,2025-02-02,47,41,87.23
+1435,19,Noida Sec 150 Site,2025-02-03,46,38,82.61
+1436,19,Noida Sec 150 Site,2025-02-04,40,35,87.5
+1437,19,Noida Sec 150 Site,2025-02-05,40,33,82.5
+1438,19,Noida Sec 150 Site,2025-02-06,38,32,84.21
+1439,19,Noida Sec 150 Site,2025-02-07,39,32,82.05
+1440,19,Noida Sec 150 Site,2025-02-08,43,38,88.37
+1441,19,Noida Sec 150 Site,2025-02-09,29,24,82.76
+1442,19,Noida Sec 150 Site,2025-02-10,41,33,80.49
+1443,19,Noida Sec 150 Site,2025-02-11,50,41,82.0
+1444,19,Noida Sec 150 Site,2025-02-12,36,29,80.56
+1445,19,Noida Sec 150 Site,2025-02-13,21,18,85.71
+1446,19,Noida Sec 150 Site,2025-02-14,37,30,81.08
+1447,19,Noida Sec 150 Site,2025-02-15,25,21,84.0
+1448,19,Noida Sec 150 Site,2025-02-16,28,22,78.57
+1449,19,Noida Sec 150 Site,2025-02-17,34,29,85.29
+1450,19,Noida Sec 150 Site,2025-02-18,24,19,79.17
+1451,19,Noida Sec 150 Site,2025-02-19,49,41,83.67
+1452,19,Noida Sec 150 Site,2025-02-20,21,18,85.71
+1453,19,Noida Sec 150 Site,2025-02-21,40,34,85.0
+1454,19,Noida Sec 150 Site,2025-02-22,41,34,82.93
+1455,19,Noida Sec 150 Site,2025-02-23,45,38,84.44
+1456,19,Noida Sec 150 Site,2025-02-24,31,25,80.65
+1457,19,Noida Sec 150 Site,2025-02-25,42,35,83.33
+1458,19,Noida Sec 150 Site,2025-02-26,27,24,88.89
+1459,19,Noida Sec 150 Site,2025-02-27,36,29,80.56
+1460,19,Noida Sec 150 Site,2025-02-28,36,29,80.56
+1461,19,Noida Sec 150 Site,2025-03-01,37,31,83.78
+1462,19,Noida Sec 150 Site,2025-03-02,22,18,81.82
+1463,19,Noida Sec 150 Site,2025-03-03,48,39,81.25
+1464,19,Noida Sec 150 Site,2025-03-04,30,25,83.33
+1465,19,Noida Sec 150 Site,2025-03-05,29,24,82.76
+1466,19,Noida Sec 150 Site,2025-03-06,44,38,86.36
+1467,19,Noida Sec 150 Site,2025-03-07,35,31,88.57
+1468,19,Noida Sec 150 Site,2025-03-08,46,40,86.96
+1469,19,Noida Sec 150 Site,2025-03-09,40,32,80.0
+1470,19,Noida Sec 150 Site,2025-03-10,41,34,82.93
+1471,19,Noida Sec 150 Site,2025-03-11,27,24,88.89
+1472,19,Noida Sec 150 Site,2025-03-12,39,35,89.74
+1473,19,Noida Sec 150 Site,2025-03-13,27,24,88.89
+1474,19,Noida Sec 150 Site,2025-03-14,41,36,87.8
+1475,19,Noida Sec 150 Site,2025-03-15,32,28,87.5
+1476,19,Noida Sec 150 Site,2025-03-16,50,40,80.0
+1477,19,Noida Sec 150 Site,2025-03-17,28,24,85.71
+1478,19,Noida Sec 150 Site,2025-03-18,29,23,79.31
+1479,19,Noida Sec 150 Site,2025-03-19,36,32,88.89
+1480,19,Noida Sec 150 Site,2025-03-20,31,26,83.87
+1481,19,Noida Sec 150 Site,2025-03-21,36,30,83.33
+1482,19,Noida Sec 150 Site,2025-03-22,21,17,80.95
+1483,19,Noida Sec 150 Site,2025-03-23,40,33,82.5
+1484,19,Noida Sec 150 Site,2025-03-24,36,29,80.56
+1485,19,Noida Sec 150 Site,2025-03-25,23,19,82.61
+1486,19,Noida Sec 150 Site,2025-03-26,50,44,88.0
+1487,19,Noida Sec 150 Site,2025-03-27,37,29,78.38
+1488,19,Noida Sec 150 Site,2025-03-28,22,18,81.82
+1489,19,Noida Sec 150 Site,2025-03-29,40,35,87.5
+1490,19,Noida Sec 150 Site,2025-03-30,47,41,87.23
+1491,19,Noida Sec 150 Site,2025-03-31,46,37,80.43
+1492,19,Noida Sec 150 Site,2025-04-01,37,32,86.49
+1493,19,Noida Sec 150 Site,2025-04-02,48,43,89.58
+1494,19,Noida Sec 150 Site,2025-04-03,44,37,84.09
+1495,19,Noida Sec 150 Site,2025-04-04,46,41,89.13
+1496,20,Noida Sec 62 Site,2025-02-11,41,36,87.8
+1497,20,Noida Sec 62 Site,2025-02-12,34,32,94.12
+1498,20,Noida Sec 62 Site,2025-02-13,21,18,85.71
+1499,20,Noida Sec 62 Site,2025-02-14,21,19,90.48
+1500,20,Noida Sec 62 Site,2025-02-15,28,26,92.86
+1501,20,Noida Sec 62 Site,2025-02-16,38,36,94.74
+1502,20,Noida Sec 62 Site,2025-02-17,49,44,89.8
+1503,20,Noida Sec 62 Site,2025-02-18,32,29,90.62
+1504,20,Noida Sec 62 Site,2025-02-19,32,29,90.62
+1505,20,Noida Sec 62 Site,2025-02-20,20,18,90.0
+1506,20,Noida Sec 62 Site,2025-02-21,23,21,91.3
+1507,20,Noida Sec 62 Site,2025-02-22,40,38,95.0
+1508,20,Noida Sec 62 Site,2025-02-23,22,21,95.45
+1509,20,Noida Sec 62 Site,2025-02-24,38,33,86.84
+1510,20,Noida Sec 62 Site,2025-02-25,47,41,87.23
+1511,20,Noida Sec 62 Site,2025-02-26,49,45,91.84
+1512,20,Noida Sec 62 Site,2025-02-27,29,27,93.1
+1513,20,Noida Sec 62 Site,2025-02-28,29,27,93.1
+1514,20,Noida Sec 62 Site,2025-03-01,29,27,93.1
+1515,20,Noida Sec 62 Site,2025-03-02,34,31,91.18
+1516,20,Noida Sec 62 Site,2025-03-03,46,43,93.48
+1517,20,Noida Sec 62 Site,2025-03-04,35,31,88.57
+1518,20,Noida Sec 62 Site,2025-03-05,27,24,88.89
+1519,20,Noida Sec 62 Site,2025-03-06,32,30,93.75
+1520,20,Noida Sec 62 Site,2025-03-07,47,43,91.49
+1521,20,Noida Sec 62 Site,2025-03-08,50,46,92.0
+1522,20,Noida Sec 62 Site,2025-03-09,29,27,93.1
+1523,20,Noida Sec 62 Site,2025-03-10,49,47,95.92
+1524,20,Noida Sec 62 Site,2025-03-11,47,44,93.62
+1525,20,Noida Sec 62 Site,2025-03-12,31,30,96.77
+1526,20,Noida Sec 62 Site,2025-03-13,20,18,90.0
+1527,20,Noida Sec 62 Site,2025-03-14,37,33,89.19
+1528,20,Noida Sec 62 Site,2025-03-15,21,18,85.71
+1529,20,Noida Sec 62 Site,2025-03-16,39,35,89.74
+1530,20,Noida Sec 62 Site,2025-03-17,37,36,97.3
+1531,20,Noida Sec 62 Site,2025-03-18,29,26,89.66
+1532,20,Noida Sec 62 Site,2025-03-19,43,41,95.35
+1533,20,Noida Sec 62 Site,2025-03-20,31,28,90.32
+1534,20,Noida Sec 62 Site,2025-03-21,48,45,93.75
+1535,20,Noida Sec 62 Site,2025-03-22,36,32,88.89
+1536,20,Noida Sec 62 Site,2025-03-23,25,22,88.0
+1537,20,Noida Sec 62 Site,2025-03-24,46,41,89.13
+1538,20,Noida Sec 62 Site,2025-03-25,23,20,86.96
+1539,20,Noida Sec 62 Site,2025-03-26,45,42,93.33
+1540,20,Noida Sec 62 Site,2025-03-27,21,20,95.24
+1541,20,Noida Sec 62 Site,2025-03-28,49,47,95.92
+1542,20,Noida Sec 62 Site,2025-03-29,37,34,91.89
+1543,20,Noida Sec 62 Site,2025-03-30,37,32,86.49
+1544,20,Noida Sec 62 Site,2025-03-31,41,36,87.8
+1545,20,Noida Sec 62 Site,2025-04-01,23,20,86.96
+1546,20,Noida Sec 62 Site,2025-04-02,38,35,92.11
+1547,20,Noida Sec 62 Site,2025-04-03,30,27,90.0
+1548,20,Noida Sec 62 Site,2025-04-04,41,38,92.68
+1549,20,Noida Sec 62 Site,2025-04-05,23,21,91.3
+1550,20,Noida Sec 62 Site,2025-04-06,22,21,95.45
+1551,20,Noida Sec 62 Site,2025-04-07,30,27,90.0
+1552,20,Noida Sec 62 Site,2025-04-08,30,28,93.33
+1553,20,Noida Sec 62 Site,2025-04-09,29,27,93.1
+1554,20,Noida Sec 62 Site,2025-04-10,24,22,91.67
+1555,20,Noida Sec 62 Site,2025-04-11,31,29,93.55
+1556,20,Noida Sec 62 Site,2025-04-12,50,45,90.0
+1557,20,Noida Sec 62 Site,2025-04-13,20,18,90.0
+1558,20,Noida Sec 62 Site,2025-04-14,45,40,88.89
+1559,20,Noida Sec 62 Site,2025-04-15,43,40,93.02
+1560,20,Noida Sec 62 Site,2025-04-16,28,27,96.43
+1561,20,Noida Sec 62 Site,2025-04-17,24,22,91.67
+1562,20,Noida Sec 62 Site,2025-04-18,30,29,96.67
+1563,20,Noida Sec 62 Site,2025-04-19,34,31,91.18
+1564,20,Noida Sec 62 Site,2025-04-20,44,39,88.64
+1565,20,Noida Sec 62 Site,2025-04-21,37,32,86.49
+1566,20,Noida Sec 62 Site,2025-04-22,40,37,92.5
+1567,20,Noida Sec 62 Site,2025-04-23,46,41,89.13
+1568,20,Noida Sec 62 Site,2025-04-24,46,40,86.96
+1569,20,Noida Sec 62 Site,2025-04-25,37,33,89.19
+1570,20,Noida Sec 62 Site,2025-04-26,43,41,95.35
+1571,20,Noida Sec 62 Site,2025-04-27,22,21,95.45
+1572,20,Noida Sec 62 Site,2025-04-28,48,42,87.5
+1573,20,Noida Sec 62 Site,2025-04-29,36,33,91.67
+1574,20,Noida Sec 62 Site,2025-04-30,46,43,93.48
+1575,20,Noida Sec 62 Site,2025-05-01,32,30,93.75
+1576,20,Noida Sec 62 Site,2025-05-02,26,25,96.15
+1577,20,Noida Sec 62 Site,2025-05-03,37,33,89.19
+1578,20,Noida Sec 62 Site,2025-05-04,48,46,95.83
+1579,21,Noida Express Way Site,2025-01-31,40,36,90.0
+1580,21,Noida Express Way Site,2025-02-01,31,27,87.1
+1581,21,Noida Express Way Site,2025-02-02,48,43,89.58
+1582,21,Noida Express Way Site,2025-02-03,43,39,90.7
+1583,21,Noida Express Way Site,2025-02-04,24,21,87.5
+1584,21,Noida Express Way Site,2025-02-05,36,30,83.33
+1585,21,Noida Express Way Site,2025-02-06,31,27,87.1
+1586,21,Noida Express Way Site,2025-02-07,41,35,85.37
+1587,21,Noida Express Way Site,2025-02-08,50,45,90.0
+1588,21,Noida Express Way Site,2025-02-09,39,35,89.74
+1589,21,Noida Express Way Site,2025-02-10,44,38,86.36
+1590,21,Noida Express Way Site,2025-02-11,34,28,82.35
+1591,21,Noida Express Way Site,2025-02-12,38,35,92.11
+1592,21,Noida Express Way Site,2025-02-13,41,37,90.24
+1593,21,Noida Express Way Site,2025-02-14,24,21,87.5
+1594,21,Noida Express Way Site,2025-02-15,35,32,91.43
+1595,21,Noida Express Way Site,2025-02-16,21,18,85.71
+1596,21,Noida Express Way Site,2025-02-17,35,30,85.71
+1597,21,Noida Express Way Site,2025-02-18,28,24,85.71
+1598,21,Noida Express Way Site,2025-02-19,21,19,90.48
+1599,21,Noida Express Way Site,2025-02-20,36,33,91.67
+1600,21,Noida Express Way Site,2025-02-21,31,27,87.1
+1601,21,Noida Express Way Site,2025-02-22,49,42,85.71
+1602,21,Noida Express Way Site,2025-02-23,21,17,80.95
+1603,21,Noida Express Way Site,2025-02-24,40,34,85.0
+1604,21,Noida Express Way Site,2025-02-25,42,39,92.86
+1605,21,Noida Express Way Site,2025-02-26,40,36,90.0
+1606,21,Noida Express Way Site,2025-02-27,46,41,89.13
+1607,21,Noida Express Way Site,2025-02-28,38,33,86.84
+1608,21,Noida Express Way Site,2025-03-01,25,21,84.0
+1609,21,Noida Express Way Site,2025-03-02,32,27,84.38
+1610,21,Noida Express Way Site,2025-03-03,40,36,90.0
+1611,21,Noida Express Way Site,2025-03-04,22,19,86.36
+1612,21,Noida Express Way Site,2025-03-05,32,29,90.62
+1613,21,Noida Express Way Site,2025-03-06,27,24,88.89
+1614,21,Noida Express Way Site,2025-03-07,31,28,90.32
+1615,21,Noida Express Way Site,2025-03-08,31,27,87.1
+1616,21,Noida Express Way Site,2025-03-09,35,32,91.43
+1617,21,Noida Express Way Site,2025-03-10,20,17,85.0
+1618,21,Noida Express Way Site,2025-03-11,24,21,87.5
+1619,21,Noida Express Way Site,2025-03-12,27,22,81.48
+1620,21,Noida Express Way Site,2025-03-13,40,34,85.0
+1621,21,Noida Express Way Site,2025-03-14,24,20,83.33
+1622,21,Noida Express Way Site,2025-03-15,31,27,87.1
+1623,21,Noida Express Way Site,2025-03-16,46,38,82.61
+1624,21,Noida Express Way Site,2025-03-17,27,23,85.19
+1625,21,Noida Express Way Site,2025-03-18,30,27,90.0
+1626,21,Noida Express Way Site,2025-03-19,35,31,88.57
+1627,21,Noida Express Way Site,2025-03-20,35,30,85.71
+1628,21,Noida Express Way Site,2025-03-21,25,22,88.0
+1629,21,Noida Express Way Site,2025-03-22,33,27,81.82
+1630,21,Noida Express Way Site,2025-03-23,21,18,85.71
+1631,21,Noida Express Way Site,2025-03-24,38,32,84.21
+1632,21,Noida Express Way Site,2025-03-25,40,35,87.5
+1633,21,Noida Express Way Site,2025-03-26,48,42,87.5
+1634,21,Noida Express Way Site,2025-03-27,21,18,85.71
+1635,21,Noida Express Way Site,2025-03-28,49,41,83.67
+1636,21,Noida Express Way Site,2025-03-29,50,43,86.0
+1637,21,Noida Express Way Site,2025-03-30,38,34,89.47
+1638,21,Noida Express Way Site,2025-03-31,48,43,89.58
+1639,21,Noida Express Way Site,2025-04-01,41,37,90.24
+1640,21,Noida Express Way Site,2025-04-02,50,42,84.0
+1641,21,Noida Express Way Site,2025-04-03,34,30,88.24
+1642,21,Noida Express Way Site,2025-04-04,35,32,91.43
+1643,21,Noida Express Way Site,2025-04-05,25,21,84.0
+1644,21,Noida Express Way Site,2025-04-06,33,29,87.88
+1645,21,Noida Express Way Site,2025-04-07,45,40,88.89
+1646,21,Noida Express Way Site,2025-04-08,44,37,84.09
+1647,21,Noida Express Way Site,2025-04-09,41,36,87.8
+1648,21,Noida Express Way Site,2025-04-10,25,22,88.0
+1649,21,Noida Express Way Site,2025-04-11,30,27,90.0
+1650,21,Noida Express Way Site,2025-04-12,39,34,87.18
+1651,21,Noida Express Way Site,2025-04-13,27,23,85.19
+1652,21,Noida Express Way Site,2025-04-14,24,20,83.33
+1653,21,Noida Express Way Site,2025-04-15,26,23,88.46
+1654,22,Greater Noida Depot,2025-03-10,36,33,91.67
+1655,22,Greater Noida Depot,2025-03-11,46,40,86.96
+1656,22,Greater Noida Depot,2025-03-12,23,20,86.96
+1657,22,Greater Noida Depot,2025-03-13,48,43,89.58
+1658,22,Greater Noida Depot,2025-03-14,21,20,95.24
+1659,22,Greater Noida Depot,2025-03-15,37,33,89.19
+1660,22,Greater Noida Depot,2025-03-16,23,20,86.96
+1661,22,Greater Noida Depot,2025-03-17,41,35,85.37
+1662,22,Greater Noida Depot,2025-03-18,39,35,89.74
+1663,22,Greater Noida Depot,2025-03-19,20,19,95.0
+1664,22,Greater Noida Depot,2025-03-20,44,40,90.91
+1665,22,Greater Noida Depot,2025-03-21,33,30,90.91
+1666,22,Greater Noida Depot,2025-03-22,31,29,93.55
+1667,22,Greater Noida Depot,2025-03-23,42,38,90.48
+1668,22,Greater Noida Depot,2025-03-24,27,25,92.59
+1669,22,Greater Noida Depot,2025-03-25,35,32,91.43
+1670,22,Greater Noida Depot,2025-03-26,32,28,87.5
+1671,22,Greater Noida Depot,2025-03-27,45,41,91.11
+1672,22,Greater Noida Depot,2025-03-28,44,41,93.18
+1673,22,Greater Noida Depot,2025-03-29,38,32,84.21
+1674,22,Greater Noida Depot,2025-03-30,24,21,87.5
+1675,22,Greater Noida Depot,2025-03-31,44,38,86.36
+1676,22,Greater Noida Depot,2025-04-01,47,40,85.11
+1677,22,Greater Noida Depot,2025-04-02,39,36,92.31
+1678,22,Greater Noida Depot,2025-04-03,33,29,87.88
+1679,22,Greater Noida Depot,2025-04-04,20,18,90.0
+1680,22,Greater Noida Depot,2025-04-05,45,38,84.44
+1681,22,Greater Noida Depot,2025-04-06,36,31,86.11
+1682,22,Greater Noida Depot,2025-04-07,20,18,90.0
+1683,22,Greater Noida Depot,2025-04-08,26,24,92.31
+1684,22,Greater Noida Depot,2025-04-09,30,27,90.0
+1685,22,Greater Noida Depot,2025-04-10,23,20,86.96
+1686,22,Greater Noida Depot,2025-04-11,40,36,90.0
+1687,22,Greater Noida Depot,2025-04-12,28,26,92.86
+1688,22,Greater Noida Depot,2025-04-13,33,30,90.91
+1689,22,Greater Noida Depot,2025-04-14,39,34,87.18
+1690,22,Greater Noida Depot,2025-04-15,41,36,87.8
+1691,22,Greater Noida Depot,2025-04-16,26,23,88.46
+1692,22,Greater Noida Depot,2025-04-17,45,41,91.11
+1693,22,Greater Noida Depot,2025-04-18,25,22,88.0
+1694,22,Greater Noida Depot,2025-04-19,37,33,89.19
+1695,22,Greater Noida Depot,2025-04-20,29,26,89.66
+1696,22,Greater Noida Depot,2025-04-21,44,40,90.91
+1697,22,Greater Noida Depot,2025-04-22,43,37,86.05
+1698,22,Greater Noida Depot,2025-04-23,47,43,91.49
+1699,22,Greater Noida Depot,2025-04-24,43,37,86.05
+1700,22,Greater Noida Depot,2025-04-25,45,41,91.11
+1701,22,Greater Noida Depot,2025-04-26,25,21,84.0
+1702,22,Greater Noida Depot,2025-04-27,36,32,88.89
+1703,22,Greater Noida Depot,2025-04-28,30,28,93.33
+1704,22,Greater Noida Depot,2025-04-29,39,36,92.31
+1705,22,Greater Noida Depot,2025-04-30,42,36,85.71
+1706,22,Greater Noida Depot,2025-05-01,32,30,93.75
+1707,22,Greater Noida Depot,2025-05-02,20,18,90.0
+1708,22,Greater Noida Depot,2025-05-03,46,40,86.96
+1709,22,Greater Noida Depot,2025-05-04,49,44,89.8
+1710,22,Greater Noida Depot,2025-05-05,22,19,86.36
+1711,22,Greater Noida Depot,2025-05-06,27,24,88.89
+1712,22,Greater Noida Depot,2025-05-07,39,33,84.62
+1713,22,Greater Noida Depot,2025-05-08,32,30,93.75
+1714,22,Greater Noida Depot,2025-05-09,32,29,90.62
+1715,22,Greater Noida Depot,2025-05-10,36,31,86.11
+1716,22,Greater Noida Depot,2025-05-11,50,45,90.0
+1717,22,Greater Noida Depot,2025-05-12,50,46,92.0
+1718,22,Greater Noida Depot,2025-05-13,25,23,92.0
+1719,22,Greater Noida Depot,2025-05-14,34,29,85.29
+1720,22,Greater Noida Depot,2025-05-15,47,43,91.49
+1721,22,Greater Noida Depot,2025-05-16,45,40,88.89
+1722,22,Greater Noida Depot,2025-05-17,26,22,84.62
+1723,22,Greater Noida Depot,2025-05-18,39,35,89.74
+1724,22,Greater Noida Depot,2025-05-19,42,36,85.71
+1725,22,Greater Noida Depot,2025-05-20,25,23,92.0
+1726,22,Greater Noida Depot,2025-05-21,31,27,87.1
+1727,22,Greater Noida Depot,2025-05-22,20,19,95.0
+1728,22,Greater Noida Depot,2025-05-23,22,21,95.45
+1729,22,Greater Noida Depot,2025-05-24,44,39,88.64
+1730,22,Greater Noida Depot,2025-05-25,41,36,87.8
+1731,22,Greater Noida Depot,2025-05-26,38,33,86.84
+1732,22,Greater Noida Depot,2025-05-27,20,18,90.0
+1733,22,Greater Noida Depot,2025-05-28,22,21,95.45
+1734,22,Greater Noida Depot,2025-05-29,37,32,86.49
+1735,22,Greater Noida Depot,2025-05-30,46,41,89.13
+1736,22,Greater Noida Depot,2025-05-31,38,33,86.84
+1737,22,Greater Noida Depot,2025-06-01,50,46,92.0
+1738,22,Greater Noida Depot,2025-06-02,27,24,88.89
+1739,22,Greater Noida Depot,2025-06-03,26,23,88.46
+1740,22,Greater Noida Depot,2025-06-04,32,29,90.62
+1741,22,Greater Noida Depot,2025-06-05,28,24,85.71
+1742,22,Greater Noida Depot,2025-06-06,36,31,86.11
+1743,23,Noida Sec 150 Site,2025-02-24,36,26,72.22
+1744,23,Noida Sec 150 Site,2025-02-25,50,35,70.0
+1745,23,Noida Sec 150 Site,2025-02-26,36,28,77.78
+1746,23,Noida Sec 150 Site,2025-02-27,48,35,72.92
+1747,23,Noida Sec 150 Site,2025-02-28,45,33,73.33
+1748,23,Noida Sec 150 Site,2025-03-01,42,31,73.81
+1749,23,Noida Sec 150 Site,2025-03-02,32,24,75.0
+1750,23,Noida Sec 150 Site,2025-03-03,44,31,70.45
+1751,23,Noida Sec 150 Site,2025-03-04,30,23,76.67
+1752,23,Noida Sec 150 Site,2025-03-05,34,26,76.47
+1753,23,Noida Sec 150 Site,2025-03-06,48,36,75.0
+1754,23,Noida Sec 150 Site,2025-03-07,20,15,75.0
+1755,23,Noida Sec 150 Site,2025-03-08,28,19,67.86
+1756,23,Noida Sec 150 Site,2025-03-09,40,31,77.5
+1757,23,Noida Sec 150 Site,2025-03-10,27,20,74.07
+1758,23,Noida Sec 150 Site,2025-03-11,27,21,77.78
+1759,23,Noida Sec 150 Site,2025-03-12,33,26,78.79
+1760,23,Noida Sec 150 Site,2025-03-13,36,27,75.0
+1761,23,Noida Sec 150 Site,2025-03-14,42,32,76.19
+1762,23,Noida Sec 150 Site,2025-03-15,27,19,70.37
+1763,23,Noida Sec 150 Site,2025-03-16,32,24,75.0
+1764,23,Noida Sec 150 Site,2025-03-17,46,33,71.74
+1765,23,Noida Sec 150 Site,2025-03-18,37,29,78.38
+1766,23,Noida Sec 150 Site,2025-03-19,35,25,71.43
+1767,23,Noida Sec 150 Site,2025-03-20,26,20,76.92
+1768,23,Noida Sec 150 Site,2025-03-21,28,20,71.43
+1769,23,Noida Sec 150 Site,2025-03-22,43,32,74.42
+1770,23,Noida Sec 150 Site,2025-03-23,49,34,69.39
+1771,23,Noida Sec 150 Site,2025-03-24,43,30,69.77
+1772,23,Noida Sec 150 Site,2025-03-25,43,30,69.77
+1773,23,Noida Sec 150 Site,2025-03-26,28,20,71.43
+1774,23,Noida Sec 150 Site,2025-03-27,26,20,76.92
+1775,23,Noida Sec 150 Site,2025-03-28,46,34,73.91
+1776,23,Noida Sec 150 Site,2025-03-29,24,18,75.0
+1777,23,Noida Sec 150 Site,2025-03-30,23,18,78.26
+1778,23,Noida Sec 150 Site,2025-03-31,41,32,78.05
+1779,23,Noida Sec 150 Site,2025-04-01,35,26,74.29
+1780,23,Noida Sec 150 Site,2025-04-02,44,34,77.27
+1781,23,Noida Sec 150 Site,2025-04-03,50,34,68.0
+1782,23,Noida Sec 150 Site,2025-04-04,35,25,71.43
+1783,23,Noida Sec 150 Site,2025-04-05,30,22,73.33
+1784,23,Noida Sec 150 Site,2025-04-06,48,37,77.08
+1785,23,Noida Sec 150 Site,2025-04-07,47,33,70.21
+1786,23,Noida Sec 150 Site,2025-04-08,25,20,80.0
+1787,23,Noida Sec 150 Site,2025-04-09,49,36,73.47
+1788,23,Noida Sec 150 Site,2025-04-10,32,23,71.88
+1789,23,Noida Sec 150 Site,2025-04-11,38,26,68.42
+1790,23,Noida Sec 150 Site,2025-04-12,36,28,77.78
+1791,23,Noida Sec 150 Site,2025-04-13,35,27,77.14
+1792,23,Noida Sec 150 Site,2025-04-14,21,15,71.43
+1793,23,Noida Sec 150 Site,2025-04-15,32,25,78.12
+1794,23,Noida Sec 150 Site,2025-04-16,44,31,70.45
+1795,23,Noida Sec 150 Site,2025-04-17,23,17,73.91
+1796,23,Noida Sec 150 Site,2025-04-18,34,24,70.59
+1797,23,Noida Sec 150 Site,2025-04-19,20,14,70.0
+1798,23,Noida Sec 150 Site,2025-04-20,26,19,73.08
+1799,23,Noida Sec 150 Site,2025-04-21,23,16,69.57
+1800,23,Noida Sec 150 Site,2025-04-22,39,30,76.92
+1801,23,Noida Sec 150 Site,2025-04-23,25,18,72.0
+1802,23,Noida Sec 150 Site,2025-04-24,27,19,70.37
+1803,23,Noida Sec 150 Site,2025-04-25,50,37,74.0
+1804,23,Noida Sec 150 Site,2025-04-26,31,22,70.97
+1805,24,Noida Sec 62 Site,2025-03-27,26,22,84.62
+1806,24,Noida Sec 62 Site,2025-03-28,44,37,84.09
+1807,24,Noida Sec 62 Site,2025-03-29,47,39,82.98
+1808,24,Noida Sec 62 Site,2025-03-30,34,28,82.35
+1809,24,Noida Sec 62 Site,2025-03-31,24,21,87.5
+1810,24,Noida Sec 62 Site,2025-04-01,41,34,82.93
+1811,24,Noida Sec 62 Site,2025-04-02,23,20,86.96
+1812,24,Noida Sec 62 Site,2025-04-03,45,37,82.22
+1813,24,Noida Sec 62 Site,2025-04-04,33,29,87.88
+1814,24,Noida Sec 62 Site,2025-04-05,26,21,80.77
+1815,24,Noida Sec 62 Site,2025-04-06,50,43,86.0
+1816,24,Noida Sec 62 Site,2025-04-07,35,31,88.57
+1817,24,Noida Sec 62 Site,2025-04-08,25,21,84.0
+1818,24,Noida Sec 62 Site,2025-04-09,24,21,87.5
+1819,24,Noida Sec 62 Site,2025-04-10,47,40,85.11
+1820,24,Noida Sec 62 Site,2025-04-11,37,32,86.49
+1821,24,Noida Sec 62 Site,2025-04-12,45,38,84.44
+1822,24,Noida Sec 62 Site,2025-04-13,28,24,85.71
+1823,24,Noida Sec 62 Site,2025-04-14,38,30,78.95
+1824,24,Noida Sec 62 Site,2025-04-15,23,20,86.96
+1825,24,Noida Sec 62 Site,2025-04-16,21,17,80.95
+1826,24,Noida Sec 62 Site,2025-04-17,28,24,85.71
+1827,24,Noida Sec 62 Site,2025-04-18,40,32,80.0
+1828,24,Noida Sec 62 Site,2025-04-19,43,36,83.72
+1829,24,Noida Sec 62 Site,2025-04-20,31,26,83.87
+1830,24,Noida Sec 62 Site,2025-04-21,37,33,89.19
+1831,24,Noida Sec 62 Site,2025-04-22,28,23,82.14
+1832,24,Noida Sec 62 Site,2025-04-23,33,27,81.82
+1833,24,Noida Sec 62 Site,2025-04-24,47,41,87.23
+1834,24,Noida Sec 62 Site,2025-04-25,39,32,82.05
+1835,24,Noida Sec 62 Site,2025-04-26,38,33,86.84
+1836,24,Noida Sec 62 Site,2025-04-27,37,30,81.08
+1837,24,Noida Sec 62 Site,2025-04-28,44,36,81.82
+1838,24,Noida Sec 62 Site,2025-04-29,30,26,86.67
+1839,24,Noida Sec 62 Site,2025-04-30,35,31,88.57
+1840,24,Noida Sec 62 Site,2025-05-01,34,30,88.24
+1841,24,Noida Sec 62 Site,2025-05-02,32,27,84.38
+1842,24,Noida Sec 62 Site,2025-05-03,34,29,85.29
+1843,24,Noida Sec 62 Site,2025-05-04,24,21,87.5
+1844,24,Noida Sec 62 Site,2025-05-05,40,35,87.5
+1845,24,Noida Sec 62 Site,2025-05-06,30,25,83.33
+1846,24,Noida Sec 62 Site,2025-05-07,39,33,84.62
+1847,24,Noida Sec 62 Site,2025-05-08,47,42,89.36
+1848,24,Noida Sec 62 Site,2025-05-09,22,18,81.82
+1849,24,Noida Sec 62 Site,2025-05-10,27,22,81.48
+1850,24,Noida Sec 62 Site,2025-05-11,40,33,82.5
+1851,24,Noida Sec 62 Site,2025-05-12,28,24,85.71
+1852,24,Noida Sec 62 Site,2025-05-13,32,26,81.25
+1853,24,Noida Sec 62 Site,2025-05-14,34,30,88.24
+1854,24,Noida Sec 62 Site,2025-05-15,50,42,84.0
+1855,24,Noida Sec 62 Site,2025-05-16,38,32,84.21
+1856,24,Noida Sec 62 Site,2025-05-17,34,28,82.35
+1857,24,Noida Sec 62 Site,2025-05-18,25,22,88.0
+1858,24,Noida Sec 62 Site,2025-05-19,24,21,87.5
+1859,24,Noida Sec 62 Site,2025-05-20,41,34,82.93
+1860,24,Noida Sec 62 Site,2025-05-21,43,37,86.05
+1861,24,Noida Sec 62 Site,2025-05-22,22,18,81.82
+1862,24,Noida Sec 62 Site,2025-05-23,32,26,81.25
+1863,24,Noida Sec 62 Site,2025-05-24,22,20,90.91
+1864,24,Noida Sec 62 Site,2025-05-25,35,30,85.71
+1865,24,Noida Sec 62 Site,2025-05-26,20,17,85.0
+1866,24,Noida Sec 62 Site,2025-05-27,36,31,86.11
+1867,24,Noida Sec 62 Site,2025-05-28,22,18,81.82
+1868,24,Noida Sec 62 Site,2025-05-29,39,32,82.05
+1869,24,Noida Sec 62 Site,2025-05-30,40,36,90.0
+1870,24,Noida Sec 62 Site,2025-05-31,32,26,81.25
+1871,24,Noida Sec 62 Site,2025-06-01,27,23,85.19
+1872,24,Noida Sec 62 Site,2025-06-02,34,29,85.29
+1873,24,Noida Sec 62 Site,2025-06-03,24,20,83.33
+1874,24,Noida Sec 62 Site,2025-06-04,25,20,80.0
+1875,24,Noida Sec 62 Site,2025-06-05,41,34,82.93
+1876,24,Noida Sec 62 Site,2025-06-06,49,41,83.67
+1877,24,Noida Sec 62 Site,2025-06-07,35,29,82.86
+1878,25,Noida Express Way Site,2025-02-13,37,31,83.78
+1879,25,Noida Express Way Site,2025-02-14,37,29,78.38
+1880,25,Noida Express Way Site,2025-02-15,50,41,82.0
+1881,25,Noida Express Way Site,2025-02-16,25,20,80.0
+1882,25,Noida Express Way Site,2025-02-17,34,28,82.35
+1883,25,Noida Express Way Site,2025-02-18,40,34,85.0
+1884,25,Noida Express Way Site,2025-02-19,33,27,81.82
+1885,25,Noida Express Way Site,2025-02-20,40,32,80.0
+1886,25,Noida Express Way Site,2025-02-21,49,39,79.59
+1887,25,Noida Express Way Site,2025-02-22,37,29,78.38
+1888,25,Noida Express Way Site,2025-02-23,22,18,81.82
+1889,25,Noida Express Way Site,2025-02-24,31,25,80.65
+1890,25,Noida Express Way Site,2025-02-25,24,19,79.17
+1891,25,Noida Express Way Site,2025-02-26,20,16,80.0
+1892,25,Noida Express Way Site,2025-02-27,44,37,84.09
+1893,25,Noida Express Way Site,2025-02-28,31,24,77.42
+1894,25,Noida Express Way Site,2025-03-01,37,28,75.68
+1895,25,Noida Express Way Site,2025-03-02,49,39,79.59
+1896,25,Noida Express Way Site,2025-03-03,44,35,79.55
+1897,25,Noida Express Way Site,2025-03-04,20,17,85.0
+1898,25,Noida Express Way Site,2025-03-05,45,35,77.78
+1899,25,Noida Express Way Site,2025-03-06,27,22,81.48
+1900,25,Noida Express Way Site,2025-03-07,37,29,78.38
+1901,25,Noida Express Way Site,2025-03-08,33,28,84.85
+1902,25,Noida Express Way Site,2025-03-09,33,26,78.79
+1903,25,Noida Express Way Site,2025-03-10,25,21,84.0
+1904,25,Noida Express Way Site,2025-03-11,40,32,80.0
+1905,25,Noida Express Way Site,2025-03-12,32,25,78.12
+1906,25,Noida Express Way Site,2025-03-13,22,17,77.27
+1907,25,Noida Express Way Site,2025-03-14,27,22,81.48
+1908,25,Noida Express Way Site,2025-03-15,45,38,84.44
+1909,25,Noida Express Way Site,2025-03-16,45,37,82.22
+1910,25,Noida Express Way Site,2025-03-17,28,22,78.57
+1911,25,Noida Express Way Site,2025-03-18,43,35,81.4
+1912,25,Noida Express Way Site,2025-03-19,28,22,78.57
+1913,25,Noida Express Way Site,2025-03-20,47,36,76.6
+1914,25,Noida Express Way Site,2025-03-21,24,19,79.17
+1915,25,Noida Express Way Site,2025-03-22,40,32,80.0
+1916,25,Noida Express Way Site,2025-03-23,34,27,79.41
+1917,25,Noida Express Way Site,2025-03-24,39,31,79.49
+1918,25,Noida Express Way Site,2025-03-25,30,23,76.67
+1919,25,Noida Express Way Site,2025-03-26,21,18,85.71
+1920,25,Noida Express Way Site,2025-03-27,20,15,75.0
+1921,25,Noida Express Way Site,2025-03-28,23,18,78.26
+1922,25,Noida Express Way Site,2025-03-29,24,20,83.33
+1923,25,Noida Express Way Site,2025-03-30,43,32,74.42
+1924,25,Noida Express Way Site,2025-03-31,22,17,77.27
+1925,25,Noida Express Way Site,2025-04-01,35,27,77.14
+1926,25,Noida Express Way Site,2025-04-02,33,26,78.79
+1927,25,Noida Express Way Site,2025-04-03,45,36,80.0
+1928,25,Noida Express Way Site,2025-04-04,31,25,80.65
+1929,25,Noida Express Way Site,2025-04-05,45,34,75.56
+1930,25,Noida Express Way Site,2025-04-06,22,18,81.82
+1931,25,Noida Express Way Site,2025-04-07,50,38,76.0
+1932,25,Noida Express Way Site,2025-04-08,28,23,82.14
+1933,25,Noida Express Way Site,2025-04-09,22,18,81.82
+1934,25,Noida Express Way Site,2025-04-10,25,19,76.0
+1935,25,Noida Express Way Site,2025-04-11,46,36,78.26
+1936,25,Noida Express Way Site,2025-04-12,32,27,84.38
+1937,25,Noida Express Way Site,2025-04-13,23,20,86.96
+1938,25,Noida Express Way Site,2025-04-14,42,33,78.57
+1939,25,Noida Express Way Site,2025-04-15,44,37,84.09
+1940,25,Noida Express Way Site,2025-04-16,27,22,81.48
+1941,25,Noida Express Way Site,2025-04-17,21,16,76.19
+1942,25,Noida Express Way Site,2025-04-18,43,36,83.72
+1943,25,Noida Express Way Site,2025-04-19,36,29,80.56
+1944,25,Noida Express Way Site,2025-04-20,26,21,80.77
+1945,25,Noida Express Way Site,2025-04-21,41,35,85.37
+1946,25,Noida Express Way Site,2025-04-22,49,38,77.55
+1947,25,Noida Express Way Site,2025-04-23,40,33,82.5
+1948,25,Noida Express Way Site,2025-04-24,43,36,83.72
+1949,25,Noida Express Way Site,2025-04-25,36,28,77.78
+1950,25,Noida Express Way Site,2025-04-26,35,29,82.86
+1951,25,Noida Express Way Site,2025-04-27,26,20,76.92
+1952,25,Noida Express Way Site,2025-04-28,21,18,85.71
+1953,25,Noida Express Way Site,2025-04-29,26,22,84.62
+1954,25,Noida Express Way Site,2025-04-30,27,22,81.48
+1955,25,Noida Express Way Site,2025-05-01,30,23,76.67
+1956,25,Noida Express Way Site,2025-05-02,45,35,77.78
+1957,25,Noida Express Way Site,2025-05-03,23,18,78.26
+1958,25,Noida Express Way Site,2025-05-04,27,20,74.07
+1959,25,Noida Express Way Site,2025-05-05,21,17,80.95
+1960,25,Noida Express Way Site,2025-05-06,42,34,80.95
+1961,25,Noida Express Way Site,2025-05-07,39,30,76.92
+1962,25,Noida Express Way Site,2025-05-08,44,33,75.0
+1963,25,Noida Express Way Site,2025-05-09,25,20,80.0
+1964,25,Noida Express Way Site,2025-05-10,41,33,80.49
+1965,26,Greater Noida Depot,2025-01-09,44,33,75.0
+1966,26,Greater Noida Depot,2025-01-10,21,15,71.43
+1967,26,Greater Noida Depot,2025-01-11,24,18,75.0
+1968,26,Greater Noida Depot,2025-01-12,45,32,71.11
+1969,26,Greater Noida Depot,2025-01-13,35,25,71.43
+1970,26,Greater Noida Depot,2025-01-14,37,29,78.38
+1971,26,Greater Noida Depot,2025-01-15,44,32,72.73
+1972,26,Greater Noida Depot,2025-01-16,48,36,75.0
+1973,26,Greater Noida Depot,2025-01-17,26,18,69.23
+1974,26,Greater Noida Depot,2025-01-18,32,23,71.88
+1975,26,Greater Noida Depot,2025-01-19,24,17,70.83
+1976,26,Greater Noida Depot,2025-01-20,21,16,76.19
+1977,26,Greater Noida Depot,2025-01-21,34,26,76.47
+1978,26,Greater Noida Depot,2025-01-22,37,28,75.68
+1979,26,Greater Noida Depot,2025-01-23,26,20,76.92
+1980,26,Greater Noida Depot,2025-01-24,37,27,72.97
+1981,26,Greater Noida Depot,2025-01-25,43,32,74.42
+1982,26,Greater Noida Depot,2025-01-26,47,37,78.72
+1983,26,Greater Noida Depot,2025-01-27,49,38,77.55
+1984,26,Greater Noida Depot,2025-01-28,25,18,72.0
+1985,26,Greater Noida Depot,2025-01-29,24,18,75.0
+1986,26,Greater Noida Depot,2025-01-30,46,33,71.74
+1987,26,Greater Noida Depot,2025-01-31,31,23,74.19
+1988,26,Greater Noida Depot,2025-02-01,44,34,77.27
+1989,26,Greater Noida Depot,2025-02-02,32,25,78.12
+1990,26,Greater Noida Depot,2025-02-03,48,34,70.83
+1991,26,Greater Noida Depot,2025-02-04,47,35,74.47
+1992,26,Greater Noida Depot,2025-02-05,39,28,71.79
+1993,26,Greater Noida Depot,2025-02-06,43,30,69.77
+1994,26,Greater Noida Depot,2025-02-07,50,38,76.0
+1995,26,Greater Noida Depot,2025-02-08,32,23,71.88
+1996,26,Greater Noida Depot,2025-02-09,41,31,75.61
+1997,26,Greater Noida Depot,2025-02-10,37,26,70.27
+1998,26,Greater Noida Depot,2025-02-11,29,21,72.41
+1999,26,Greater Noida Depot,2025-02-12,40,29,72.5
+2000,26,Greater Noida Depot,2025-02-13,23,17,73.91
+2001,26,Greater Noida Depot,2025-02-14,22,15,68.18
+2002,26,Greater Noida Depot,2025-02-15,50,36,72.0
+2003,26,Greater Noida Depot,2025-02-16,47,33,70.21
+2004,26,Greater Noida Depot,2025-02-17,23,17,73.91
+2005,26,Greater Noida Depot,2025-02-18,23,16,69.57
+2006,26,Greater Noida Depot,2025-02-19,40,31,77.5
+2007,26,Greater Noida Depot,2025-02-20,41,31,75.61
+2008,26,Greater Noida Depot,2025-02-21,39,30,76.92
+2009,26,Greater Noida Depot,2025-02-22,28,20,71.43
+2010,26,Greater Noida Depot,2025-02-23,27,20,74.07
+2011,26,Greater Noida Depot,2025-02-24,22,15,68.18
+2012,26,Greater Noida Depot,2025-02-25,49,35,71.43
+2013,26,Greater Noida Depot,2025-02-26,35,28,80.0
+2014,26,Greater Noida Depot,2025-02-27,46,32,69.57
+2015,26,Greater Noida Depot,2025-02-28,45,34,75.56
+2016,26,Greater Noida Depot,2025-03-01,31,23,74.19
+2017,26,Greater Noida Depot,2025-03-02,50,39,78.0
+2018,26,Greater Noida Depot,2025-03-03,46,34,73.91
+2019,26,Greater Noida Depot,2025-03-04,42,30,71.43
+2020,26,Greater Noida Depot,2025-03-05,39,28,71.79
+2021,26,Greater Noida Depot,2025-03-06,21,16,76.19
+2022,26,Greater Noida Depot,2025-03-07,46,34,73.91
+2023,26,Greater Noida Depot,2025-03-08,50,36,72.0
+2024,26,Greater Noida Depot,2025-03-09,36,25,69.44
+2025,26,Greater Noida Depot,2025-03-10,43,31,72.09
+2026,26,Greater Noida Depot,2025-03-11,32,23,71.88
+2027,26,Greater Noida Depot,2025-03-12,36,27,75.0
+2028,26,Greater Noida Depot,2025-03-13,38,29,76.32
+2029,26,Greater Noida Depot,2025-03-14,25,19,76.0
+2030,26,Greater Noida Depot,2025-03-15,37,27,72.97
+2031,26,Greater Noida Depot,2025-03-16,23,18,78.26
+2032,26,Greater Noida Depot,2025-03-17,38,28,73.68
+2033,26,Greater Noida Depot,2025-03-18,34,26,76.47
+2034,26,Greater Noida Depot,2025-03-19,33,26,78.79
+2035,26,Greater Noida Depot,2025-03-20,25,19,76.0
+2036,26,Greater Noida Depot,2025-03-21,37,27,72.97
+2037,26,Greater Noida Depot,2025-03-22,30,23,76.67
+2038,26,Greater Noida Depot,2025-03-23,37,30,81.08
+2039,26,Greater Noida Depot,2025-03-24,34,27,79.41
+2040,26,Greater Noida Depot,2025-03-25,48,35,72.92
+2041,26,Greater Noida Depot,2025-03-26,30,23,76.67
+2042,26,Greater Noida Depot,2025-03-27,33,26,78.79
+2043,26,Greater Noida Depot,2025-03-28,33,26,78.79
+2044,26,Greater Noida Depot,2025-03-29,30,23,76.67
+2045,26,Greater Noida Depot,2025-03-30,38,29,76.32
+2046,26,Greater Noida Depot,2025-03-31,32,25,78.12
+2047,26,Greater Noida Depot,2025-04-01,49,38,77.55
+2048,26,Greater Noida Depot,2025-04-02,31,25,80.65
+2049,26,Greater Noida Depot,2025-04-03,34,27,79.41
+2050,26,Greater Noida Depot,2025-04-04,20,15,75.0
+2051,26,Greater Noida Depot,2025-04-05,29,22,75.86
+2052,26,Greater Noida Depot,2025-04-06,36,26,72.22
+2053,26,Greater Noida Depot,2025-04-07,48,35,72.92
+2054,27,Noida Sec 150 Site,2025-01-17,27,21,77.78
+2055,27,Noida Sec 150 Site,2025-01-18,30,23,76.67
+2056,27,Noida Sec 150 Site,2025-01-19,46,39,84.78
+2057,27,Noida Sec 150 Site,2025-01-20,46,36,78.26
+2058,27,Noida Sec 150 Site,2025-01-21,37,30,81.08
+2059,27,Noida Sec 150 Site,2025-01-22,38,32,84.21
+2060,27,Noida Sec 150 Site,2025-01-23,24,18,75.0
+2061,27,Noida Sec 150 Site,2025-01-24,34,27,79.41
+2062,27,Noida Sec 150 Site,2025-01-25,24,19,79.17
+2063,27,Noida Sec 150 Site,2025-01-26,48,39,81.25
+2064,27,Noida Sec 150 Site,2025-01-27,27,21,77.78
+2065,27,Noida Sec 150 Site,2025-01-28,29,22,75.86
+2066,27,Noida Sec 150 Site,2025-01-29,32,26,81.25
+2067,27,Noida Sec 150 Site,2025-01-30,26,22,84.62
+2068,27,Noida Sec 150 Site,2025-01-31,43,34,79.07
+2069,27,Noida Sec 150 Site,2025-02-01,35,27,77.14
+2070,27,Noida Sec 150 Site,2025-02-02,46,39,84.78
+2071,27,Noida Sec 150 Site,2025-02-03,42,34,80.95
+2072,27,Noida Sec 150 Site,2025-02-04,49,37,75.51
+2073,27,Noida Sec 150 Site,2025-02-05,40,31,77.5
+2074,27,Noida Sec 150 Site,2025-02-06,43,36,83.72
+2075,27,Noida Sec 150 Site,2025-02-07,32,24,75.0
+2076,27,Noida Sec 150 Site,2025-02-08,21,18,85.71
+2077,27,Noida Sec 150 Site,2025-02-09,30,24,80.0
+2078,27,Noida Sec 150 Site,2025-02-10,46,37,80.43
+2079,27,Noida Sec 150 Site,2025-02-11,49,41,83.67
+2080,27,Noida Sec 150 Site,2025-02-12,47,39,82.98
+2081,27,Noida Sec 150 Site,2025-02-13,43,35,81.4
+2082,27,Noida Sec 150 Site,2025-02-14,39,33,84.62
+2083,27,Noida Sec 150 Site,2025-02-15,40,33,82.5
+2084,27,Noida Sec 150 Site,2025-02-16,32,24,75.0
+2085,27,Noida Sec 150 Site,2025-02-17,36,27,75.0
+2086,27,Noida Sec 150 Site,2025-02-18,37,30,81.08
+2087,27,Noida Sec 150 Site,2025-02-19,30,24,80.0
+2088,27,Noida Sec 150 Site,2025-02-20,27,21,77.78
+2089,27,Noida Sec 150 Site,2025-02-21,41,34,82.93
+2090,27,Noida Sec 150 Site,2025-02-22,32,27,84.38
+2091,27,Noida Sec 150 Site,2025-02-23,44,36,81.82
+2092,27,Noida Sec 150 Site,2025-02-24,36,27,75.0
+2093,27,Noida Sec 150 Site,2025-02-25,33,26,78.79
+2094,27,Noida Sec 150 Site,2025-02-26,32,25,78.12
+2095,27,Noida Sec 150 Site,2025-02-27,30,23,76.67
+2096,27,Noida Sec 150 Site,2025-02-28,38,32,84.21
+2097,27,Noida Sec 150 Site,2025-03-01,37,29,78.38
+2098,27,Noida Sec 150 Site,2025-03-02,22,17,77.27
+2099,27,Noida Sec 150 Site,2025-03-03,33,27,81.82
+2100,27,Noida Sec 150 Site,2025-03-04,24,20,83.33
+2101,27,Noida Sec 150 Site,2025-03-05,35,28,80.0
+2102,27,Noida Sec 150 Site,2025-03-06,35,28,80.0
+2103,27,Noida Sec 150 Site,2025-03-07,38,29,76.32
+2104,27,Noida Sec 150 Site,2025-03-08,39,33,84.62
+2105,27,Noida Sec 150 Site,2025-03-09,36,28,77.78
+2106,27,Noida Sec 150 Site,2025-03-10,22,17,77.27
+2107,27,Noida Sec 150 Site,2025-03-11,33,26,78.79
+2108,27,Noida Sec 150 Site,2025-03-12,49,40,81.63
+2109,27,Noida Sec 150 Site,2025-03-13,23,19,82.61
+2110,27,Noida Sec 150 Site,2025-03-14,33,26,78.79
+2111,27,Noida Sec 150 Site,2025-03-15,26,20,76.92
+2112,27,Noida Sec 150 Site,2025-03-16,39,32,82.05
+2113,27,Noida Sec 150 Site,2025-03-17,44,35,79.55
+2114,27,Noida Sec 150 Site,2025-03-18,31,25,80.65
+2115,27,Noida Sec 150 Site,2025-03-19,45,36,80.0
+2116,27,Noida Sec 150 Site,2025-03-20,24,19,79.17
+2117,27,Noida Sec 150 Site,2025-03-21,49,41,83.67
+2118,27,Noida Sec 150 Site,2025-03-22,26,21,80.77
+2119,27,Noida Sec 150 Site,2025-03-23,24,20,83.33
+2120,27,Noida Sec 150 Site,2025-03-24,47,36,76.6
+2121,27,Noida Sec 150 Site,2025-03-25,43,33,76.74
+2122,27,Noida Sec 150 Site,2025-03-26,50,41,82.0
+2123,28,Noida Sec 62 Site,2025-03-26,47,41,87.23
+2124,28,Noida Sec 62 Site,2025-03-27,29,23,79.31
+2125,28,Noida Sec 62 Site,2025-03-28,42,37,88.1
+2126,28,Noida Sec 62 Site,2025-03-29,29,24,82.76
+2127,28,Noida Sec 62 Site,2025-03-30,20,17,85.0
+2128,28,Noida Sec 62 Site,2025-03-31,43,37,86.05
+2129,28,Noida Sec 62 Site,2025-04-01,26,22,84.62
+2130,28,Noida Sec 62 Site,2025-04-02,44,36,81.82
+2131,28,Noida Sec 62 Site,2025-04-03,35,30,85.71
+2132,28,Noida Sec 62 Site,2025-04-04,24,21,87.5
+2133,28,Noida Sec 62 Site,2025-04-05,41,33,80.49
+2134,28,Noida Sec 62 Site,2025-04-06,38,34,89.47
+2135,28,Noida Sec 62 Site,2025-04-07,36,29,80.56
+2136,28,Noida Sec 62 Site,2025-04-08,25,20,80.0
+2137,28,Noida Sec 62 Site,2025-04-09,26,23,88.46
+2138,28,Noida Sec 62 Site,2025-04-10,39,32,82.05
+2139,28,Noida Sec 62 Site,2025-04-11,34,29,85.29
+2140,28,Noida Sec 62 Site,2025-04-12,20,16,80.0
+2141,28,Noida Sec 62 Site,2025-04-13,41,34,82.93
+2142,28,Noida Sec 62 Site,2025-04-14,47,42,89.36
+2143,28,Noida Sec 62 Site,2025-04-15,31,27,87.1
+2144,28,Noida Sec 62 Site,2025-04-16,20,17,85.0
+2145,28,Noida Sec 62 Site,2025-04-17,48,41,85.42
+2146,28,Noida Sec 62 Site,2025-04-18,27,24,88.89
+2147,28,Noida Sec 62 Site,2025-04-19,36,32,88.89
+2148,28,Noida Sec 62 Site,2025-04-20,23,20,86.96
+2149,28,Noida Sec 62 Site,2025-04-21,35,31,88.57
+2150,28,Noida Sec 62 Site,2025-04-22,37,30,81.08
+2151,28,Noida Sec 62 Site,2025-04-23,26,22,84.62
+2152,28,Noida Sec 62 Site,2025-04-24,34,29,85.29
+2153,28,Noida Sec 62 Site,2025-04-25,42,34,80.95
+2154,28,Noida Sec 62 Site,2025-04-26,27,24,88.89
+2155,28,Noida Sec 62 Site,2025-04-27,29,24,82.76
+2156,28,Noida Sec 62 Site,2025-04-28,32,28,87.5
+2157,28,Noida Sec 62 Site,2025-04-29,20,17,85.0
+2158,28,Noida Sec 62 Site,2025-04-30,31,26,83.87
+2159,28,Noida Sec 62 Site,2025-05-01,29,24,82.76
+2160,28,Noida Sec 62 Site,2025-05-02,36,30,83.33
+2161,28,Noida Sec 62 Site,2025-05-03,21,18,85.71
+2162,28,Noida Sec 62 Site,2025-05-04,48,40,83.33
+2163,28,Noida Sec 62 Site,2025-05-05,46,41,89.13
+2164,28,Noida Sec 62 Site,2025-05-06,50,43,86.0
+2165,28,Noida Sec 62 Site,2025-05-07,28,23,82.14
+2166,28,Noida Sec 62 Site,2025-05-08,30,27,90.0
+2167,28,Noida Sec 62 Site,2025-05-09,41,33,80.49
+2168,28,Noida Sec 62 Site,2025-05-10,43,36,83.72
+2169,28,Noida Sec 62 Site,2025-05-11,50,43,86.0
+2170,28,Noida Sec 62 Site,2025-05-12,47,40,85.11
+2171,28,Noida Sec 62 Site,2025-05-13,27,23,85.19
+2172,28,Noida Sec 62 Site,2025-05-14,38,31,81.58
+2173,28,Noida Sec 62 Site,2025-05-15,29,26,89.66
+2174,28,Noida Sec 62 Site,2025-05-16,30,25,83.33
+2175,28,Noida Sec 62 Site,2025-05-17,24,20,83.33
+2176,28,Noida Sec 62 Site,2025-05-18,24,21,87.5
+2177,28,Noida Sec 62 Site,2025-05-19,41,36,87.8
+2178,28,Noida Sec 62 Site,2025-05-20,47,38,80.85
+2179,28,Noida Sec 62 Site,2025-05-21,42,37,88.1
+2180,28,Noida Sec 62 Site,2025-05-22,36,32,88.89
+2181,28,Noida Sec 62 Site,2025-05-23,33,30,90.91
+2182,28,Noida Sec 62 Site,2025-05-24,44,36,81.82
+2183,28,Noida Sec 62 Site,2025-05-25,49,42,85.71
+2184,28,Noida Sec 62 Site,2025-05-26,25,21,84.0
+2185,28,Noida Sec 62 Site,2025-05-27,37,32,86.49
+2186,28,Noida Sec 62 Site,2025-05-28,43,35,81.4
+2187,29,Noida Express Way Site,2025-03-24,46,44,95.65
+2188,29,Noida Express Way Site,2025-03-25,43,37,86.05
+2189,29,Noida Express Way Site,2025-03-26,30,28,93.33
+2190,29,Noida Express Way Site,2025-03-27,33,31,93.94
+2191,29,Noida Express Way Site,2025-03-28,29,26,89.66
+2192,29,Noida Express Way Site,2025-03-29,49,46,93.88
+2193,29,Noida Express Way Site,2025-03-30,40,38,95.0
+2194,29,Noida Express Way Site,2025-03-31,28,24,85.71
+2195,29,Noida Express Way Site,2025-04-01,26,23,88.46
+2196,29,Noida Express Way Site,2025-04-02,25,22,88.0
+2197,29,Noida Express Way Site,2025-04-03,39,36,92.31
+2198,29,Noida Express Way Site,2025-04-04,39,36,92.31
+2199,29,Noida Express Way Site,2025-04-05,27,25,92.59
+2200,29,Noida Express Way Site,2025-04-06,27,25,92.59
+2201,29,Noida Express Way Site,2025-04-07,31,27,87.1
+2202,29,Noida Express Way Site,2025-04-08,44,40,90.91
+2203,29,Noida Express Way Site,2025-04-09,36,34,94.44
+2204,29,Noida Express Way Site,2025-04-10,35,33,94.29
+2205,29,Noida Express Way Site,2025-04-11,31,27,87.1
+2206,29,Noida Express Way Site,2025-04-12,32,29,90.62
+2207,29,Noida Express Way Site,2025-04-13,24,21,87.5
+2208,29,Noida Express Way Site,2025-04-14,27,23,85.19
+2209,29,Noida Express Way Site,2025-04-15,44,42,95.45
+2210,29,Noida Express Way Site,2025-04-16,49,43,87.76
+2211,29,Noida Express Way Site,2025-04-17,33,29,87.88
+2212,29,Noida Express Way Site,2025-04-18,41,39,95.12
+2213,29,Noida Express Way Site,2025-04-19,44,39,88.64
+2214,29,Noida Express Way Site,2025-04-20,25,24,96.0
+2215,29,Noida Express Way Site,2025-04-21,34,32,94.12
+2216,29,Noida Express Way Site,2025-04-22,35,32,91.43
+2217,29,Noida Express Way Site,2025-04-23,47,42,89.36
+2218,29,Noida Express Way Site,2025-04-24,27,24,88.89
+2219,29,Noida Express Way Site,2025-04-25,44,38,86.36
+2220,29,Noida Express Way Site,2025-04-26,43,40,93.02
+2221,29,Noida Express Way Site,2025-04-27,43,38,88.37
+2222,29,Noida Express Way Site,2025-04-28,39,37,94.87
+2223,29,Noida Express Way Site,2025-04-29,38,35,92.11
+2224,29,Noida Express Way Site,2025-04-30,36,33,91.67
+2225,29,Noida Express Way Site,2025-05-01,42,39,92.86
+2226,29,Noida Express Way Site,2025-05-02,36,31,86.11
+2227,29,Noida Express Way Site,2025-05-03,34,32,94.12
+2228,29,Noida Express Way Site,2025-05-04,21,20,95.24
+2229,29,Noida Express Way Site,2025-05-05,27,25,92.59
+2230,29,Noida Express Way Site,2025-05-06,32,31,96.88
+2231,29,Noida Express Way Site,2025-05-07,21,19,90.48
+2232,29,Noida Express Way Site,2025-05-08,36,34,94.44
+2233,29,Noida Express Way Site,2025-05-09,50,43,86.0
+2234,29,Noida Express Way Site,2025-05-10,29,26,89.66
+2235,29,Noida Express Way Site,2025-05-11,48,43,89.58
+2236,29,Noida Express Way Site,2025-05-12,46,41,89.13
+2237,29,Noida Express Way Site,2025-05-13,25,23,92.0
+2238,29,Noida Express Way Site,2025-05-14,39,37,94.87
+2239,29,Noida Express Way Site,2025-05-15,42,38,90.48
+2240,29,Noida Express Way Site,2025-05-16,24,22,91.67
+2241,29,Noida Express Way Site,2025-05-17,40,36,90.0
+2242,29,Noida Express Way Site,2025-05-18,43,39,90.7
+2243,29,Noida Express Way Site,2025-05-19,25,23,92.0
+2244,29,Noida Express Way Site,2025-05-20,50,47,94.0
+2245,29,Noida Express Way Site,2025-05-21,37,32,86.49
+2246,29,Noida Express Way Site,2025-05-22,33,29,87.88
+2247,29,Noida Express Way Site,2025-05-23,20,18,90.0
+2248,29,Noida Express Way Site,2025-05-24,38,36,94.74
+2249,29,Noida Express Way Site,2025-05-25,48,42,87.5
+2250,29,Noida Express Way Site,2025-05-26,34,29,85.29
+2251,29,Noida Express Way Site,2025-05-27,30,28,93.33
+2252,29,Noida Express Way Site,2025-05-28,49,46,93.88
+2253,29,Noida Express Way Site,2025-05-29,25,23,92.0
+2254,29,Noida Express Way Site,2025-05-30,23,20,86.96
+2255,29,Noida Express Way Site,2025-05-31,42,38,90.48
+2256,29,Noida Express Way Site,2025-06-01,31,27,87.1
+2257,30,Greater Noida Depot,2025-01-25,32,27,84.38
+2258,30,Greater Noida Depot,2025-01-26,36,30,83.33
+2259,30,Greater Noida Depot,2025-01-27,25,20,80.0
+2260,30,Greater Noida Depot,2025-01-28,32,25,78.12
+2261,30,Greater Noida Depot,2025-01-29,25,22,88.0
+2262,30,Greater Noida Depot,2025-01-30,38,33,86.84
+2263,30,Greater Noida Depot,2025-01-31,47,37,78.72
+2264,30,Greater Noida Depot,2025-02-01,47,37,78.72
+2265,30,Greater Noida Depot,2025-02-02,44,37,84.09
+2266,30,Greater Noida Depot,2025-02-03,33,27,81.82
+2267,30,Greater Noida Depot,2025-02-04,43,37,86.05
+2268,30,Greater Noida Depot,2025-02-05,34,28,82.35
+2269,30,Greater Noida Depot,2025-02-06,25,20,80.0
+2270,30,Greater Noida Depot,2025-02-07,24,21,87.5
+2271,30,Greater Noida Depot,2025-02-08,20,17,85.0
+2272,30,Greater Noida Depot,2025-02-09,28,22,78.57
+2273,30,Greater Noida Depot,2025-02-10,35,30,85.71
+2274,30,Greater Noida Depot,2025-02-11,37,32,86.49
+2275,30,Greater Noida Depot,2025-02-12,39,34,87.18
+2276,30,Greater Noida Depot,2025-02-13,27,22,81.48
+2277,30,Greater Noida Depot,2025-02-14,41,34,82.93
+2278,30,Greater Noida Depot,2025-02-15,33,27,81.82
+2279,30,Greater Noida Depot,2025-02-16,39,33,84.62
+2280,30,Greater Noida Depot,2025-02-17,27,23,85.19
+2281,30,Greater Noida Depot,2025-02-18,28,24,85.71
+2282,30,Greater Noida Depot,2025-02-19,37,32,86.49
+2283,30,Greater Noida Depot,2025-02-20,26,20,76.92
+2284,30,Greater Noida Depot,2025-02-21,24,19,79.17
+2285,30,Greater Noida Depot,2025-02-22,31,24,77.42
+2286,30,Greater Noida Depot,2025-02-23,47,37,78.72
+2287,30,Greater Noida Depot,2025-02-24,38,33,86.84
+2288,30,Greater Noida Depot,2025-02-25,29,24,82.76
+2289,30,Greater Noida Depot,2025-02-26,22,17,77.27
+2290,30,Greater Noida Depot,2025-02-27,33,29,87.88
+2291,30,Greater Noida Depot,2025-02-28,25,21,84.0
+2292,30,Greater Noida Depot,2025-03-01,39,33,84.62
+2293,30,Greater Noida Depot,2025-03-02,42,35,83.33
+2294,30,Greater Noida Depot,2025-03-03,45,38,84.44
+2295,30,Greater Noida Depot,2025-03-04,50,41,82.0
+2296,30,Greater Noida Depot,2025-03-05,38,31,81.58
+2297,30,Greater Noida Depot,2025-03-06,21,17,80.95
+2298,30,Greater Noida Depot,2025-03-07,29,24,82.76
+2299,30,Greater Noida Depot,2025-03-08,48,39,81.25
+2300,30,Greater Noida Depot,2025-03-09,22,19,86.36
+2301,30,Greater Noida Depot,2025-03-10,46,38,82.61
+2302,30,Greater Noida Depot,2025-03-11,29,24,82.76
+2303,30,Greater Noida Depot,2025-03-12,23,20,86.96
+2304,30,Greater Noida Depot,2025-03-13,28,23,82.14
+2305,30,Greater Noida Depot,2025-03-14,33,27,81.82
+2306,30,Greater Noida Depot,2025-03-15,42,34,80.95
+2307,30,Greater Noida Depot,2025-03-16,21,17,80.95
+2308,30,Greater Noida Depot,2025-03-17,43,38,88.37
+2309,30,Greater Noida Depot,2025-03-18,36,32,88.89
+2310,30,Greater Noida Depot,2025-03-19,35,30,85.71
+2311,30,Greater Noida Depot,2025-03-20,39,34,87.18
+2312,30,Greater Noida Depot,2025-03-21,42,34,80.95
+2313,30,Greater Noida Depot,2025-03-22,39,34,87.18
+2314,30,Greater Noida Depot,2025-03-23,28,23,82.14
+2315,30,Greater Noida Depot,2025-03-24,39,32,82.05
+2316,30,Greater Noida Depot,2025-03-25,24,20,83.33
+2317,30,Greater Noida Depot,2025-03-26,35,29,82.86
+2318,30,Greater Noida Depot,2025-03-27,40,33,82.5
+2319,30,Greater Noida Depot,2025-03-28,45,36,80.0
+2320,30,Greater Noida Depot,2025-03-29,39,31,79.49
+2321,30,Greater Noida Depot,2025-03-30,29,25,86.21
+2322,30,Greater Noida Depot,2025-03-31,20,16,80.0
+2323,30,Greater Noida Depot,2025-04-01,34,29,85.29
+2324,30,Greater Noida Depot,2025-04-02,23,20,86.96
+2325,30,Greater Noida Depot,2025-04-03,26,22,84.62
+2326,30,Greater Noida Depot,2025-04-04,33,27,81.82
+2327,30,Greater Noida Depot,2025-04-05,30,24,80.0
+2328,30,Greater Noida Depot,2025-04-06,45,38,84.44
+2329,30,Greater Noida Depot,2025-04-07,20,17,85.0
+2330,30,Greater Noida Depot,2025-04-08,42,34,80.95
+2331,30,Greater Noida Depot,2025-04-09,45,35,77.78
+2332,30,Greater Noida Depot,2025-04-10,29,24,82.76
+2333,30,Greater Noida Depot,2025-04-11,30,26,86.67
+2334,30,Greater Noida Depot,2025-04-12,23,20,86.96
+2335,30,Greater Noida Depot,2025-04-13,30,25,83.33
+2336,30,Greater Noida Depot,2025-04-14,38,32,84.21
+2337,30,Greater Noida Depot,2025-04-15,20,17,85.0
+2338,30,Greater Noida Depot,2025-04-16,26,21,80.77
+2339,31,Noida Sec 150 Site,2025-02-26,49,45,91.84
+2340,31,Noida Sec 150 Site,2025-02-27,49,44,89.8
+2341,31,Noida Sec 150 Site,2025-02-28,21,19,90.48
+2342,31,Noida Sec 150 Site,2025-03-01,35,30,85.71
+2343,31,Noida Sec 150 Site,2025-03-02,34,32,94.12
+2344,31,Noida Sec 150 Site,2025-03-03,37,35,94.59
+2345,31,Noida Sec 150 Site,2025-03-04,34,32,94.12
+2346,31,Noida Sec 150 Site,2025-03-05,33,31,93.94
+2347,31,Noida Sec 150 Site,2025-03-06,21,20,95.24
+2348,31,Noida Sec 150 Site,2025-03-07,29,26,89.66
+2349,31,Noida Sec 150 Site,2025-03-08,41,36,87.8
+2350,31,Noida Sec 150 Site,2025-03-09,37,32,86.49
+2351,31,Noida Sec 150 Site,2025-03-10,38,35,92.11
+2352,31,Noida Sec 150 Site,2025-03-11,45,42,93.33
+2353,31,Noida Sec 150 Site,2025-03-12,45,40,88.89
+2354,31,Noida Sec 150 Site,2025-03-13,24,21,87.5
+2355,31,Noida Sec 150 Site,2025-03-14,20,18,90.0
+2356,31,Noida Sec 150 Site,2025-03-15,32,29,90.62
+2357,31,Noida Sec 150 Site,2025-03-16,46,40,86.96
+2358,31,Noida Sec 150 Site,2025-03-17,39,35,89.74
+2359,31,Noida Sec 150 Site,2025-03-18,39,34,87.18
+2360,31,Noida Sec 150 Site,2025-03-19,45,42,93.33
+2361,31,Noida Sec 150 Site,2025-03-20,42,39,92.86
+2362,31,Noida Sec 150 Site,2025-03-21,42,36,85.71
+2363,31,Noida Sec 150 Site,2025-03-22,33,28,84.85
+2364,31,Noida Sec 150 Site,2025-03-23,48,42,87.5
+2365,31,Noida Sec 150 Site,2025-03-24,34,32,94.12
+2366,31,Noida Sec 150 Site,2025-03-25,29,25,86.21
+2367,31,Noida Sec 150 Site,2025-03-26,29,25,86.21
+2368,31,Noida Sec 150 Site,2025-03-27,31,29,93.55
+2369,31,Noida Sec 150 Site,2025-03-28,44,38,86.36
+2370,31,Noida Sec 150 Site,2025-03-29,22,20,90.91
+2371,31,Noida Sec 150 Site,2025-03-30,20,19,95.0
+2372,31,Noida Sec 150 Site,2025-03-31,48,43,89.58
+2373,31,Noida Sec 150 Site,2025-04-01,26,23,88.46
+2374,31,Noida Sec 150 Site,2025-04-02,35,32,91.43
+2375,31,Noida Sec 150 Site,2025-04-03,36,32,88.89
+2376,31,Noida Sec 150 Site,2025-04-04,30,26,86.67
+2377,31,Noida Sec 150 Site,2025-04-05,47,40,85.11
+2378,31,Noida Sec 150 Site,2025-04-06,50,45,90.0
+2379,31,Noida Sec 150 Site,2025-04-07,24,21,87.5
+2380,31,Noida Sec 150 Site,2025-04-08,21,19,90.48
+2381,31,Noida Sec 150 Site,2025-04-09,42,39,92.86
+2382,31,Noida Sec 150 Site,2025-04-10,23,20,86.96
+2383,31,Noida Sec 150 Site,2025-04-11,49,42,85.71
+2384,31,Noida Sec 150 Site,2025-04-12,47,43,91.49
+2385,31,Noida Sec 150 Site,2025-04-13,22,19,86.36
+2386,31,Noida Sec 150 Site,2025-04-14,48,41,85.42
+2387,31,Noida Sec 150 Site,2025-04-15,36,33,91.67
+2388,31,Noida Sec 150 Site,2025-04-16,43,38,88.37
+2389,31,Noida Sec 150 Site,2025-04-17,38,35,92.11
+2390,31,Noida Sec 150 Site,2025-04-18,40,38,95.0
+2391,31,Noida Sec 150 Site,2025-04-19,30,26,86.67
+2392,31,Noida Sec 150 Site,2025-04-20,29,25,86.21
+2393,31,Noida Sec 150 Site,2025-04-21,30,28,93.33
+2394,31,Noida Sec 150 Site,2025-04-22,41,35,85.37
+2395,31,Noida Sec 150 Site,2025-04-23,24,21,87.5
+2396,31,Noida Sec 150 Site,2025-04-24,23,20,86.96
+2397,31,Noida Sec 150 Site,2025-04-25,39,35,89.74
+2398,31,Noida Sec 150 Site,2025-04-26,23,20,86.96
+2399,31,Noida Sec 150 Site,2025-04-27,31,28,90.32
+2400,31,Noida Sec 150 Site,2025-04-28,28,24,85.71
+2401,31,Noida Sec 150 Site,2025-04-29,42,39,92.86
+2402,31,Noida Sec 150 Site,2025-04-30,38,33,86.84
+2403,31,Noida Sec 150 Site,2025-05-01,22,19,86.36
+2404,31,Noida Sec 150 Site,2025-05-02,48,42,87.5
+2405,31,Noida Sec 150 Site,2025-05-03,34,29,85.29
+2406,31,Noida Sec 150 Site,2025-05-04,20,18,90.0
+2407,31,Noida Sec 150 Site,2025-05-05,41,35,85.37
+2408,31,Noida Sec 150 Site,2025-05-06,32,27,84.38
+2409,32,Noida Sec 62 Site,2025-01-31,32,26,81.25
+2410,32,Noida Sec 62 Site,2025-02-01,39,34,87.18
+2411,32,Noida Sec 62 Site,2025-02-02,40,35,87.5
+2412,32,Noida Sec 62 Site,2025-02-03,42,35,83.33
+2413,32,Noida Sec 62 Site,2025-02-04,31,25,80.65
+2414,32,Noida Sec 62 Site,2025-02-05,46,37,80.43
+2415,32,Noida Sec 62 Site,2025-02-06,44,38,86.36
+2416,32,Noida Sec 62 Site,2025-02-07,37,29,78.38
+2417,32,Noida Sec 62 Site,2025-02-08,49,42,85.71
+2418,32,Noida Sec 62 Site,2025-02-09,34,29,85.29
+2419,32,Noida Sec 62 Site,2025-02-10,22,19,86.36
+2420,32,Noida Sec 62 Site,2025-02-11,49,42,85.71
+2421,32,Noida Sec 62 Site,2025-02-12,23,19,82.61
+2422,32,Noida Sec 62 Site,2025-02-13,41,35,85.37
+2423,32,Noida Sec 62 Site,2025-02-14,44,37,84.09
+2424,32,Noida Sec 62 Site,2025-02-15,27,24,88.89
+2425,32,Noida Sec 62 Site,2025-02-16,24,21,87.5
+2426,32,Noida Sec 62 Site,2025-02-17,39,32,82.05
+2427,32,Noida Sec 62 Site,2025-02-18,31,26,83.87
+2428,32,Noida Sec 62 Site,2025-02-19,42,37,88.1
+2429,32,Noida Sec 62 Site,2025-02-20,30,26,86.67
+2430,32,Noida Sec 62 Site,2025-02-21,48,39,81.25
+2431,32,Noida Sec 62 Site,2025-02-22,35,28,80.0
+2432,32,Noida Sec 62 Site,2025-02-23,35,28,80.0
+2433,32,Noida Sec 62 Site,2025-02-24,35,29,82.86
+2434,32,Noida Sec 62 Site,2025-02-25,25,20,80.0
+2435,32,Noida Sec 62 Site,2025-02-26,31,26,83.87
+2436,32,Noida Sec 62 Site,2025-02-27,24,20,83.33
+2437,32,Noida Sec 62 Site,2025-02-28,32,28,87.5
+2438,32,Noida Sec 62 Site,2025-03-01,45,36,80.0
+2439,32,Noida Sec 62 Site,2025-03-02,37,32,86.49
+2440,32,Noida Sec 62 Site,2025-03-03,45,37,82.22
+2441,32,Noida Sec 62 Site,2025-03-04,34,28,82.35
+2442,32,Noida Sec 62 Site,2025-03-05,33,27,81.82
+2443,32,Noida Sec 62 Site,2025-03-06,27,23,85.19
+2444,32,Noida Sec 62 Site,2025-03-07,35,29,82.86
+2445,32,Noida Sec 62 Site,2025-03-08,30,24,80.0
+2446,32,Noida Sec 62 Site,2025-03-09,42,36,85.71
+2447,32,Noida Sec 62 Site,2025-03-10,45,40,88.89
+2448,32,Noida Sec 62 Site,2025-03-11,38,33,86.84
+2449,32,Noida Sec 62 Site,2025-03-12,37,32,86.49
+2450,32,Noida Sec 62 Site,2025-03-13,25,21,84.0
+2451,32,Noida Sec 62 Site,2025-03-14,22,19,86.36
+2452,32,Noida Sec 62 Site,2025-03-15,42,36,85.71
+2453,32,Noida Sec 62 Site,2025-03-16,35,28,80.0
+2454,32,Noida Sec 62 Site,2025-03-17,39,33,84.62
+2455,32,Noida Sec 62 Site,2025-03-18,37,30,81.08
+2456,32,Noida Sec 62 Site,2025-03-19,34,27,79.41
+2457,32,Noida Sec 62 Site,2025-03-20,50,41,82.0
+2458,32,Noida Sec 62 Site,2025-03-21,39,31,79.49
+2459,32,Noida Sec 62 Site,2025-03-22,46,39,84.78
+2460,32,Noida Sec 62 Site,2025-03-23,46,38,82.61
+2461,32,Noida Sec 62 Site,2025-03-24,35,30,85.71
+2462,32,Noida Sec 62 Site,2025-03-25,21,17,80.95
+2463,32,Noida Sec 62 Site,2025-03-26,46,37,80.43
+2464,32,Noida Sec 62 Site,2025-03-27,38,33,86.84
+2465,32,Noida Sec 62 Site,2025-03-28,40,35,87.5
+2466,32,Noida Sec 62 Site,2025-03-29,44,35,79.55
+2467,32,Noida Sec 62 Site,2025-03-30,24,20,83.33
+2468,32,Noida Sec 62 Site,2025-03-31,29,24,82.76
+2469,32,Noida Sec 62 Site,2025-04-01,38,32,84.21
+2470,32,Noida Sec 62 Site,2025-04-02,26,22,84.62
+2471,32,Noida Sec 62 Site,2025-04-03,30,25,83.33
+2472,32,Noida Sec 62 Site,2025-04-04,45,40,88.89
+2473,32,Noida Sec 62 Site,2025-04-05,29,26,89.66
+2474,32,Noida Sec 62 Site,2025-04-06,49,41,83.67
+2475,32,Noida Sec 62 Site,2025-04-07,49,40,81.63
+2476,32,Noida Sec 62 Site,2025-04-08,22,19,86.36
+2477,32,Noida Sec 62 Site,2025-04-09,39,35,89.74
+2478,32,Noida Sec 62 Site,2025-04-10,32,28,87.5
+2479,32,Noida Sec 62 Site,2025-04-11,47,38,80.85
+2480,32,Noida Sec 62 Site,2025-04-12,31,27,87.1
+2481,32,Noida Sec 62 Site,2025-04-13,50,40,80.0
+2482,33,Noida Express Way Site,2025-02-18,37,28,75.68
+2483,33,Noida Express Way Site,2025-02-19,31,21,67.74
+2484,33,Noida Express Way Site,2025-02-20,29,22,75.86
+2485,33,Noida Express Way Site,2025-02-21,27,19,70.37
+2486,33,Noida Express Way Site,2025-02-22,38,27,71.05
+2487,33,Noida Express Way Site,2025-02-23,30,22,73.33
+2488,33,Noida Express Way Site,2025-02-24,32,23,71.88
+2489,33,Noida Express Way Site,2025-02-25,37,26,70.27
+2490,33,Noida Express Way Site,2025-02-26,25,18,72.0
+2491,33,Noida Express Way Site,2025-02-27,26,19,73.08
+2492,33,Noida Express Way Site,2025-02-28,46,35,76.09
+2493,33,Noida Express Way Site,2025-03-01,46,33,71.74
+2494,33,Noida Express Way Site,2025-03-02,29,22,75.86
+2495,33,Noida Express Way Site,2025-03-03,41,28,68.29
+2496,33,Noida Express Way Site,2025-03-04,20,14,70.0
+2497,33,Noida Express Way Site,2025-03-05,20,14,70.0
+2498,33,Noida Express Way Site,2025-03-06,48,35,72.92
+2499,33,Noida Express Way Site,2025-03-07,33,25,75.76
+2500,33,Noida Express Way Site,2025-03-08,24,16,66.67
+2501,33,Noida Express Way Site,2025-03-09,40,30,75.0
+2502,33,Noida Express Way Site,2025-03-10,47,34,72.34
+2503,33,Noida Express Way Site,2025-03-11,45,33,73.33
+2504,33,Noida Express Way Site,2025-03-12,49,35,71.43
+2505,33,Noida Express Way Site,2025-03-13,25,18,72.0
+2506,33,Noida Express Way Site,2025-03-14,33,24,72.73
+2507,33,Noida Express Way Site,2025-03-15,34,24,70.59
+2508,33,Noida Express Way Site,2025-03-16,27,19,70.37
+2509,33,Noida Express Way Site,2025-03-17,39,26,66.67
+2510,33,Noida Express Way Site,2025-03-18,35,27,77.14
+2511,33,Noida Express Way Site,2025-03-19,27,20,74.07
+2512,33,Noida Express Way Site,2025-03-20,28,20,71.43
+2513,33,Noida Express Way Site,2025-03-21,37,27,72.97
+2514,33,Noida Express Way Site,2025-03-22,21,16,76.19
+2515,33,Noida Express Way Site,2025-03-23,38,27,71.05
+2516,33,Noida Express Way Site,2025-03-24,31,21,67.74
+2517,33,Noida Express Way Site,2025-03-25,35,27,77.14
+2518,33,Noida Express Way Site,2025-03-26,22,15,68.18
+2519,33,Noida Express Way Site,2025-03-27,43,31,72.09
+2520,33,Noida Express Way Site,2025-03-28,47,36,76.6
+2521,33,Noida Express Way Site,2025-03-29,44,31,70.45
+2522,33,Noida Express Way Site,2025-03-30,36,25,69.44
+2523,33,Noida Express Way Site,2025-03-31,48,35,72.92
+2524,33,Noida Express Way Site,2025-04-01,27,19,70.37
+2525,33,Noida Express Way Site,2025-04-02,43,32,74.42
+2526,33,Noida Express Way Site,2025-04-03,41,28,68.29
+2527,33,Noida Express Way Site,2025-04-04,40,29,72.5
+2528,33,Noida Express Way Site,2025-04-05,38,27,71.05
+2529,33,Noida Express Way Site,2025-04-06,21,16,76.19
+2530,33,Noida Express Way Site,2025-04-07,37,28,75.68
+2531,33,Noida Express Way Site,2025-04-08,35,25,71.43
+2532,33,Noida Express Way Site,2025-04-09,48,35,72.92
+2533,33,Noida Express Way Site,2025-04-10,43,30,69.77
+2534,33,Noida Express Way Site,2025-04-11,31,24,77.42
+2535,33,Noida Express Way Site,2025-04-12,45,32,71.11
+2536,33,Noida Express Way Site,2025-04-13,25,17,68.0
+2537,33,Noida Express Way Site,2025-04-14,49,36,73.47
+2538,33,Noida Express Way Site,2025-04-15,29,22,75.86
+2539,33,Noida Express Way Site,2025-04-16,38,27,71.05
+2540,33,Noida Express Way Site,2025-04-17,40,29,72.5
+2541,33,Noida Express Way Site,2025-04-18,25,18,72.0
+2542,33,Noida Express Way Site,2025-04-19,41,32,78.05
+2543,33,Noida Express Way Site,2025-04-20,45,34,75.56
+2544,33,Noida Express Way Site,2025-04-21,20,14,70.0
+2545,33,Noida Express Way Site,2025-04-22,22,15,68.18
+2546,33,Noida Express Way Site,2025-04-23,22,17,77.27
+2547,33,Noida Express Way Site,2025-04-24,28,20,71.43
+2548,33,Noida Express Way Site,2025-04-25,39,27,69.23
+2549,33,Noida Express Way Site,2025-04-26,47,33,70.21
+2550,33,Noida Express Way Site,2025-04-27,43,29,67.44
+2551,33,Noida Express Way Site,2025-04-28,25,19,76.0
+2552,33,Noida Express Way Site,2025-04-29,43,30,69.77
+2553,33,Noida Express Way Site,2025-04-30,34,24,70.59
+2554,33,Noida Express Way Site,2025-05-01,25,17,68.0
+2555,33,Noida Express Way Site,2025-05-02,42,29,69.05
+2556,33,Noida Express Way Site,2025-05-03,25,19,76.0
+2557,33,Noida Express Way Site,2025-05-04,47,32,68.09
+2558,33,Noida Express Way Site,2025-05-05,22,17,77.27
+2559,33,Noida Express Way Site,2025-05-06,39,30,76.92
+2560,33,Noida Express Way Site,2025-05-07,24,18,75.0
+2561,33,Noida Express Way Site,2025-05-08,44,34,77.27
+2562,33,Noida Express Way Site,2025-05-09,44,31,70.45
+2563,33,Noida Express Way Site,2025-05-10,41,29,70.73
+2564,34,Greater Noida Depot,2025-03-13,25,19,76.0
+2565,34,Greater Noida Depot,2025-03-14,43,35,81.4
+2566,34,Greater Noida Depot,2025-03-15,21,17,80.95
+2567,34,Greater Noida Depot,2025-03-16,44,36,81.82
+2568,34,Greater Noida Depot,2025-03-17,21,16,76.19
+2569,34,Greater Noida Depot,2025-03-18,32,25,78.12
+2570,34,Greater Noida Depot,2025-03-19,35,28,80.0
+2571,34,Greater Noida Depot,2025-03-20,44,36,81.82
+2572,34,Greater Noida Depot,2025-03-21,27,21,77.78
+2573,34,Greater Noida Depot,2025-03-22,42,32,76.19
+2574,34,Greater Noida Depot,2025-03-23,28,21,75.0
+2575,34,Greater Noida Depot,2025-03-24,47,36,76.6
+2576,34,Greater Noida Depot,2025-03-25,29,24,82.76
+2577,34,Greater Noida Depot,2025-03-26,34,26,76.47
+2578,34,Greater Noida Depot,2025-03-27,30,25,83.33
+2579,34,Greater Noida Depot,2025-03-28,41,34,82.93
+2580,34,Greater Noida Depot,2025-03-29,23,19,82.61
+2581,34,Greater Noida Depot,2025-03-30,40,30,75.0
+2582,34,Greater Noida Depot,2025-03-31,47,36,76.6
+2583,34,Greater Noida Depot,2025-04-01,49,39,79.59
+2584,34,Greater Noida Depot,2025-04-02,28,21,75.0
+2585,34,Greater Noida Depot,2025-04-03,28,23,82.14
+2586,34,Greater Noida Depot,2025-04-04,28,22,78.57
+2587,34,Greater Noida Depot,2025-04-05,32,25,78.12
+2588,34,Greater Noida Depot,2025-04-06,41,33,80.49
+2589,34,Greater Noida Depot,2025-04-07,43,34,79.07
+2590,34,Greater Noida Depot,2025-04-08,44,33,75.0
+2591,34,Greater Noida Depot,2025-04-09,30,24,80.0
+2592,34,Greater Noida Depot,2025-04-10,25,19,76.0
+2593,34,Greater Noida Depot,2025-04-11,20,16,80.0
+2594,34,Greater Noida Depot,2025-04-12,46,34,73.91
+2595,34,Greater Noida Depot,2025-04-13,33,24,72.73
+2596,34,Greater Noida Depot,2025-04-14,23,18,78.26
+2597,34,Greater Noida Depot,2025-04-15,31,23,74.19
+2598,34,Greater Noida Depot,2025-04-16,29,22,75.86
+2599,34,Greater Noida Depot,2025-04-17,21,15,71.43
+2600,34,Greater Noida Depot,2025-04-18,22,16,72.73
+2601,34,Greater Noida Depot,2025-04-19,39,31,79.49
+2602,34,Greater Noida Depot,2025-04-20,46,34,73.91
+2603,34,Greater Noida Depot,2025-04-21,39,31,79.49
+2604,34,Greater Noida Depot,2025-04-22,42,35,83.33
+2605,34,Greater Noida Depot,2025-04-23,22,18,81.82
+2606,34,Greater Noida Depot,2025-04-24,24,18,75.0
+2607,34,Greater Noida Depot,2025-04-25,44,36,81.82
+2608,34,Greater Noida Depot,2025-04-26,38,31,81.58
+2609,34,Greater Noida Depot,2025-04-27,25,20,80.0
+2610,34,Greater Noida Depot,2025-04-28,42,31,73.81
+2611,34,Greater Noida Depot,2025-04-29,29,22,75.86
+2612,34,Greater Noida Depot,2025-04-30,49,36,73.47
+2613,34,Greater Noida Depot,2025-05-01,34,28,82.35
+2614,34,Greater Noida Depot,2025-05-02,28,22,78.57
+2615,34,Greater Noida Depot,2025-05-03,42,34,80.95
+2616,34,Greater Noida Depot,2025-05-04,44,35,79.55
+2617,34,Greater Noida Depot,2025-05-05,28,21,75.0
+2618,34,Greater Noida Depot,2025-05-06,22,17,77.27
+2619,34,Greater Noida Depot,2025-05-07,21,16,76.19
+2620,34,Greater Noida Depot,2025-05-08,30,25,83.33
+2621,34,Greater Noida Depot,2025-05-09,28,23,82.14
+2622,34,Greater Noida Depot,2025-05-10,28,21,75.0
+2623,34,Greater Noida Depot,2025-05-11,22,17,77.27
+2624,34,Greater Noida Depot,2025-05-12,49,37,75.51
+2625,34,Greater Noida Depot,2025-05-13,32,24,75.0
+2626,34,Greater Noida Depot,2025-05-14,35,26,74.29
+2627,34,Greater Noida Depot,2025-05-15,37,30,81.08
+2628,34,Greater Noida Depot,2025-05-16,26,20,76.92
+2629,34,Greater Noida Depot,2025-05-17,23,19,82.61
+2630,34,Greater Noida Depot,2025-05-18,42,32,76.19
+2631,34,Greater Noida Depot,2025-05-19,21,15,71.43
+2632,34,Greater Noida Depot,2025-05-20,38,30,78.95
+2633,34,Greater Noida Depot,2025-05-21,44,34,77.27
+2634,34,Greater Noida Depot,2025-05-22,48,37,77.08
+2635,34,Greater Noida Depot,2025-05-23,40,32,80.0
+2636,34,Greater Noida Depot,2025-05-24,49,36,73.47
+2637,34,Greater Noida Depot,2025-05-25,32,24,75.0
+2638,34,Greater Noida Depot,2025-05-26,42,32,76.19
+2639,34,Greater Noida Depot,2025-05-27,32,25,78.12
+2640,34,Greater Noida Depot,2025-05-28,36,29,80.56
+2641,34,Greater Noida Depot,2025-05-29,44,34,77.27
+2642,34,Greater Noida Depot,2025-05-30,33,25,75.76
+2643,34,Greater Noida Depot,2025-05-31,43,35,81.4
+2644,35,Noida Sec 150 Site,2025-03-11,22,17,77.27
+2645,35,Noida Sec 150 Site,2025-03-12,20,15,75.0
+2646,35,Noida Sec 150 Site,2025-03-13,42,34,80.95
+2647,35,Noida Sec 150 Site,2025-03-14,35,26,74.29
+2648,35,Noida Sec 150 Site,2025-03-15,37,30,81.08
+2649,35,Noida Sec 150 Site,2025-03-16,31,23,74.19
+2650,35,Noida Sec 150 Site,2025-03-17,29,22,75.86
+2651,35,Noida Sec 150 Site,2025-03-18,40,33,82.5
+2652,35,Noida Sec 150 Site,2025-03-19,40,29,72.5
+2653,35,Noida Sec 150 Site,2025-03-20,37,30,81.08
+2654,35,Noida Sec 150 Site,2025-03-21,30,22,73.33
+2655,35,Noida Sec 150 Site,2025-03-22,34,27,79.41
+2656,35,Noida Sec 150 Site,2025-03-23,29,23,79.31
+2657,35,Noida Sec 150 Site,2025-03-24,25,19,76.0
+2658,35,Noida Sec 150 Site,2025-03-25,50,38,76.0
+2659,35,Noida Sec 150 Site,2025-03-26,26,20,76.92
+2660,35,Noida Sec 150 Site,2025-03-27,32,26,81.25
+2661,35,Noida Sec 150 Site,2025-03-28,40,32,80.0
+2662,35,Noida Sec 150 Site,2025-03-29,35,26,74.29
+2663,35,Noida Sec 150 Site,2025-03-30,40,31,77.5
+2664,35,Noida Sec 150 Site,2025-03-31,26,19,73.08
+2665,35,Noida Sec 150 Site,2025-04-01,26,19,73.08
+2666,35,Noida Sec 150 Site,2025-04-02,38,28,73.68
+2667,35,Noida Sec 150 Site,2025-04-03,32,23,71.88
+2668,35,Noida Sec 150 Site,2025-04-04,37,29,78.38
+2669,35,Noida Sec 150 Site,2025-04-05,35,27,77.14
+2670,35,Noida Sec 150 Site,2025-04-06,46,37,80.43
+2671,35,Noida Sec 150 Site,2025-04-07,50,41,82.0
+2672,35,Noida Sec 150 Site,2025-04-08,21,16,76.19
+2673,35,Noida Sec 150 Site,2025-04-09,30,24,80.0
+2674,35,Noida Sec 150 Site,2025-04-10,21,16,76.19
+2675,35,Noida Sec 150 Site,2025-04-11,26,21,80.77
+2676,35,Noida Sec 150 Site,2025-04-12,41,32,78.05
+2677,35,Noida Sec 150 Site,2025-04-13,50,39,78.0
+2678,35,Noida Sec 150 Site,2025-04-14,47,36,76.6
+2679,35,Noida Sec 150 Site,2025-04-15,43,33,76.74
+2680,35,Noida Sec 150 Site,2025-04-16,49,36,73.47
+2681,35,Noida Sec 150 Site,2025-04-17,43,32,74.42
+2682,35,Noida Sec 150 Site,2025-04-18,40,29,72.5
+2683,35,Noida Sec 150 Site,2025-04-19,49,40,81.63
+2684,35,Noida Sec 150 Site,2025-04-20,21,16,76.19
+2685,35,Noida Sec 150 Site,2025-04-21,40,29,72.5
+2686,35,Noida Sec 150 Site,2025-04-22,25,20,80.0
+2687,35,Noida Sec 150 Site,2025-04-23,48,36,75.0
+2688,35,Noida Sec 150 Site,2025-04-24,45,33,73.33
+2689,35,Noida Sec 150 Site,2025-04-25,39,29,74.36
+2690,35,Noida Sec 150 Site,2025-04-26,38,28,73.68
+2691,35,Noida Sec 150 Site,2025-04-27,46,34,73.91
+2692,35,Noida Sec 150 Site,2025-04-28,35,27,77.14
+2693,35,Noida Sec 150 Site,2025-04-29,39,29,74.36
+2694,35,Noida Sec 150 Site,2025-04-30,45,33,73.33
+2695,35,Noida Sec 150 Site,2025-05-01,30,24,80.0
+2696,35,Noida Sec 150 Site,2025-05-02,43,34,79.07
+2697,35,Noida Sec 150 Site,2025-05-03,30,22,73.33
+2698,35,Noida Sec 150 Site,2025-05-04,41,32,78.05
+2699,35,Noida Sec 150 Site,2025-05-05,24,18,75.0
+2700,35,Noida Sec 150 Site,2025-05-06,50,40,80.0
+2701,35,Noida Sec 150 Site,2025-05-07,44,32,72.73
+2702,35,Noida Sec 150 Site,2025-05-08,25,19,76.0
+2703,35,Noida Sec 150 Site,2025-05-09,23,17,73.91
+2704,35,Noida Sec 150 Site,2025-05-10,44,34,77.27
+2705,35,Noida Sec 150 Site,2025-05-11,42,32,76.19
+2706,35,Noida Sec 150 Site,2025-05-12,25,19,76.0
+2707,35,Noida Sec 150 Site,2025-05-13,49,38,77.55
+2708,35,Noida Sec 150 Site,2025-05-14,24,18,75.0
+2709,35,Noida Sec 150 Site,2025-05-15,47,37,78.72
+2710,35,Noida Sec 150 Site,2025-05-16,32,26,81.25
+2711,35,Noida Sec 150 Site,2025-05-17,20,16,80.0
+2712,35,Noida Sec 150 Site,2025-05-18,22,16,72.73
+2713,35,Noida Sec 150 Site,2025-05-19,25,20,80.0
+2714,35,Noida Sec 150 Site,2025-05-20,42,33,78.57
+2715,35,Noida Sec 150 Site,2025-05-21,48,36,75.0
+2716,35,Noida Sec 150 Site,2025-05-22,42,34,80.95
+2717,35,Noida Sec 150 Site,2025-05-23,44,34,77.27
+2718,35,Noida Sec 150 Site,2025-05-24,24,18,75.0
+2719,35,Noida Sec 150 Site,2025-05-25,40,30,75.0
+2720,35,Noida Sec 150 Site,2025-05-26,34,26,76.47
+2721,35,Noida Sec 150 Site,2025-05-27,50,37,74.0
+2722,35,Noida Sec 150 Site,2025-05-28,42,30,71.43
+2723,35,Noida Sec 150 Site,2025-05-29,25,20,80.0
+2724,35,Noida Sec 150 Site,2025-05-30,39,32,82.05
+2725,35,Noida Sec 150 Site,2025-05-31,40,32,80.0
+2726,35,Noida Sec 150 Site,2025-06-01,29,22,75.86
+2727,35,Noida Sec 150 Site,2025-06-02,20,16,80.0
+2728,35,Noida Sec 150 Site,2025-06-03,26,19,73.08

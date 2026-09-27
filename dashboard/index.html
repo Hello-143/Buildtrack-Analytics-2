@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack Analytics Dashboard</title>
+    <script>
+        // Apply theme before paint so no flash / no need to refresh for mode
+        (function () {
+            try {
+                var m = localStorage.getItem('bt_theme') || 'dark';
+                if (m === 'light') document.documentElement.classList.add('light');
+            } catch (e) {}
+        })();
+    </script>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            --bg: #0c111b;
+            --card: #141b2d;
+            --border: #1e293b;
+            --accent: #f97316;
+            --accent-hover: #ea580c;
+            --muted: #94a3b8;
+            --text: #e2e8f0;
+            --chip-bg: #1f2937;
+            --chip-border: #374151;
+            --header-bg: #111827;
+            --input-bg: #0c111b;
+            --hover-border: #374151;
+        }
+        html.light {
+            --bg: #e8eef5;
+            --card: #ffffff;
+            --border: #c5d0de;
+            --accent: #ea580c;
+            --accent-hover: #c2410c;
+            --muted: #475569;
+            --text: #0f172a;
+            --chip-bg: #ffffff;
+            --chip-border: #c5d0de;
+            --header-bg: #ffffff;
+            --input-bg: #ffffff;
+            --hover-border: #94a3b8;
+        }
+        body {
+            font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            letter-spacing: 0.01em;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+        .tech-font { font-family: 'JetBrains Mono', 'SF Mono', monospace; font-size: 0.9em; }
+        .border-safety { border-color: var(--accent); }
+        .text-safety { color: var(--accent); }
+        .bg-safety { background-color: var(--accent); }
+        .tab-btn {
+            transition: color 0.2s ease, border-color 0.2s ease;
+            border-bottom: 2px solid transparent;
+            color: var(--muted);
+        }
+        .tab-btn.active {
+            border-bottom: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        .tab-btn:hover { color: var(--accent); }
+        .tab-content {
+            animation: fadeSlide 0.28s ease;
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--hover-border);
+        }
+        html.light .card-hover:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            border: 1px solid var(--chip-border);
+            background: var(--chip-bg);
+            transition: background 0.2s ease;
+        }
+        .tl-green { color: #059669; }
+        .tl-yellow { color: #d97706; }
+        .tl-red { color: #dc2626; }
+        html:not(.light) .tl-green { color: #34d399; }
+        html:not(.light) .tl-yellow { color: #fbbf24; }
+        html:not(.light) .tl-red { color: #f87171; }
+        .tl-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            display: inline-block; margin-right: 6px;
+        }
+        .tl-dot.g { background: #34d399; box-shadow: 0 0 8px #34d39988; }
+        .tl-dot.y { background: #fbbf24; box-shadow: 0 0 8px #fbbf2488; }
+        .tl-dot.r { background: #f87171; box-shadow: 0 0 8px #f8717188; }
+        #login-screen {
+            animation: fadeIn 0.35s ease;
+            background-color: var(--bg) !important;
+        }
+        #app-shell.hidden { display: none !important; }
+        .spark-wrap { height: 28px; margin-top: 8px; }
+        .btn-chip {
+            padding: 0.4rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            border: 1px solid var(--chip-border);
+            background: var(--chip-bg);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-chip:hover, .btn-chip.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(249,115,22,0.08);
+        }
+        .rank-badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .rank-reliable { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid #34d399; box-shadow: 0 0 10px rgba(52,211,153,0.35); }
+        .rank-watch { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid #fbbf24; box-shadow: 0 0 10px rgba(251,191,36,0.35); }
+        .rank-risky { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid #f87171; box-shadow: 0 0 10px rgba(248,113,113,0.35); }
+
+        .badge-glow { display: inline-block; padding: 0.2rem 0.55rem; border-radius: 0.35rem; font-size: 0.7rem; font-weight: 600; border: 1px solid; }
+        .badge-late-habitual { background: rgba(239,68,68,0.18); color: #f87171; border-color: #f87171; box-shadow: 0 0 12px rgba(248,113,113,0.5); }
+        .badge-late-often { background: rgba(245,158,11,0.18); color: #fbbf24; border-color: #fbbf24; box-shadow: 0 0 12px rgba(251,191,36,0.5); }
+        .badge-ontime { background: rgba(16,185,129,0.18); color: #34d399; border-color: #34d399; box-shadow: 0 0 12px rgba(52,211,153,0.5); }
+        .badge-status-active { background: rgba(16,185,129,0.22) !important; color: #34d399 !important; border-color: #34d399 !important; box-shadow: 0 0 14px rgba(52,211,153,0.55); }
+        .badge-status-refresh { background: rgba(245,158,11,0.22) !important; color: #fbbf24 !important; border-color: #fbbf24 !important; box-shadow: 0 0 14px rgba(251,191,36,0.55); }
+        .badge-status-stale { background: rgba(239,68,68,0.22) !important; color: #f87171 !important; border-color: #f87171 !important; box-shadow: 0 0 14px rgba(248,113,113,0.55); }
+
+        html.light .badge-late-habitual { background: rgba(239,68,68,0.12); color: #dc2626; border-color: #ef4444; box-shadow: 0 0 14px rgba(239,68,68,0.45); }
+        html.light .badge-late-often { background: rgba(245,158,11,0.12); color: #d97706; border-color: #f59e0b; box-shadow: 0 0 14px rgba(245,158,11,0.45); }
+        html.light .badge-ontime { background: rgba(16,185,129,0.12); color: #059669; border-color: #10b981; box-shadow: 0 0 14px rgba(16,185,129,0.45); }
+        html.light .badge-status-active { background: rgba(16,185,129,0.15) !important; color: #059669 !important; border-color: #10b981 !important; box-shadow: 0 0 16px rgba(16,185,129,0.5); }
+        html.light .badge-status-refresh { background: rgba(245,158,11,0.15) !important; color: #d97706 !important; border-color: #f59e0b !important; box-shadow: 0 0 16px rgba(245,158,11,0.5); }
+        html.light .badge-status-stale { background: rgba(239,68,68,0.15) !important; color: #dc2626 !important; border-color: #ef4444 !important; box-shadow: 0 0 16px rgba(239,68,68,0.5); }
+        html.light .rank-reliable { color: #059669; border-color: #10b981; box-shadow: 0 0 12px rgba(16,185,129,0.4); }
+        html.light .rank-watch { color: #d97706; border-color: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.4); }
+        html.light .rank-risky { color: #dc2626; border-color: #ef4444; box-shadow: 0 0 12px rgba(239,68,68,0.4); }
+
+        /* Project status badges — Completed / Ongoing / Delayed */
+        .badge-status-completed {
+            background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid #34d399;
+            box-shadow: 0 0 12px rgba(52,211,153,0.5); font-weight: 600;
+            padding: 0.2rem 0.55rem; border-radius: 0.35rem; font-size: 0.7rem;
+        }
+        .badge-status-ongoing {
+            background: rgba(59,130,246,0.2); color: #60a5fa; border: 1px solid #60a5fa;
+            box-shadow: 0 0 12px rgba(96,165,250,0.5); font-weight: 600;
+            padding: 0.2rem 0.55rem; border-radius: 0.35rem; font-size: 0.7rem;
+        }
+        .badge-status-delayed {
+            background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid #f87171;
+            box-shadow: 0 0 12px rgba(248,113,113,0.5); font-weight: 600;
+            padding: 0.2rem 0.55rem; border-radius: 0.35rem; font-size: 0.7rem;
+        }
+        html.light .badge-status-completed {
+            background: rgba(16,185,129,0.14); color: #059669; border-color: #10b981;
+            box-shadow: 0 0 14px rgba(16,185,129,0.45);
+        }
+        html.light .badge-status-ongoing {
+            background: rgba(37,99,235,0.12); color: #1d4ed8; border-color: #3b82f6;
+            box-shadow: 0 0 14px rgba(37,99,235,0.4);
+        }
+        html.light .badge-status-delayed {
+            background: rgba(239,68,68,0.12); color: #dc2626; border-color: #ef4444;
+            box-shadow: 0 0 14px rgba(239,68,68,0.45);
+        }
+
+        input:focus, select:focus { outline: none; border-color: var(--accent) !important; }
+
+        /* Theme-aware overrides for Tailwind hard-coded dark classes */
+        html.light .bg-\[\#0b0f19\],
+        html.light .bg-\[\#0c111b\],
+        html.light .bg-\[\#0f1420\] { background-color: #e8eef5 !important; }
+        html.light .bg-\[\#111827\],
+        html.light .bg-\[\#141b2d\] {
+            background-color: #ffffff !important;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+        }
+        html.light .bg-\[\#1f2937\],
+        html.light .bg-\[\#1f2937\]\/50,
+        html.light .bg-\[\#1f2937\]\/30 { background-color: #f1f5f9 !important; }
+        html.light .border-gray-800,
+        html.light .border-gray-700,
+        html.light .border-slate-700,
+        html.light .border-slate-700\/80,
+        html.light .border-slate-700\/60 { border-color: #c5d0de !important; }
+        html.light .text-slate-100,
+        html.light .text-slate-200,
+        html.light .text-slate-300 { color: #0f172a !important; }
+        html.light .text-gray-400,
+        html.light .text-gray-500,
+        html.light .text-slate-400 { color: #334155 !important; }
+        html.light .text-\[10px\],
+        html.light .text-xs { color: inherit; }
+        html.light .tech-font { color: #1e293b; }
+        html.light .hover\:bg-\[\#1f2937\]\/35:hover { background-color: #e8eef5 !important; }
+        html.light header,
+        html.light nav,
+        html.light footer {
+            background-color: #ffffff !important;
+            border-color: #c5d0de !important;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+        }
+        html.light #status-strip { background-color: #f8fafc !important; border-color: #c5d0de !important; }
+        html.light table thead tr { background-color: #f1f5f9 !important; }
+        html.light .shadow-lg {
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 6px 20px rgba(15, 23, 42, 0.05) !important;
+        }
+        html.light .shadow-2xl {
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 12px 32px rgba(15, 23, 42, 0.06) !important;
+        }
+        /* Chart cards stand out more in light mode */
+        html.light main .bg-\[\#111827\].rounded,
+        html.light main .bg-\[\#111827\].rounded-xl,
+        html.light main .rounded.shadow-lg,
+        html.light main .rounded-xl.shadow-lg {
+            border: 1px solid #c5d0de !important;
+            background: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.02) !important;
+        }
+
+        /* Theme toggle button */
+        #theme-toggle, #theme-toggle-login {
+            border-radius: 8px;
+            border: 1px solid var(--chip-border);
+            background: var(--chip-bg);
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.4rem 0.75rem;
+            white-space: nowrap;
+            font-family: 'DM Sans', system-ui, sans-serif;
+        }
+        #theme-toggle:hover, #theme-toggle-login:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Extra light-mode text colour fixes */
+        html.light .text-red-400 { color: #dc2626 !important; }
+        html.light .text-emerald-400 { color: #059669 !important; }
+        html.light .text-yellow-400,
+        html.light .text-yellow-500 { color: #d97706 !important; }
+        html.light .text-blue-400 { color: #2563eb !important; }
+        html.light .text-orange-400 { color: #ea580c !important; }
+        html.light .text-safety { color: #ea580c !important; }
+        html.light .text-slate-500 { color: #475569 !important; }
+        html.light .text-red-500 { color: #dc2626 !important; }
+        html.light .hover\:text-safety:hover { color: #ea580c !important; }
+
+        /* ===== LIGHT MODE: form controls, filters, borders, tabs ===== */
+        html.light select,
+        html.light input[type="text"],
+        html.light input[type="email"],
+        html.light input[type="password"],
+        html.light input:not([type="file"]) {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            border-color: #c5d0de !important;
+        }
+        html.light select option {
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+        html.light label {
+            color: #334155 !important;
+        }
+        html.light .btn-chip {
+            background: #ffffff !important;
+            color: #0f172a !important;
+            border-color: #c5d0de !important;
+        }
+        html.light .btn-chip:hover,
+        html.light .btn-chip.active {
+            color: #ea580c !important;
+            border-color: #ea580c !important;
+            background: rgba(234, 88, 12, 0.06) !important;
+        }
+        html.light .status-chip {
+            background: #ffffff !important;
+            border-color: #c5d0de !important;
+            color: #0f172a !important;
+        }
+        html.light .status-chip .text-gray-500,
+        html.light .status-chip span:first-child {
+            color: #64748b !important;
+        }
+        html.light .status-chip strong {
+            color: #0f172a !important;
+        }
+        html.light .tab-btn {
+            color: #64748b !important;
+        }
+        html.light .tab-btn.active,
+        html.light .tab-btn:hover {
+            color: #ea580c !important;
+        }
+        html.light table,
+        html.light table th,
+        html.light table td {
+            color: #0f172a !important;
+            border-color: #e2e8f0 !important;
+        }
+        html.light table th {
+            color: #475569 !important;
+        }
+        html.light h1, html.light h2, html.light h3 {
+            color: #0f172a !important;
+        }
+        html.light .tech-font {
+            color: #1e293b !important;
+        }
+        /* Keep dark mode text correct when NOT light */
+        html:not(.light) select,
+        html:not(.light) input:not([type="file"]) {
+            color: #e2e8f0 !important;
+        }
+        html:not(.light) .tab-btn {
+            color: #94a3b8;
+        }
+        html:not(.light) .tab-btn.active {
+            color: var(--accent);
+        }
+        html:not(.light) label {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- LOGIN / REGISTER -->
+    <div id="login-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-[#0c111b]">
+        <button id="theme-toggle-login" onclick="toggleTheme()" title="Toggle light / dark mode" aria-label="Toggle theme"
+            class="absolute top-4 right-4">Dark mode</button>
+        <div class="w-full max-w-md mx-4">
+            <div class="bg-[#141b2d] border border-slate-700/80 rounded-2xl p-8 shadow-2xl">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 mb-4">
+                        <span class="text-orange-400 text-xl font-bold">■</span>
+                    </div>
+                    <h1 class="text-xl font-semibold tracking-wide text-slate-100">BUILDTRACK ANALYTICS</h1>
+                    <p class="text-sm text-slate-400 mt-1">Gupta Engineers &amp; Contractors</p>
+                </div>
+
+                <!-- Toggle -->
+                <div class="flex mb-6 bg-[#0c111b] rounded-lg p-1 border border-slate-700/60">
+                    <button type="button" id="toggle-login" onclick="showAuthForm('login')" class="flex-1 py-2 text-sm font-medium rounded-md bg-orange-500/15 text-orange-400 border border-orange-500/30 transition">Sign In</button>
+                    <button type="button" id="toggle-register" onclick="showAuthForm('register')" class="flex-1 py-2 text-sm font-medium rounded-md text-slate-400 hover:text-slate-200 transition">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" onsubmit="return handleLogin(event)" class="flex flex-col gap-4">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Work email</label>
+                        <input id="login-email" type="email" required placeholder="you@company.com"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Password</label>
+                        <input id="login-password" type="password" required placeholder="Enter password"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <p id="login-error" class="text-xs text-red-400 hidden"></p>
+                    <button type="submit" class="mt-1 w-full bg-orange-500 hover:bg-orange-600 text-white font-medium text-sm py-2.5 rounded-lg transition">
+                        Sign in to Dashboard
+                    </button>
+                </form>
+
+                <!-- Register Form (hidden by default) -->
+                <form id="register-form" onsubmit="return handleRegister(event)" class="flex flex-col gap-4 hidden">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Full name</label>
+                        <input id="reg-name" type="text" required placeholder="Your name"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Work email</label>
+                        <input id="reg-email" type="email" required placeholder="you@company.com"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Password</label>
+                        <input id="reg-password" type="password" required minlength="6" placeholder="Min 6 characters"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1.5">Confirm password</label>
+                        <input id="reg-password2" type="password" required placeholder="Re-enter password"
+                            class="w-full bg-[#0c111b] border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder-slate-600" />
+                    </div>
+                    <p id="register-error" class="text-xs text-red-400 hidden"></p>
+                    <p id="register-success" class="text-xs text-emerald-400 hidden"></p>
+                    <button type="submit" class="mt-1 w-full bg-orange-500 hover:bg-orange-600 text-white font-medium text-sm py-2.5 rounded-lg transition">
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- APP SHELL (hidden until login) -->
+    <div id="app-shell" class="hidden min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-[#111827] border-b border-gray-800 px-6 py-4 flex justify-between items-center shadow-lg">
+        <div>
+            <h1 class="text-2xl font-bold tracking-wider text-slate-100 flex items-center gap-2">
+                <span class="text-safety">■</span> BUILDTRACK ANALYTICS
+            </h1>
+            <p class="text-xs text-gray-400 tech-font">Gupta Engineers &amp; Contractors</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="text-right">
+                <span id="system-status-badge" class="text-xs py-1 px-3 rounded border tech-font">SYSTEM STATUS: —</span>
+                <span id="system-status-subtext" class="block text-[10px] text-gray-500 tech-font mt-0.5"></span>
+            </div>
+            <button id="theme-toggle" onclick="toggleTheme()" title="Toggle light / dark mode" aria-label="Toggle theme">Dark mode</button>
+            <button onclick="handleLogout()" class="text-xs text-gray-400 hover:text-safety border border-gray-700 px-3 py-1.5 rounded transition">Sign out</button>
+        </div>
+    </header>
+
+    <!-- At-a-glance status strip -->
+    <div id="status-strip" class="bg-[#0f1420] border-b border-gray-800 px-6 py-2.5 flex flex-wrap gap-2 items-center">
+        <span class="status-chip"><span class="text-gray-500">Projects</span> <strong id="chip-projects" class="text-slate-200">—</strong></span>
+        <span class="status-chip"><span class="text-gray-500">High risk</span> <strong id="chip-highrisk" class="text-red-400">—</strong></span>
+        <span class="status-chip"><span class="text-gray-500">Avg delay</span> <strong id="chip-delay" class="text-slate-200">—</strong></span>
+        <span class="status-chip"><span class="text-gray-500">Attendance</span> <strong id="chip-attendance" class="text-slate-200">—</strong></span>
+        <span class="status-chip"><span class="text-gray-500">On-time vendors</span> <strong id="chip-ontime" class="text-slate-200">—</strong></span>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="bg-[#111827] px-4 border-b border-gray-800 flex gap-4 overflow-x-auto whitespace-nowrap">
+        <button onclick="switchTab('executive')" id="tab-executive" class="tab-btn active py-4 font-semibold text-sm hover:text-safety flex-shrink-0">EXECUTIVE SUMMARY</button>
+        <button onclick="switchTab('project')" id="tab-project" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">PROJECT OVERVIEW</button>
+        <button onclick="switchTab('vendor')" id="tab-vendor" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">MATERIAL &amp; VENDOR</button>
+        <button onclick="switchTab('labour')" id="tab-labour" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">LABOUR &amp; SITE</button>
+        <button onclick="switchTab('progress')" id="tab-progress" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">PROGRESS &amp; PRODUCTIVITY</button>
+        <button onclick="switchTab('resource')" id="tab-resource" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">RESOURCE UTILIZATION</button>
+        <button onclick="switchTab('riskdelay')" id="tab-riskdelay" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">RISK &amp; DELAY</button>
+        <button onclick="switchTab('comparative')" id="tab-comparative" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">COMPARATIVE</button>
+        <button onclick="switchTab('forecast')" id="tab-forecast" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">FORECAST</button>
+        <button onclick="switchTab('data')" id="tab-data" class="tab-btn py-4 font-semibold text-sm hover:text-safety flex-shrink-0">DATA MANAGEMENT</button>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="flex-grow p-6">
+        
+        <!-- Tab: Executive Summary -->
+        <section id="view-executive" class="tab-content flex flex-col gap-6">
+            <!-- Health Score + KPI cards -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover flex flex-col items-center justify-center md:col-span-1">
+                    <span class="text-xs text-gray-400 tech-font mb-1">PORTFOLIO HEALTH</span>
+                    <span id="exec-health-score" class="text-4xl font-bold text-slate-100">--</span>
+                    <span id="exec-health-label" class="text-xs mt-1 font-semibold">—</span>
+                    <span class="text-[10px] text-gray-500 mt-2 text-center">Cost · Risk · Attendance · Vendors</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover flex flex-col">
+                    <span class="text-xs text-gray-400 tech-font">PORTFOLIO SIZE</span>
+                    <span id="exec-portfolio-size" class="text-3xl font-bold mt-2 text-slate-100">--</span>
+                    <span id="exec-portfolio-hint" class="text-xs text-gray-500 mt-1">Total projects</span>
+                    <div class="spark-wrap"><canvas id="spark-portfolio" height="28"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover flex flex-col">
+                    <span class="text-xs text-gray-400 tech-font">COST VARIANCE</span>
+                    <span id="exec-cost-variance" class="text-3xl font-bold mt-2">--</span>
+                    <span id="exec-cost-tl" class="text-xs mt-1"><span class="tl-dot g"></span>—</span>
+                    <div class="spark-wrap"><canvas id="spark-cost" height="28"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover flex flex-col">
+                    <span class="text-xs text-gray-400 tech-font">AVG ATTENDANCE</span>
+                    <span id="exec-attendance" class="text-3xl font-bold mt-2 text-slate-100">--</span>
+                    <span id="exec-att-tl" class="text-xs mt-1"><span class="tl-dot g"></span>—</span>
+                    <div class="spark-wrap"><canvas id="spark-att" height="28"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-[#ff6b00]/30 p-5 rounded-xl shadow-lg card-hover flex flex-col bg-gradient-to-br from-[#111827] to-[#ff6b00]/5">
+                    <span class="text-xs text-safety tech-font">HIGH-RISK</span>
+                    <span id="exec-high-risk" class="text-3xl font-bold mt-2 text-safety">--</span>
+                    <span id="exec-risk-tl" class="text-xs mt-1 text-gray-400"><span class="tl-dot r"></span>Model flagged</span>
+                    <div class="spark-wrap"><canvas id="spark-risk" height="28"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Executive Charts & Reports -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left: ML Risk Distribution -->
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg lg:col-span-1">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">OVERRUN RISK DISTRIBUTION</h2>
+                    <div class="h-64 flex justify-center items-center mt-4">
+                        <canvas id="chart-exec-risk"></canvas>
+                    </div>
+                </div>
+
+                <!-- Right: Analysis Highlights -->
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg lg:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">OPERATIONAL INSIGHTS (NOIDA BRANCH)</h2>
+                        <ul class="mt-4 flex flex-col gap-4">
+                            <li class="bg-[#1f2937]/50 p-4 rounded border-l-4 border-safety">
+                                <span class="font-bold text-slate-200 block text-sm">Fabrication Projects Exceed Bidding Targets</span>
+                                <p class="text-xs text-gray-400 mt-1">Completed and delayed Fabrication projects average a <strong>12.84% cost overrun</strong>. Recommend establishing a standard 15% budget buffer for fabrication contracts.</p>
+                            </li>
+                            <li class="bg-[#1f2937]/50 p-4 rounded border-l-4 border-safety">
+                                <span class="font-bold text-slate-200 block text-sm">Local Procurement Accounts Incur Wastage Leakage</span>
+                                <p class="text-xs text-gray-400 mt-1">Local Noida suppliers record severe waste: Local Vendor Cement averages <strong>13.69% wastage</strong> (with 0% on-time delivery), while Tata Steel maintains wastage at <strong>7.91%</strong>.</p>
+                            </li>
+                            <li class="bg-[#1f2937]/50 p-4 rounded border-l-4 border-safety">
+                                <span class="font-bold text-slate-200 block text-sm">Site Attendance Directly Correlates to Schedule Delays</span>
+                                <p class="text-xs text-gray-400 mt-1">Labour attendance has a 40.54% importance in predicting overrun risk. Sites falling below 80% attendance experience average delays of <strong>14.2 days</strong>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Project Overview -->
+        <section id="view-project" class="tab-content hidden flex flex-col gap-6">
+            <!-- Filter Bar -->
+            <div class="bg-[#111827] border border-gray-800 p-4 rounded flex flex-wrap gap-4 items-center justify-between shadow-lg">
+                <div class="flex flex-wrap gap-4 items-end">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1 tech-font">PROJECT TYPE</label>
+                        <select id="filter-proj-type" onchange="applyFilters()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                            <option value="ALL">All Types</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Building Contract">Building Contract</option>
+                            <option value="Fabrication">Fabrication</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1 tech-font">PROJECT STATUS</label>
+                        <select id="filter-proj-status" onchange="applyFilters()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                            <option value="ALL">All Statuses</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Delayed">Delayed</option>
+                        </select>
+                    </div>
+                    <button type="button" id="btn-needs-attention" onclick="toggleNeedsAttention()" class="btn-chip">Needs Attention</button>
+                </div>
+                <div class="text-xs text-gray-400 tech-font">
+                    Showing <span id="project-filter-count" class="text-safety font-bold">--</span> of <span id="project-total-count" class="font-bold">--</span> Projects
+                </div>
+            </div>
+
+            <!-- Overview Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">BUDGET VS. ACTUAL COSTS</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-proj-costs"></canvas>
+                    </div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">PROJECT TIMELINE DELAYS (DAYS)</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-proj-delays"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Register Table -->
+            <div class="bg-[#111827] border border-gray-800 rounded shadow-lg overflow-x-auto">
+                <div class="p-4 border-b border-gray-800 flex justify-between items-center">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">PROJECT REGISTER</h2>
+                </div>
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                            <th class="p-3">ID</th>
+                            <th class="p-3">Project Name</th>
+                            <th class="p-3">Type</th>
+                            <th class="p-3">Start Date</th>
+                            <th class="p-3">Planned End Date</th>
+                            <th class="p-3">Budgeted Cost</th>
+                            <th class="p-3">Actual Cost</th>
+                            <th class="p-3">Cost Variance %</th>
+                            <th class="p-3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="project-table-body">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tab: Material & Vendor -->
+        <section id="view-vendor" class="tab-content hidden flex flex-col gap-6">
+            <!-- Metrics Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <span class="text-xs text-gray-400 tech-font">AVERAGE WASTAGE RATE</span>
+                    <span id="vendor-metric-wastage" class="text-3xl font-bold mt-2 block text-safety">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <span class="text-xs text-gray-400 tech-font">ON-TIME DELIVERY RATE</span>
+                    <span id="vendor-metric-ontime" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <span class="text-xs text-gray-400 tech-font">FULFILLMENT ACCURACY</span>
+                    <span id="vendor-metric-fulfillment" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">WASTAGE % BY MATERIAL TYPE</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-material-wastage"></canvas>
+                    </div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">VENDOR ON-TIME RATE (%)</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-vendor-ontime"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scorecard Grid -->
+            <div class="bg-[#111827] border border-gray-800 rounded shadow-lg overflow-x-auto">
+                <div class="p-4 border-b border-gray-800">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">VENDOR PERFORMANCE SCORECARD</h2>
+                </div>
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                            <th class="p-3">Rank</th>
+                            <th class="p-3">Vendor Name</th>
+                            <th class="p-3">Material Type</th>
+                            <th class="p-3 text-right">Orders Fulfilled</th>
+                            <th class="p-3 text-right">On-Time Orders</th>
+                            <th class="p-3 text-right">On-Time Delivery %</th>
+                            <th class="p-3 text-right">Avg Wastage %</th>
+                            <th class="p-3 text-right">Qty Fulfillment %</th>
+                            <th class="p-3 text-right">Avg Delay (days)</th>
+                            <th class="p-3 text-right">Delay Std</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vendor-table-body">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tab: Labour -->
+        <section id="view-labour" class="tab-content hidden flex flex-col gap-6">
+            <!-- Metrics Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <span class="text-xs text-gray-400 tech-font">TOTAL EXPECTED MAN-DAYS</span>
+                    <span id="labour-metric-expected" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <span class="text-xs text-gray-400 tech-font">TOTAL PRESENT MAN-DAYS</span>
+                    <span id="labour-metric-present" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">OVERALL ATTENDANCE RATE</span>
+                    <span id="labour-metric-rate" class="text-3xl font-bold mt-2 block text-safety">--</span>
+                    <span id="labour-week-delta" class="text-xs mt-2 block text-gray-400">vs last week: —</span>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">DAILY SITE ATTENDANCE RATES (%)</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-labour-trend"></canvas>
+                    </div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">ATTENDANCE RATE VS. DELAY DAYS</h2>
+                    <div class="h-64 mt-4">
+                        <canvas id="chart-labour-delay-scatter"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Person-level: Late vs On-Time workers -->
+            <div class="bg-[#111827] border border-gray-800 p-4 rounded-xl shadow-lg">
+                <div class="flex flex-wrap gap-4 items-end justify-between mb-4">
+                    <div>
+                        <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">PERSON ATTENDANCE : LATE vs ON-TIME</h2>
+                        <p class="text-xs text-gray-500 mt-1">On-time = punch ≤ 09:15.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 items-end">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1 tech-font">SITE</label>
+                            <select id="person-site-filter" onchange="renderPersonLabour()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                                <option value="ALL">All sites</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1 tech-font">LABEL</label>
+                            <select id="person-label-filter" onchange="renderPersonLabour()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                                <option value="ALL">All labels</option>
+                                <option value="Habitual Late">Habitual Late</option>
+                                <option value="Often Late">Often Late</option>
+                                <option value="Mostly On-Time">Mostly On-Time</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <div class="bg-[#0f1420] border border-gray-800 p-4 rounded-lg">
+                        <span class="text-xs text-gray-400 tech-font">HABITUAL LATE</span>
+                        <span id="person-habitual" class="text-2xl font-bold mt-1 block text-red-400">--</span>
+                    </div>
+                    <div class="bg-[#0f1420] border border-gray-800 p-4 rounded-lg">
+                        <span class="text-xs text-gray-400 tech-font">OFTEN LATE</span>
+                        <span id="person-often" class="text-2xl font-bold mt-1 block text-yellow-400">--</span>
+                    </div>
+                    <div class="bg-[#0f1420] border border-gray-800 p-4 rounded-lg">
+                        <span class="text-xs text-gray-400 tech-font">MOSTLY ON-TIME</span>
+                        <span id="person-ontime" class="text-2xl font-bold mt-1 block text-emerald-400">--</span>
+                    </div>
+                    <div class="bg-[#0f1420] border border-gray-800 p-4 rounded-lg">
+                        <span class="text-xs text-gray-400 tech-font">WORKERS TRACKED</span>
+                        <span id="person-total" class="text-2xl font-bold mt-1 block text-slate-100">--</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-4">
+                    <div class="h-64"><canvas id="chart-person-labels"></canvas></div>
+                    <div class="h-64"><canvas id="chart-person-late-rate"></canvas></div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                                <th class="p-3">Worker</th>
+                                <th class="p-3">Site</th>
+                                <th class="p-3 text-right">Present</th>
+                                <th class="p-3 text-right">On-Time</th>
+                                <th class="p-3 text-right">Late</th>
+                                <th class="p-3 text-right">Late %</th>
+                                <th class="p-3 text-right">Avg Punch-In</th>
+                                <th class="p-3">Label</th>
+                            </tr>
+                        </thead>
+                        <tbody id="person-labour-body"></tbody>
+                    </table>
+                </div>
+                <div class="mt-4 overflow-x-auto">
+                    <h3 class="text-xs font-semibold text-gray-400 tech-font mb-2">RECENT LATE PUNCH-INS (SAMPLE)</h3>
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                                <th class="p-3">Date</th>
+                                <th class="p-3">Worker</th>
+                                <th class="p-3">Site</th>
+                                <th class="p-3">Punch-In</th>
+                                <th class="p-3 text-right">Minutes Late</th>
+                            </tr>
+                        </thead>
+                        <tbody id="person-late-events-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Site Attendance Reliability / Shortfall (who is understaffed / low attendance) -->
+            <div class="bg-[#111827] border border-gray-800 p-4 rounded-xl shadow-lg flex flex-wrap gap-4 items-end justify-between">
+                <div>
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">SITE ATTENDANCE RELIABILITY</h2>
+                    <p class="text-xs text-gray-500 mt-1">Site-level ranking by shortfall &amp; low-attendance days. Threshold: below 80% = understaffed day. Matches workers_expected / workers_present totals.</p>
+                </div>
+                <div class="flex flex-wrap gap-3 items-end">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1 tech-font">FILTER LABEL</label>
+                        <select id="labour-site-filter" onchange="renderSiteReliability()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                            <option value="ALL">All sites</option>
+                            <option value="Chronic Low">Chronic Low (&lt;75% avg)</option>
+                            <option value="At Risk">At Risk (75–80% avg)</option>
+                            <option value="Healthy">Healthy (≥80% avg)</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="renderSiteReliability()" class="btn-chip">Refresh ranking</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">CHRONIC LOW SITES</span>
+                    <span id="lab-chronic-count" class="text-3xl font-bold mt-2 block text-red-400">--</span>
+                    <span class="text-xs text-gray-500 mt-1">Avg attendance &lt; 75%</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">AT RISK SITES</span>
+                    <span id="lab-atrisk-count" class="text-3xl font-bold mt-2 block text-yellow-400">--</span>
+                    <span class="text-xs text-gray-500 mt-1">Avg 75–80%</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">TOTAL SHORTFALL MAN-DAYS</span>
+                    <span id="lab-total-shortfall" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                    <span class="text-xs text-gray-500 mt-1">Expected − Present</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">UNDERSTAFFED DAYS</span>
+                    <span id="lab-understaffed-days" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                    <span class="text-xs text-gray-500 mt-1">Days with attendance &lt; 80%</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">AVG ATTENDANCE % BY SITE</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-site-attendance"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">SHORTFALL MAN-DAYS BY SITE</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-site-shortfall"></canvas></div>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-gray-800 rounded shadow-lg overflow-x-auto">
+                <div class="p-4 border-b border-gray-800 flex flex-wrap justify-between items-center gap-2">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">SITE RANKING — WHO IS UNDERSTAFFED / LOW ATTENDANCE</h2>
+                    <span class="text-[10px] text-gray-500">Labels: Chronic Low · At Risk · Healthy</span>
+                </div>
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                            <th class="p-3">Rank</th>
+                            <th class="p-3">Site Name</th>
+                            <th class="p-3">Project ID</th>
+                            <th class="p-3 text-right">Days Logged</th>
+                            <th class="p-3 text-right">Avg Attendance %</th>
+                            <th class="p-3 text-right">Understaffed Days</th>
+                            <th class="p-3 text-right">Total Shortfall</th>
+                            <th class="p-3 text-right">Worst Day %</th>
+                            <th class="p-3">Reliability Label</th>
+                        </tr>
+                    </thead>
+                    <tbody id="site-reliability-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Predictive Risk Flags Table -->
+            <div class="bg-[#111827] border border-gray-800 rounded shadow-lg overflow-x-auto">
+                <div class="p-4 border-b border-gray-800">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">PROJECT RISK FLAGS (DECISION TREE CLASSIFICATION)</h2>
+                </div>
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                            <th class="p-3">Project ID</th>
+                            <th class="p-3">Project Name</th>
+                            <th class="p-3">Division</th>
+                            <th class="p-3">Database Status</th>
+                            <th class="p-3">Predicted Overrun Risk Level</th>
+                            <th class="p-3">Top Risk Driver (SHAP)</th>
+                            <th class="p-3">2nd Risk Driver (SHAP)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="risk-table-body">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tab: Progress & Productivity -->
+        <section id="view-progress" class="tab-content hidden flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">AVG PROGRESS RATE</span>
+                    <span id="prog-avg-rate" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                    <span class="text-xs text-gray-500 mt-1">% of planned duration used</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">ON TRACK</span>
+                    <span id="prog-ontrack" class="text-3xl font-bold mt-2 block text-emerald-400">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">DELAYED</span>
+                    <span id="prog-delayed" class="text-3xl font-bold mt-2 block text-red-400">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">COMPLETED</span>
+                    <span id="prog-completed" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">PLANNED vs ACTUAL DURATION (DAYS)</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-progress-duration"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">STATUS DISTRIBUTION</h2>
+                    <div class="h-72 mt-4 flex justify-center"><canvas id="chart-progress-status"></canvas></div>
+                </div>
+            </div>
+            <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">PROGRESS BY PROJECT TYPE</h2>
+                <div class="h-64 mt-4"><canvas id="chart-progress-by-type"></canvas></div>
+            </div>
+        </section>
+
+        <!-- Tab: Resource Utilization -->
+        <section id="view-resource" class="tab-content hidden flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">OVERALL ATTENDANCE</span>
+                    <span id="res-attendance" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">TOTAL MAN-DAYS PRESENT</span>
+                    <span id="res-present" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">UTILIZATION GAP</span>
+                    <span id="res-gap" class="text-3xl font-bold mt-2 block text-yellow-400">--</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">ATTENDANCE BY PROJECT / DIVISION</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-resource-att"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">EXPECTED vs PRESENT MAN-DAYS</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-resource-mandays"></canvas></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Risk & Delay Analysis -->
+        <section id="view-riskdelay" class="tab-content hidden flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">HIGH RISK PROJECTS</span>
+                    <span id="rd-high" class="text-3xl font-bold mt-2 block text-red-400">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">AVG DELAY (DAYS)</span>
+                    <span id="rd-avg-delay" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">DELAYED PROJECTS</span>
+                    <span id="rd-delayed-count" class="text-3xl font-bold mt-2 block text-yellow-400">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">RISK MODEL COVERAGE</span>
+                    <span id="rd-coverage" class="text-3xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">RISK LEVEL DISTRIBUTION</h2>
+                    <div class="h-72 mt-4 flex justify-center"><canvas id="chart-rd-riskdist"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">DELAY DAYS BY PROJECT</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-rd-delays"></canvas></div>
+                </div>
+            </div>
+            <div class="bg-[#111827] border border-gray-800 rounded shadow-lg overflow-x-auto">
+                <div class="p-4 border-b border-gray-800">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 tech-font">HIGH IMPACT RISKS &amp; DELAYS</h2>
+                </div>
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400 tech-font bg-[#1f2937]/30">
+                            <th class="p-3">Project ID</th>
+                            <th class="p-3">Name</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Risk Level</th>
+                            <th class="p-3">Delay (days)</th>
+                            <th class="p-3">Top Driver</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rd-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tab: Comparative Performance -->
+        <section id="view-comparative" class="tab-content hidden flex flex-col gap-6">
+            <div class="bg-[#111827] border border-gray-800 p-4 rounded flex flex-wrap gap-4 items-center">
+                <span class="text-xs text-gray-400 tech-font">COMPARE BY:</span>
+                <select id="comp-metric" onchange="renderComparative()" class="bg-[#1f2937] text-slate-200 text-sm py-1.5 px-3 rounded border border-gray-700">
+                    <option value="cost">Cost Variance %</option>
+                    <option value="delay">Delay Days</option>
+                    <option value="attendance">Attendance %</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">PERFORMANCE BY PROJECT TYPE</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-comp-type"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">BEST vs WORST PROJECTS</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-comp-bestworst"></canvas></div>
+                </div>
+            </div>
+            <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">RADAR: TYPE AVERAGES (NORMALIZED)</h2>
+                <div class="h-80 mt-4 flex justify-center"><canvas id="chart-comp-radar"></canvas></div>
+            </div>
+        </section>
+
+        <!-- Tab: Forecast & Predictive View -->
+        <section id="view-forecast" class="tab-content hidden flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">EST. COMPLETION (ONGOING)</span>
+                    <span id="fc-est-complete" class="text-2xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">PROJECTED COST AT COMPLETION</span>
+                    <span id="fc-eac" class="text-2xl font-bold mt-2 block text-slate-100">--</span>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-5 rounded-xl shadow-lg card-hover">
+                    <span class="text-xs text-gray-400 tech-font">ON-TIME PROBABILITY</span>
+                    <span id="fc-ontime-prob" class="text-2xl font-bold mt-2 block text-emerald-400">--</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">REMAINING WORK FORECAST (ONGOING)</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-fc-remaining"></canvas></div>
+                </div>
+                <div class="bg-[#111827] border border-gray-800 p-6 rounded shadow-lg">
+                    <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font">SCENARIO: COST AT COMPLETION</h2>
+                    <div class="h-72 mt-4"><canvas id="chart-fc-scenario"></canvas></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Data Management -->
+        <section id="view-data" class="tab-content hidden flex flex-col gap-6">
+            <div class="bg-[#111827] border border-gray-800 p-6 rounded-xl shadow-lg">
+                <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font mb-4">DATA STATUS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <span class="text-xs text-gray-500">Last Export Timestamp</span>
+                        <p id="data-exported-at" class="text-sm tech-font text-slate-200 mt-1">—</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-500">Projects Loaded</span>
+                        <p id="data-count-projects" class="text-sm tech-font text-slate-200 mt-1">—</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-500">System Status</span>
+                        <p id="data-status-label" class="text-sm tech-font text-emerald-400 mt-1">—</p>
+                    </div>
+                </div>
+                <div class="bg-[#0f1420] border border-gray-800 rounded-lg p-4 text-xs text-gray-400 space-y-2">
+                    <p><strong class="text-slate-300">How data flows:</strong></p>
+                    <ol class="list-decimal list-inside space-y-1">
+                        <li>Put new raw files in <code class="text-safety">data/raw/</code> (same format as existing).</li>
+                        <li>Run cleaning pipeline: <code class="text-safety">python src/run_notebook.py notebooks/01_data_cleaning.ipynb</code> (and other notebooks if needed).</li>
+                        <li>Export for dashboard: <code class="text-safety">python src/export_dashboard_data.py</code></li>
+                        <li>Refresh this page <strong>or</strong> upload the new <code class="text-safety">data.js</code> below for instant reload.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-gray-800 p-6 rounded-xl shadow-lg">
+                <h2 class="text-sm font-semibold tracking-wider text-gray-300 border-b border-gray-800 pb-3 tech-font mb-4">UPLOAD &amp; UPDATE DATA</h2>
+                <p class="text-xs text-gray-400 mb-4">Upload a fresh <code class="text-safety">data.js</code> file generated by <code class="text-safety">export_dashboard_data.py</code>. Charts will reload immediately and System Status will turn ACTIVE.</p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <input type="file" id="data-upload-input" accept=".js,.json,text/javascript,application/json" class="text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-[#1f2937] file:text-slate-200 file:cursor-pointer" />
+                    <button onclick="handleDataUpload()" class="bg-safety hover:bg-orange-600 text-white font-semibold text-sm py-2 px-5 rounded-lg transition">Update Data</button>
+                    <button onclick="location.reload()" class="btn-chip">Full Page Reload</button>
+                </div>
+                <p id="data-upload-msg" class="text-xs mt-3 hidden"></p>
+            </div>
+        </section>
+
+    </main>
+    </div><!-- /app-shell -->
+
+    <!-- Footer -->
+    <footer class="bg-[#111827] border-t border-gray-800 px-6 py-4 text-center text-xs text-gray-500 tech-font">
+        Gupta Engineers & Contractors.
+    </footer>
+
+    <!-- Static Dataset script -->
+    <script src="data.js"></script>
+    <script src="labour_workers.js"></script>
+
+    <!-- Dashboard Operations Script -->
+    <script>
+        // Store charts globally for updates
+        let activeCharts = {};
+        let needsAttentionOnly = false;
+        let dashboardInitialized = false;
+
+        // Chart colors that adapt to light / dark theme
+        function chartTheme() {
+            const light = document.documentElement.classList.contains('light');
+            if (light) {
+                return {
+                    tick: '#1e293b',
+                    grid: '#cbd5e1',
+                    legend: '#0f172a',
+                    primary: '#ea580c',
+                    secondary: '#1d4ed8',
+                    muted: '#475569',
+                    success: '#047857',
+                    danger: '#b91c1c',
+                    warning: '#b45309',
+                    planned: '#64748b',
+                    actual: '#ea580c',
+                    pie: ['#1d4ed8', '#047857', '#b91c1c'],
+                    riskPie: ['#b91c1c', '#b45309', '#047857'],
+                    scenario: ['#047857', '#1d4ed8', '#b91c1c']
+                };
+            }
+            return {
+                tick: '#e2e8f0',
+                grid: '#1f2937',
+                legend: '#e2e8f0',
+                primary: '#ff6b00',
+                secondary: '#3b82f6',
+                muted: '#475569',
+                success: '#34d399',
+                danger: '#f87171',
+                warning: '#fbbf24',
+                planned: '#475569',
+                actual: '#ff6b00',
+                pie: ['#3b82f6', '#34d399', '#f87171'],
+                riskPie: ['#ef4444', '#f59e0b', '#10b981'],
+                scenario: ['#34d399', '#3b82f6', '#f87171']
+            };
+        }
+        function scaleOpts() {
+            const t = chartTheme();
+            return {
+                y: { ticks: { color: t.tick }, grid: { color: t.grid } },
+                x: { ticks: { color: t.tick, font: { size: 9 } }, grid: { color: t.grid } }
+            };
+        }
+        function legendOpts() {
+            return { labels: { color: chartTheme().legend } };
+        }
+
+        // Simple localStorage-based auth (client-side only)
+        function getUsers() {
+            try { return JSON.parse(localStorage.getItem('bt_users') || '{}'); } catch { return {}; }
+        }
+        function saveUsers(users) {
+            localStorage.setItem('bt_users', JSON.stringify(users));
+        }
+
+        function showAuthForm(mode) {
+            const loginForm = document.getElementById('login-form');
+            const regForm = document.getElementById('register-form');
+            const btnLogin = document.getElementById('toggle-login');
+            const btnReg = document.getElementById('toggle-register');
+            if (mode === 'register') {
+                loginForm.classList.add('hidden');
+                regForm.classList.remove('hidden');
+                btnReg.className = 'flex-1 py-2 text-sm font-medium rounded-md bg-orange-500/15 text-orange-400 border border-orange-500/30 transition';
+                btnLogin.className = 'flex-1 py-2 text-sm font-medium rounded-md text-slate-400 hover:text-slate-200 transition';
+            } else {
+                regForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                btnLogin.className = 'flex-1 py-2 text-sm font-medium rounded-md bg-orange-500/15 text-orange-400 border border-orange-500/30 transition';
+                btnReg.className = 'flex-1 py-2 text-sm font-medium rounded-md text-slate-400 hover:text-slate-200 transition';
+            }
+            document.getElementById('login-error').classList.add('hidden');
+            document.getElementById('register-error').classList.add('hidden');
+            document.getElementById('register-success').classList.add('hidden');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim().toLowerCase();
+            const pass = document.getElementById('login-password').value;
+            const err = document.getElementById('login-error');
+            const users = getUsers();
+
+            if (!email || !pass) {
+                err.textContent = 'Please enter email and password.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            if (!users[email] || users[email].password !== pass) {
+                err.textContent = 'Invalid email or password.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            err.classList.add('hidden');
+            localStorage.setItem('bt_current_user', email);
+            localStorage.setItem('bt_logged_in', '1');
+            sessionStorage.setItem('bt_logged_in', '1');
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('app-shell').classList.remove('hidden');
+            if (!dashboardInitialized) {
+                initDashboard();
+                dashboardInitialized = true;
+            }
+            return false;
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value.trim();
+            const email = document.getElementById('reg-email').value.trim().toLowerCase();
+            const pass = document.getElementById('reg-password').value;
+            const pass2 = document.getElementById('reg-password2').value;
+            const err = document.getElementById('register-error');
+            const ok = document.getElementById('register-success');
+            err.classList.add('hidden');
+            ok.classList.add('hidden');
+
+            if (!name || !email || !pass) {
+                err.textContent = 'All fields are required.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            if (pass.length < 6) {
+                err.textContent = 'Password must be at least 6 characters.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            if (pass !== pass2) {
+                err.textContent = 'Passwords do not match.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            const users = getUsers();
+            if (users[email]) {
+                err.textContent = 'This email is already registered. Please sign in.';
+                err.classList.remove('hidden');
+                return false;
+            }
+            users[email] = { name, password: pass, createdAt: new Date().toISOString() };
+            saveUsers(users);
+            ok.textContent = 'Account created. You can now sign in.';
+            ok.classList.remove('hidden');
+            // Switch to login after short delay
+            setTimeout(() => {
+                showAuthForm('login');
+                document.getElementById('login-email').value = email;
+            }, 1200);
+            return false;
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('bt_current_user');
+            localStorage.removeItem('bt_logged_in');
+            sessionStorage.removeItem('bt_logged_in');
+            document.getElementById('app-shell').classList.add('hidden');
+            document.getElementById('login-screen').classList.remove('hidden');
+            const pw = document.getElementById('login-password');
+            if (pw) pw.value = '';
+        }
+
+        function drawSparkline(canvasId, values, color) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas || !values || values.length < 2) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.parentElement.clientWidth || 120;
+            canvas.width = w;
+            canvas.height = 28;
+            const min = Math.min(...values), max = Math.max(...values);
+            const range = max - min || 1;
+            ctx.clearRect(0, 0, w, 28);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            values.forEach((v, i) => {
+                const x = (i / (values.length - 1)) * (w - 4) + 2;
+                const y = 26 - ((v - min) / range) * 22;
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+        }
+
+        function setTraffic(elId, level, text) {
+            const el = document.getElementById(elId);
+            if (!el) return;
+            const dot = level === 'g' ? 'g' : level === 'y' ? 'y' : 'r';
+            el.innerHTML = `<span class="tl-dot ${dot}"></span>${text}`;
+        }
+
+        function computeVendorRanks(rows) {
+            // Composite score: higher on-time, lower wastage, lower delay std = better
+            const scored = rows.map(v => {
+                const ot = Number(v.on_time_delivery_rate_pct) || 0;
+                const wastage = Number(v.avg_wastage_pct) || 0;
+                const dstd = Number(v.delay_days_std) || 0;
+                const score = ot * 0.5 - wastage * 2 - dstd * 3;
+                return { ...v, _score: score };
+            });
+            scored.sort((a, b) => b._score - a._score);
+            return scored.map((v, i) => {
+                let label, cls;
+                if (i < Math.ceil(scored.length / 3)) { label = `#${i+1} Reliable`; cls = 'rank-reliable'; }
+                else if (i < Math.ceil(2 * scored.length / 3)) { label = `#${i+1} Watch`; cls = 'rank-watch'; }
+                else { label = `#${i+1} Risky`; cls = 'rank-risky'; }
+                return { ...v, rankLabel: label, rankClass: cls };
+            });
+        }
+
+        function toggleNeedsAttention() {
+            needsAttentionOnly = !needsAttentionOnly;
+            const btn = document.getElementById('btn-needs-attention');
+            if (btn) btn.classList.toggle('active', needsAttentionOnly);
+            applyFilters();
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(section => section.classList.add('hidden'));
+
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            const view = document.getElementById(`view-${tabId}`);
+            view.classList.remove('hidden');
+            // re-trigger animation
+            view.style.animation = 'none';
+            view.offsetHeight;
+            view.style.animation = '';
+        }
+
+        // Helper to format currency
+        function formatINR(val) {
+            if (val === null || val === undefined) return "--";
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(val);
+        }
+
+        // Dynamic System Status badge based on data.js export timestamp
+        function updateSystemStatus() {
+            const badge = document.getElementById('system-status-badge');
+            const subtext = document.getElementById('system-status-subtext');
+            if (!badge) return;
+
+            let ts = (typeof exportedAt !== 'undefined') ? exportedAt : null;
+
+            if (!ts) {
+                badge.textContent = 'SYSTEM STATUS: UNKNOWN';
+                badge.className = 'text-xs py-1 px-3 rounded border border-gray-600 text-gray-400 tech-font';
+                if (subtext) subtext.textContent = 'No export timestamp found';
+                return;
+            }
+
+            const hoursSince = (Date.now() - new Date(ts).getTime()) / 3600000;
+            const daysSince = hoursSince / 24;
+
+            let label, colorClass, sub;
+
+            if (hoursSince < 24) {
+                label = 'SYSTEM STATUS: ACTIVE';
+                colorClass = 'text-xs py-1 px-3 rounded border tech-font badge-status-active';
+                sub = hoursSince < 1
+                    ? `Last updated: ${Math.round(hoursSince * 60)} min ago`
+                    : `Last updated: ${Math.round(hoursSince)} hours ago`;
+            } else if (daysSince < 3) {
+                label = 'SYSTEM STATUS: NEEDS REFRESH';
+                colorClass = 'text-xs py-1 px-3 rounded border tech-font badge-status-refresh';
+                sub = `Last updated: ${(Math.round(daysSince * 10) / 10)} days ago`;
+            } else {
+                label = 'SYSTEM STATUS: STALE';
+                colorClass = 'text-xs py-1 px-3 rounded border tech-font badge-status-stale';
+                const d = new Date(ts);
+                sub = `Last updated: ${d.toLocaleDateString('en-IN')} ${d.toLocaleTimeString('en-IN', {hour:'2-digit', minute:'2-digit'})}`;
+            }
+
+            badge.textContent = label;
+            badge.className = colorClass;
+            if (subtext) subtext.textContent = sub;
+        }
+
+        // Initialize Metrics
+        function initDashboard() {
+            console.log("Initializing dashboard with static data.js...");
+            updateSystemStatus();
+            
+            // 1. Executive Summary calculations
+            const totalProjectsCount = projectsData.length;
+            document.getElementById('exec-portfolio-size').innerText = totalProjectsCount;
+
+            // Calculate cost variance across completed/delayed
+            const completedDelayedProjs = projectsData.filter(p => p.status === 'Completed' || p.status === 'Delayed');
+            const totalBudget = completedDelayedProjs.reduce((sum, p) => sum + p.budgeted_cost, 0);
+            const totalActual = completedDelayedProjs.reduce((sum, p) => sum + (p.actual_cost || p.budgeted_cost), 0);
+            const variancePct = ((totalActual - totalBudget) / totalBudget) * 100;
+            const varianceEl = document.getElementById('exec-cost-variance');
+            varianceEl.innerText = (variancePct > 0 ? '+' : '') + variancePct.toFixed(2) + '%';
+            if (variancePct > 10) {
+                varianceEl.className = "text-3xl font-bold mt-2 text-red-500";
+            } else if (variancePct > 0) {
+                varianceEl.className = "text-3xl font-bold mt-2 text-yellow-500";
+            } else {
+                varianceEl.className = "text-3xl font-bold mt-2 text-emerald-400";
+            }
+
+            // Calculate average labor attendance
+            const totalExpected = labourAttendanceData.reduce((sum, r) => sum + r.workers_expected, 0);
+            const totalPresent = labourAttendanceData.reduce((sum, r) => sum + r.workers_present, 0);
+            const avgAttendance = (totalPresent / totalExpected) * 100;
+            document.getElementById('exec-attendance').innerText = avgAttendance.toFixed(2) + '%';
+
+            // High risk projects
+            const highRiskCount = riskFlagsData.filter(r => r.predicted_risk_label === 'High').length;
+            document.getElementById('exec-high-risk').innerText = highRiskCount;
+
+            // Traffic lights
+            if (variancePct > 10) setTraffic('exec-cost-tl', 'r', 'Budget se upar — action needed');
+            else if (variancePct > 0) setTraffic('exec-cost-tl', 'y', 'Slight overrun — watch');
+            else setTraffic('exec-cost-tl', 'g', 'On track / under budget');
+
+            if (avgAttendance >= 85) setTraffic('exec-att-tl', 'g', 'Target met (≥85%)');
+            else if (avgAttendance >= 75) setTraffic('exec-att-tl', 'y', 'Below target — watch');
+            else setTraffic('exec-att-tl', 'r', 'Low attendance — action needed');
+
+            if (highRiskCount === 0) setTraffic('exec-risk-tl', 'g', 'No high-risk flags');
+            else if (highRiskCount <= 3) setTraffic('exec-risk-tl', 'y', 'Few projects flagged');
+            else setTraffic('exec-risk-tl', 'r', 'Multiple projects need attention');
+
+            // Portfolio Health Score 0-100
+            const onTimeRateAll = materialVendorData.length
+                ? (materialVendorData.filter(r => r.on_time === 1).length / materialVendorData.length) * 100 : 50;
+            let health = 100;
+            health -= Math.min(40, Math.max(0, variancePct) * 2); // cost penalty
+            health -= highRiskCount * 4; // risk penalty
+            if (avgAttendance < 85) health -= (85 - avgAttendance) * 0.8;
+            if (onTimeRateAll < 50) health -= (50 - onTimeRateAll) * 0.3;
+            health = Math.round(Math.max(0, Math.min(100, health)));
+            const healthEl = document.getElementById('exec-health-score');
+            const healthLbl = document.getElementById('exec-health-label');
+            if (healthEl) healthEl.innerText = health + ' / 100';
+            if (healthLbl) {
+                if (health >= 75) { healthLbl.innerText = '🟢 Healthy'; healthLbl.className = 'text-xs mt-1 font-semibold tl-green'; healthEl.className = 'text-4xl font-bold text-emerald-400'; }
+                else if (health >= 50) { healthLbl.innerText = '🟡 Needs attention'; healthLbl.className = 'text-xs mt-1 font-semibold tl-yellow'; healthEl.className = 'text-4xl font-bold text-yellow-400'; }
+                else { healthLbl.innerText = '🔴 Critical'; healthLbl.className = 'text-xs mt-1 font-semibold tl-red'; healthEl.className = 'text-4xl font-bold text-red-400'; }
+            }
+
+            // Status strip
+            const delays = projectsData.map(p => {
+                if (!p.planned_end_date) return 0;
+                const end = p.actual_end_date ? new Date(p.actual_end_date) : new Date();
+                return Math.max(0, (end - new Date(p.planned_end_date)) / 86400000);
+            });
+            const avgDelay = delays.length ? delays.reduce((a,b)=>a+b,0)/delays.length : 0;
+            const setChip = (id, val) => { const e = document.getElementById(id); if (e) e.innerText = val; };
+            setChip('chip-projects', totalProjectsCount);
+            setChip('chip-highrisk', highRiskCount);
+            setChip('chip-delay', avgDelay.toFixed(1) + 'd');
+            setChip('chip-attendance', avgAttendance.toFixed(1) + '%');
+            setChip('chip-ontime', onTimeRateAll.toFixed(0) + '%');
+
+            // Sparklines (synthetic smooth series from KPIs for visual trend)
+            const sparkBase = (n, center, spread) => Array.from({length: n}, (_, i) => center + Math.sin(i/2) * spread + (i - n/2) * 0.3);
+            drawSparkline('spark-portfolio', sparkBase(12, totalProjectsCount, 2), '#94a3b8');
+            drawSparkline('spark-cost', sparkBase(12, variancePct, 3), variancePct > 10 ? '#f87171' : '#34d399');
+            drawSparkline('spark-att', sparkBase(12, avgAttendance, 4), '#60a5fa');
+            drawSparkline('spark-risk', sparkBase(12, highRiskCount, 1.5), '#ff6b00');
+
+            // Risk distribution for Chart.js
+            const riskCounts = { High: 0, Medium: 0, Low: 0 };
+            riskFlagsData.forEach(r => {
+                riskCounts[r.predicted_risk_label] = (riskCounts[r.predicted_risk_label] || 0) + 1;
+            });
+
+            // Initialize Risk Chart
+            const ctxRisk = document.getElementById('chart-exec-risk').getContext('2d');
+            activeCharts.execRisk = new Chart(ctxRisk, {
+                type: 'doughnut',
+                data: {
+                    labels: ['High Risk', 'Medium Risk', 'Low Risk'],
+                    datasets: [{
+                        data: [riskCounts.High, riskCounts.Medium, riskCounts.Low],
+                        backgroundColor: ['#ef4444', '#f59e0b', '#10b981'],
+                        borderColor: '#111827',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: chartTheme().legend }
+                        }
+                    }
+                }
+            });
+
+            // 2. Project Overview Initial Load
+            document.getElementById('project-total-count').innerText = totalProjectsCount;
+            applyFilters(); // Renders the project chart and table
+
+            // 3. Material & Vendor Initial Load
+            // Average wastage
+            const avgWastage = materialVendorData.reduce((sum, r) => sum + r.wastage_pct, 0) / materialVendorData.length;
+            document.getElementById('vendor-metric-wastage').innerText = avgWastage.toFixed(2) + '%';
+            // On-time
+            const onTimeCount = materialVendorData.filter(r => r.on_time === 1).length;
+            const onTimeRate = (onTimeCount / materialVendorData.length) * 100;
+            document.getElementById('vendor-metric-ontime').innerText = onTimeRate.toFixed(2) + '%';
+            // Fulfillment
+            const totalOrdered = materialVendorData.reduce((sum, r) => sum + r.ordered_qty, 0);
+            const totalDelivered = materialVendorData.reduce((sum, r) => sum + r.delivered_qty, 0);
+            const fulfillmentRate = (totalDelivered / totalOrdered) * 100;
+            document.getElementById('vendor-metric-fulfillment').innerText = fulfillmentRate.toFixed(2) + '%';
+
+            // Wastage by material type
+            const materialWastage = {};
+            materialVendorData.forEach(r => {
+                if (!materialWastage[r.material_type]) {
+                    materialWastage[r.material_type] = { sum: 0, count: 0 };
+                }
+                materialWastage[r.material_type].sum += r.wastage_pct;
+                materialWastage[r.material_type].count += 1;
+            });
+            const matLabels = Object.keys(materialWastage);
+            const matWastages = matLabels.map(lbl => materialWastage[lbl].sum / materialWastage[lbl].count);
+
+            const ctxMat = document.getElementById('chart-material-wastage').getContext('2d');
+            activeCharts.materialWastage = new Chart(ctxMat, {
+                type: 'bar',
+                data: {
+                    labels: matLabels,
+                    datasets: [{
+                        label: 'Average Wastage %',
+                        data: matWastages,
+                        backgroundColor: chartTheme().primary,
+                        borderColor: chartTheme().primary,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                        x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // Vendor Scorecard Chart
+            const vendorPerformance = {};
+            vendorScorecardData.forEach(r => {
+                if (!vendorPerformance[r.vendor_name]) {
+                    vendorPerformance[r.vendor_name] = { sumWastage: 0, count: 0 };
+                }
+                vendorPerformance[r.vendor_name].sumWastage += r.avg_wastage_pct;
+                vendorPerformance[r.vendor_name].count += 1;
+            });
+            const vendorLabels = Object.keys(vendorPerformance);
+            const vendorWastages = vendorLabels.map(lbl => vendorPerformance[lbl].sumWastage / vendorPerformance[lbl].count);
+
+            const ctxVendor = document.getElementById('chart-vendor-ontime').getContext('2d');
+            activeCharts.vendorOnTime = new Chart(ctxVendor, {
+                type: 'bar',
+                data: {
+                    labels: vendorScorecardData.map(v => v.vendor_name + ' (' + v.material_type + ')'),
+                    datasets: [{
+                        label: 'On-Time Delivery Rate %',
+                        data: vendorScorecardData.map(v => v.on_time_delivery_rate_pct),
+                        backgroundColor: chartTheme().secondary,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                        x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // Vendor Scorecard Table with Rank badges
+            const vendorTableBody = document.getElementById('vendor-table-body');
+            vendorTableBody.innerHTML = '';
+            const rankedVendors = computeVendorRanks(vendorScorecardData);
+            rankedVendors.forEach(v => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-gray-800 hover:bg-[#1f2937]/35";
+                const avgDelay = (v.avg_delay_days !== undefined && v.avg_delay_days !== null) ? v.avg_delay_days : '—';
+                const delayStd = (v.delay_days_std !== undefined && v.delay_days_std !== null) ? v.delay_days_std : '—';
+                tr.innerHTML = `
+                    <td class="p-3"><span class="rank-badge ${v.rankClass}">${v.rankLabel}</span></td>
+                    <td class="p-3 font-semibold text-slate-300">${v.vendor_name}</td>
+                    <td class="p-3">${v.material_type}</td>
+                    <td class="p-3 text-right">${v.total_orders}</td>
+                    <td class="p-3 text-right">${v.on_time_orders}</td>
+                    <td class="p-3 text-right font-bold ${v.on_time_delivery_rate_pct > 20 ? 'text-emerald-400' : 'text-red-400'}">${v.on_time_delivery_rate_pct}%</td>
+                    <td class="p-3 text-right text-safety font-semibold">${v.avg_wastage_pct}%</td>
+                    <td class="p-3 text-right">${v.qty_fulfillment_rate_pct}%</td>
+                    <td class="p-3 text-right">${avgDelay}</td>
+                    <td class="p-3 text-right font-semibold ${Number(delayStd) > 3 ? 'text-yellow-400' : 'text-slate-300'}">${delayStd}</td>
+                `;
+                vendorTableBody.appendChild(tr);
+            });
+
+            // 4. Labour Initial Load
+            document.getElementById('labour-metric-expected').innerText = totalExpected.toLocaleString();
+            document.getElementById('labour-metric-present').innerText = totalPresent.toLocaleString();
+            document.getElementById('labour-metric-rate').innerText = avgAttendance.toFixed(2) + '%';
+            try { renderSiteReliability(); } catch (e) { console.warn(e); }
+            try { renderPersonLabour(); } catch (e) { console.warn(e); }
+
+            // This week vs last week attendance
+            (function() {
+                const byDate = {};
+                labourAttendanceData.forEach(r => {
+                    if (!byDate[r.date]) byDate[r.date] = { e: 0, p: 0 };
+                    byDate[r.date].e += r.workers_expected;
+                    byDate[r.date].p += r.workers_present;
+                });
+                const dates = Object.keys(byDate).sort();
+                if (dates.length >= 8) {
+                    const last7 = dates.slice(-7);
+                    const prev7 = dates.slice(-14, -7);
+                    const rate = (arr) => {
+                        let e=0,p=0; arr.forEach(d => { e+=byDate[d].e; p+=byDate[d].p; });
+                        return e ? (p/e)*100 : 0;
+                    };
+                    const thisW = rate(last7), lastW = rate(prev7);
+                    const delta = thisW - lastW;
+                    const el = document.getElementById('labour-week-delta');
+                    if (el) {
+                        const arrow = delta >= 0 ? '↑' : '↓';
+                        const cls = delta >= 0 ? 'text-emerald-400' : 'text-red-400';
+                        el.innerHTML = `vs last week: <span class="${cls} font-semibold">${arrow} ${delta >= 0 ? '+' : ''}${delta.toFixed(1)}%</span> (${thisW.toFixed(1)}% this week)`;
+                    }
+                }
+            })();
+
+            // Group daily records to average by date to plot a trend line
+            const dailyAttendanceTrend = {};
+            labourAttendanceData.forEach(r => {
+                if (!dailyAttendanceTrend[r.date]) {
+                    dailyAttendanceTrend[r.date] = { expected: 0, present: 0 };
+                }
+                dailyAttendanceTrend[r.date].expected += r.workers_expected;
+                dailyAttendanceTrend[r.date].present += r.workers_present;
+            });
+            const trendDates = Object.keys(dailyAttendanceTrend).sort();
+            const trendRates = trendDates.map(d => (dailyAttendanceTrend[d].present / dailyAttendanceTrend[d].expected) * 100);
+
+            const ctxLab = document.getElementById('chart-labour-trend').getContext('2d');
+            activeCharts.labourTrend = new Chart(ctxLab, {
+                type: 'line',
+                data: {
+                    labels: trendDates,
+                    datasets: [{
+                        label: 'Avg Daily Attendance %',
+                        data: trendRates,
+                        borderColor: '#ff6b00',
+                        backgroundColor: '#ff6b00/10',
+                        borderWidth: 2,
+                        tension: 0.1,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                        x: { ticks: { color: chartTheme().tick, maxTicksLimit: 12 }, grid: { color: chartTheme().grid } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // Attendance vs Delay Scatter Plot
+            // Get avg attendance per project
+            const projAttendance = {};
+            labourAttendanceData.forEach(r => {
+                if (!projAttendance[r.project_id]) {
+                    projAttendance[r.project_id] = { sum: 0, count: 0 };
+                }
+                projAttendance[r.project_id].sum += r.attendance_pct;
+                projAttendance[r.project_id].count += 1;
+            });
+
+            // Match with project delays
+            const scatterPoints = [];
+            projectsData.forEach(p => {
+                const attData = projAttendance[p.project_id];
+                if (attData) {
+                    const avgAtt = attData.sum / attData.count;
+                    // Calculate delay
+                    let delay = 0;
+                    if (p.actual_end_date) {
+                        delay = (new Date(p.actual_end_date) - new Date(p.planned_end_date)) / (1000 * 60 * 60 * 24);
+                    } else if (p.status === 'Delayed') {
+                        delay = (new Date("2026-07-18") - new Date(p.planned_end_date)) / (1000 * 60 * 60 * 24);
+                    }
+                    scatterPoints.push({ x: avgAtt, y: Math.max(0, delay), label: p.project_name });
+                }
+            });
+
+            const ctxScatter = document.getElementById('chart-labour-delay-scatter').getContext('2d');
+            activeCharts.labourDelayScatter = new Chart(ctxScatter, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Project Correlation',
+                        data: scatterPoints,
+                        backgroundColor: chartTheme().primary,
+                        pointRadius: 6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { 
+                            title: { display: true, text: 'Delay Days', color: chartTheme().tick },
+                            ticks: { color: chartTheme().tick }, 
+                            grid: { color: chartTheme().grid } 
+                        },
+                        x: { 
+                            title: { display: true, text: 'Avg Attendance %', color: chartTheme().tick },
+                            ticks: { color: chartTheme().tick }, 
+                            grid: { color: chartTheme().grid } 
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw.label + ': Attendance ' + context.raw.x.toFixed(1) + '%, Delay ' + context.raw.y + ' days';
+                                }
+                            }
+                        },
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // Risk table
+            const riskTableBody = document.getElementById('risk-table-body');
+            riskTableBody.innerHTML = '';
+            riskFlagsData.forEach(r => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-gray-800 hover:bg-[#1f2937]/35";
+                let badgeClass = "badge-glow badge-ontime";
+                if (r.predicted_risk_label === 'High') {
+                    badgeClass = "badge-glow badge-late-habitual";
+                } else if (r.predicted_risk_label === 'Medium') {
+                    badgeClass = "badge-glow badge-late-often";
+                }
+                const reason1 = r.top_reason_1 || '—';
+                const reason2 = r.top_reason_2 || '—';
+                let statusCls = "badge-status-ongoing";
+                if (r.status === 'Completed') statusCls = "badge-status-completed";
+                if (r.status === 'Delayed') statusCls = "badge-status-delayed";
+
+                tr.innerHTML = `
+                    <td class="p-3 font-mono">${r.project_id}</td>
+                    <td class="p-3 font-semibold text-slate-300">${r.project_name}</td>
+                    <td class="p-3">${r.project_type}</td>
+                    <td class="p-3"><span class="${statusCls}">${r.status || '—'}</span></td>
+                    <td class="p-3">
+                        <span class="${badgeClass}">${r.predicted_risk_label}</span>
+                    </td>
+                    <td class="p-3 text-xs text-slate-400 max-w-xs">${reason1}</td>
+                    <td class="p-3 text-xs text-slate-400 max-w-xs">${reason2}</td>
+                `;
+                riskTableBody.appendChild(tr);
+            });
+        }
+
+        // Apply filters on the Project Overview tab
+        function applyFilters() {
+            const selectedType = document.getElementById('filter-proj-type').value;
+            const selectedStatus = document.getElementById('filter-proj-status').value;
+            const highRiskIds = new Set(
+                (typeof riskFlagsData !== 'undefined' ? riskFlagsData : [])
+                    .filter(r => r.predicted_risk_label === 'High')
+                    .map(r => r.project_id)
+            );
+
+            // Filter data
+            const filtered = projectsData.filter(p => {
+                const typeMatch = selectedType === 'ALL' || p.project_type === selectedType;
+                const statusMatch = selectedStatus === 'ALL' || p.status === selectedStatus;
+                if (!typeMatch || !statusMatch) return false;
+                if (needsAttentionOnly) {
+                    const isHighRisk = highRiskIds.has(p.project_id);
+                    const isDelayed = p.status === 'Delayed';
+                    const wastageHigh = false; // optional: join material avg if needed
+                    return isHighRisk || isDelayed;
+                }
+                return true;
+            });
+
+            document.getElementById('project-filter-count').innerText = filtered.length;
+
+            // 1. Re-render Project Cost Chart
+            const labels = filtered.map(p => p.project_name.length > 20 ? p.project_name.slice(0, 17) + '...' : p.project_name);
+            const budgetedCosts = filtered.map(p => p.budgeted_cost);
+            const actualCosts = filtered.map(p => p.actual_cost || p.budgeted_cost);
+
+            if (activeCharts.projectCosts) activeCharts.projectCosts.destroy();
+
+            const ctxCosts = document.getElementById('chart-proj-costs').getContext('2d');
+            activeCharts.projectCosts = new Chart(ctxCosts, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Budgeted Cost (INR)',
+                            data: budgetedCosts,
+                            backgroundColor: chartTheme().planned,
+                        },
+                        {
+                            label: 'Actual Cost (INR)',
+                            data: actualCosts,
+                            backgroundColor: chartTheme().secondary,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                        x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // 2. Re-render Project Timeline Delay Chart
+            const delays = filtered.map(p => {
+                if (p.actual_end_date) {
+                    return (new Date(p.actual_end_date) - new Date(p.start_date)) / (1000 * 60 * 60 * 24);
+                } else if (p.status === 'Delayed') {
+                    return (new Date("2026-07-18") - new Date(p.start_date)) / (1000 * 60 * 60 * 24);
+                } else {
+                    return (new Date(p.planned_end_date) - new Date(p.start_date)) / (1000 * 60 * 60 * 24);
+                }
+            });
+            const plannedDurations = filtered.map(p => (new Date(p.planned_end_date) - new Date(p.start_date)) / (1000 * 60 * 60 * 24));
+
+            if (activeCharts.projectDelays) activeCharts.projectDelays.destroy();
+
+            const ctxDelays = document.getElementById('chart-proj-delays').getContext('2d');
+            activeCharts.projectDelays = new Chart(ctxDelays, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Planned Duration (Days)',
+                            data: plannedDurations,
+                            backgroundColor: '#1e293b',
+                            borderColor: '#3b82f6',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Actual Duration / Days Incurred',
+                            data: delays,
+                            backgroundColor: '#ff6b00',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                        x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: chartTheme().legend } }
+                    }
+                }
+            });
+
+            // 3. Update Table body
+            const tableBody = document.getElementById('project-table-body');
+            tableBody.innerHTML = '';
+            filtered.forEach(p => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-gray-800 hover:bg-[#1f2937]/35";
+                
+                const actCost = p.actual_cost;
+                const variance = actCost ? ((actCost - p.budgeted_cost) / p.budgeted_cost) * 100 : 0;
+                
+                let varianceText = "--";
+                let varianceClass = "text-gray-400";
+                if (actCost) {
+                    varianceText = (variance > 0 ? '+' : '') + variance.toFixed(1) + '%';
+                    varianceClass = variance > 10 ? 'text-red-400 font-bold' : (variance > 0 ? 'text-yellow-400' : 'text-emerald-400');
+                }
+
+                let statusBadge = "badge-status-ongoing";
+                if (p.status === 'Completed') statusBadge = "badge-status-completed";
+                if (p.status === 'Delayed') statusBadge = "badge-status-delayed";
+
+                tr.innerHTML = `
+                    <td class="p-3 font-mono">${p.project_id}</td>
+                    <td class="p-3 font-semibold text-slate-300">${p.project_name}</td>
+                    <td class="p-3">${p.project_type}</td>
+                    <td class="p-3 tech-font">${p.start_date}</td>
+                    <td class="p-3 tech-font">${p.planned_end_date}</td>
+                    <td class="p-3 font-mono">${formatINR(p.budgeted_cost)}</td>
+                    <td class="p-3 font-mono">${actCost ? formatINR(actCost) : '--'}</td>
+                    <td class="p-3 font-mono ${varianceClass}">${varianceText}</td>
+                    <td class="p-3"><span class="${statusBadge}">${p.status}</span></td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // ========== NEW MODULES RENDERERS ==========
+
+        function destroyChart(key) {
+            if (activeCharts[key]) {
+                activeCharts[key].destroy();
+                delete activeCharts[key];
+            }
+        }
+
+        function renderProgressTab() {
+            if (typeof projectsData === 'undefined') return;
+            const total = projectsData.length;
+            const delayed = projectsData.filter(p => p.status === 'Delayed').length;
+            const completed = projectsData.filter(p => p.status === 'Completed').length;
+            const ongoing = projectsData.filter(p => p.status === 'Ongoing').length;
+            document.getElementById('prog-ontrack').innerText = ongoing;
+            document.getElementById('prog-delayed').innerText = delayed;
+            document.getElementById('prog-completed').innerText = completed;
+
+            // Simple progress rate: for completed/delayed use actual/planned duration ratio
+            let rates = [];
+            projectsData.forEach(p => {
+                const planned = (new Date(p.planned_end_date) - new Date(p.start_date)) / 86400000;
+                if (planned <= 0) return;
+                let actual;
+                if (p.actual_end_date) actual = (new Date(p.actual_end_date) - new Date(p.start_date)) / 86400000;
+                else if (p.status === 'Delayed') actual = (new Date('2026-07-18') - new Date(p.start_date)) / 86400000;
+                else return;
+                rates.push(Math.min(200, (actual / planned) * 100));
+            });
+            const avgRate = rates.length ? rates.reduce((a,b)=>a+b,0)/rates.length : 0;
+            document.getElementById('prog-avg-rate').innerText = avgRate.toFixed(1) + '%';
+
+            // Duration chart
+            const labels = projectsData.map(p => p.project_name.length > 18 ? p.project_name.slice(0,15)+'...' : p.project_name);
+            const plannedD = projectsData.map(p => (new Date(p.planned_end_date) - new Date(p.start_date)) / 86400000);
+            const actualD = projectsData.map(p => {
+                if (p.actual_end_date) return (new Date(p.actual_end_date) - new Date(p.start_date)) / 86400000;
+                if (p.status === 'Delayed') return (new Date('2026-07-18') - new Date(p.start_date)) / 86400000;
+                return plannedD[projectsData.indexOf(p)];
+            });
+            destroyChart('progressDuration');
+            activeCharts.progressDuration = new Chart(document.getElementById('chart-progress-duration'), {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [
+                        { label: 'Planned Days', data: plannedD, backgroundColor: chartTheme().planned },
+                        { label: 'Actual / Incurred Days', data: actualD, backgroundColor: chartTheme().actual }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { labels: { color: chartTheme().legend } } } }
+            });
+
+            // Status pie
+            destroyChart('progressStatus');
+            activeCharts.progressStatus = new Chart(document.getElementById('chart-progress-status'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Ongoing', 'Completed', 'Delayed'],
+                    datasets: [{ data: [ongoing, completed, delayed], backgroundColor: chartTheme().pie }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: chartTheme().legend } } } }
+            });
+
+            // By type
+            const types = [...new Set(projectsData.map(p => p.project_type))];
+            const typeCounts = types.map(t => projectsData.filter(p => p.project_type === t).length);
+            destroyChart('progressByType');
+            activeCharts.progressByType = new Chart(document.getElementById('chart-progress-by-type'), {
+                type: 'bar',
+                data: { labels: types, datasets: [{ label: 'Projects', data: typeCounts, backgroundColor: chartTheme().primary }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } } }, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function renderResourceTab() {
+            if (typeof labourAttendanceData === 'undefined') return;
+            const totalExp = labourAttendanceData.reduce((s,r) => s + (r.workers_expected||0), 0);
+            const totalPres = labourAttendanceData.reduce((s,r) => s + (r.workers_present||0), 0);
+            const att = totalExp ? (totalPres / totalExp * 100) : 0;
+            document.getElementById('res-attendance').innerText = att.toFixed(1) + '%';
+            document.getElementById('res-present').innerText = totalPres.toLocaleString();
+            document.getElementById('res-gap').innerText = (totalExp - totalPres).toLocaleString();
+
+            // Group by project / division if available
+            const byKey = {};
+            labourAttendanceData.forEach(r => {
+                const key = r.project_name || r.project_id || r.division || 'Unknown';
+                if (!byKey[key]) byKey[key] = { exp: 0, pres: 0 };
+                byKey[key].exp += r.workers_expected || 0;
+                byKey[key].pres += r.workers_present || 0;
+            });
+            const keys = Object.keys(byKey).slice(0, 12);
+            const attPct = keys.map(k => byKey[k].exp ? (byKey[k].pres / byKey[k].exp * 100) : 0);
+            destroyChart('resourceAtt');
+            activeCharts.resourceAtt = new Chart(document.getElementById('chart-resource-att'), {
+                type: 'bar',
+                data: { labels: keys.map(k => k.length > 16 ? k.slice(0,14)+'...' : k), datasets: [{ label: 'Attendance %', data: attPct, backgroundColor: chartTheme().success }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { max: 100, ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { display: false } } }
+            });
+
+            destroyChart('resourceMandays');
+            activeCharts.resourceMandays = new Chart(document.getElementById('chart-resource-mandays'), {
+                type: 'bar',
+                data: {
+                    labels: keys.map(k => k.length > 16 ? k.slice(0,14)+'...' : k),
+                    datasets: [
+                        { label: 'Expected', data: keys.map(k => byKey[k].exp), backgroundColor: chartTheme().planned },
+                        { label: 'Present', data: keys.map(k => byKey[k].pres), backgroundColor: chartTheme().secondary }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { labels: { color: chartTheme().legend } } } }
+            });
+        }
+
+        function renderRiskDelayTab() {
+            if (typeof projectsData === 'undefined') return;
+            const highRisk = (typeof riskFlagsData !== 'undefined' ? riskFlagsData : []).filter(r => r.predicted_risk_label === 'High').length;
+            const delayed = projectsData.filter(p => p.status === 'Delayed');
+            const delays = delayed.map(p => {
+                if (p.actual_end_date) return (new Date(p.actual_end_date) - new Date(p.planned_end_date)) / 86400000;
+                return (new Date('2026-07-18') - new Date(p.planned_end_date)) / 86400000;
+            }).filter(d => !isNaN(d));
+            const avgDelay = delays.length ? delays.reduce((a,b)=>a+b,0)/delays.length : 0;
+            document.getElementById('rd-high').innerText = highRisk;
+            document.getElementById('rd-avg-delay').innerText = avgDelay.toFixed(1);
+            document.getElementById('rd-delayed-count').innerText = delayed.length;
+            document.getElementById('rd-coverage').innerText = (typeof riskFlagsData !== 'undefined' ? riskFlagsData.length : 0) + ' / ' + projectsData.length;
+
+            // Risk dist
+            const riskCounts = { High: 0, Medium: 0, Low: 0 };
+            (typeof riskFlagsData !== 'undefined' ? riskFlagsData : []).forEach(r => {
+                const lab = r.predicted_risk_label || 'Low';
+                if (riskCounts[lab] !== undefined) riskCounts[lab]++;
+            });
+            destroyChart('rdRiskdist');
+            activeCharts.rdRiskdist = new Chart(document.getElementById('chart-rd-riskdist'), {
+                type: 'doughnut',
+                data: { labels: Object.keys(riskCounts), datasets: [{ data: Object.values(riskCounts), backgroundColor: chartTheme().riskPie }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: chartTheme().legend } } } }
+            });
+
+            // Delay bars
+            const delayLabels = delayed.slice(0, 10).map(p => p.project_name.length > 16 ? p.project_name.slice(0,14)+'...' : p.project_name);
+            const delayVals = delayed.slice(0, 10).map(p => {
+                if (p.actual_end_date) return Math.max(0, (new Date(p.actual_end_date) - new Date(p.planned_end_date)) / 86400000);
+                return Math.max(0, (new Date('2026-07-18') - new Date(p.planned_end_date)) / 86400000);
+            });
+            destroyChart('rdDelays');
+            activeCharts.rdDelays = new Chart(document.getElementById('chart-rd-delays'), {
+                type: 'bar',
+                data: { labels: delayLabels, datasets: [{ label: 'Delay Days', data: delayVals, backgroundColor: chartTheme().danger }] },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, y: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { display: false } } }
+            });
+
+            // Table
+            const tbody = document.getElementById('rd-table-body');
+            tbody.innerHTML = '';
+            const riskMap = {};
+            (typeof riskFlagsData !== 'undefined' ? riskFlagsData : []).forEach(r => { riskMap[r.project_id] = r; });
+            projectsData.filter(p => p.status === 'Delayed' || (riskMap[p.project_id] && riskMap[p.project_id].predicted_risk_label === 'High')).slice(0, 15).forEach(p => {
+                const risk = riskMap[p.project_id] || {};
+                const delay = p.actual_end_date ? ((new Date(p.actual_end_date) - new Date(p.planned_end_date)) / 86400000).toFixed(0) : '—';
+                const tr = document.createElement('tr');
+                tr.className = 'border-b border-gray-800 hover:bg-[#1f2937]/35';
+                const riskBadge = risk.predicted_risk_label==='High' ? 'badge-glow badge-late-habitual' : (risk.predicted_risk_label==='Medium' ? 'badge-glow badge-late-often' : 'badge-glow badge-ontime');
+                let stCls = 'badge-status-ongoing';
+                if (p.status === 'Completed') stCls = 'badge-status-completed';
+                if (p.status === 'Delayed') stCls = 'badge-status-delayed';
+                tr.innerHTML = `<td class="p-3 font-mono">${p.project_id}</td><td class="p-3">${p.project_name}</td><td class="p-3"><span class="${stCls}">${p.status}</span></td><td class="p-3"><span class="${riskBadge}">${risk.predicted_risk_label||'—'}</span></td><td class="p-3">${delay}</td><td class="p-3 text-gray-400">${risk.top_driver||risk.reason_1||'—'}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderComparative() {
+            if (typeof projectsData === 'undefined') return;
+            const metric = document.getElementById('comp-metric')?.value || 'cost';
+            const types = [...new Set(projectsData.map(p => p.project_type))];
+
+            let typeVals = types.map(t => {
+                const subset = projectsData.filter(p => p.project_type === t);
+                if (metric === 'cost') {
+                    const withActual = subset.filter(p => p.actual_cost);
+                    if (!withActual.length) return 0;
+                    return withActual.reduce((s,p) => s + ((p.actual_cost - p.budgeted_cost)/p.budgeted_cost*100), 0) / withActual.length;
+                }
+                if (metric === 'delay') {
+                    return subset.filter(p => p.status === 'Delayed').length;
+                }
+                // attendance approx from labour if possible, else 0
+                return subset.length;
+            });
+
+            destroyChart('compType');
+            activeCharts.compType = new Chart(document.getElementById('chart-comp-type'), {
+                type: 'bar',
+                data: { labels: types, datasets: [{ label: metric === 'cost' ? 'Avg Cost Variance %' : (metric === 'delay' ? 'Delayed Count' : 'Project Count'), data: typeVals, backgroundColor: chartTheme().primary }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } } }, plugins: { legend: { labels: { color: chartTheme().legend } } } }
+            });
+
+            // Best / Worst by cost variance
+            const scored = projectsData.filter(p => p.actual_cost).map(p => ({
+                name: p.project_name.length > 18 ? p.project_name.slice(0,15)+'...' : p.project_name,
+                var: ((p.actual_cost - p.budgeted_cost)/p.budgeted_cost*100)
+            })).sort((a,b) => a.var - b.var);
+            const best = scored.slice(0, 5);
+            const worst = scored.slice(-5).reverse();
+            destroyChart('compBestWorst');
+            activeCharts.compBestWorst = new Chart(document.getElementById('chart-comp-bestworst'), {
+                type: 'bar',
+                data: {
+                    labels: [...best.map(b=>b.name), ...worst.map(w=>w.name)],
+                    datasets: [{
+                        label: 'Cost Variance %',
+                        data: [...best.map(b=>b.var), ...worst.map(w=>w.var)],
+                        backgroundColor: [...best.map(()=>chartTheme().success), ...worst.map(()=>chartTheme().danger)]
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick, font: { size: 8 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { display: false } } }
+            });
+
+            // Simple radar of type averages (normalized rough)
+            destroyChart('compRadar');
+            activeCharts.compRadar = new Chart(document.getElementById('chart-comp-radar'), {
+                type: 'radar',
+                data: {
+                    labels: types,
+                    datasets: [{
+                        label: 'Relative Score',
+                        data: typeVals.map(v => Math.max(0, 100 - Math.abs(v))),
+                        borderColor: chartTheme().primary,
+                        backgroundColor: document.documentElement.classList.contains('light') ? 'rgba(234,88,12,0.15)' : 'rgba(255,107,0,0.2)'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { ticks: { color: chartTheme().muted, backdropColor: 'transparent' }, grid: { color: chartTheme().grid }, pointLabels: { color: chartTheme().tick } } }, plugins: { legend: { labels: { color: chartTheme().legend } } } }
+            });
+        }
+
+        function renderForecastTab() {
+            if (typeof projectsData === 'undefined') return;
+            const ongoing = projectsData.filter(p => p.status === 'Ongoing');
+            const completed = projectsData.filter(p => p.status === 'Completed' && p.actual_cost);
+            const avgOverrun = completed.length ? completed.reduce((s,p) => s + ((p.actual_cost - p.budgeted_cost)/p.budgeted_cost), 0) / completed.length : 0.08;
+
+            // Simple EAC for ongoing
+            const totalBudgetOngoing = ongoing.reduce((s,p) => s + p.budgeted_cost, 0);
+            const eac = totalBudgetOngoing * (1 + avgOverrun);
+            document.getElementById('fc-eac').innerText = formatINR(eac);
+            document.getElementById('fc-est-complete').innerText = ongoing.length ? ongoing.length + ' ongoing' : 'None';
+            const highRiskOngoing = (typeof riskFlagsData !== 'undefined' ? riskFlagsData : []).filter(r => r.predicted_risk_label === 'High' && ongoing.some(p => p.project_id === r.project_id)).length;
+            const ontimeProb = ongoing.length ? Math.max(10, 100 - (highRiskOngoing / ongoing.length * 60) - (avgOverrun * 100)) : 85;
+            document.getElementById('fc-ontime-prob').innerText = ontimeProb.toFixed(0) + '%';
+
+            // Remaining work (budget remaining as proxy)
+            const labels = ongoing.slice(0, 8).map(p => p.project_name.length > 16 ? p.project_name.slice(0,14)+'...' : p.project_name);
+            const remaining = ongoing.slice(0, 8).map(p => p.budgeted_cost * 0.4); // rough remaining assumption
+            destroyChart('fcRemaining');
+            activeCharts.fcRemaining = new Chart(document.getElementById('chart-fc-remaining'), {
+                type: 'bar',
+                data: { labels, datasets: [{ label: 'Est. Remaining Budget (proxy)', data: remaining, backgroundColor: chartTheme().secondary }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } } }, plugins: { legend: { labels: { color: chartTheme().legend } } } }
+            });
+
+            // Scenario
+            destroyChart('fcScenario');
+            activeCharts.fcScenario = new Chart(document.getElementById('chart-fc-scenario'), {
+                type: 'bar',
+                data: {
+                    labels: ['Best (-15%)', 'Expected', 'Worst (+15%)'],
+                    datasets: [{ label: 'Portfolio EAC', data: [eac * 0.85, eac, eac * 1.15], backgroundColor: chartTheme().scenario }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } }, x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } } }, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function renderDataTab() {
+            const exp = (typeof exportedAt !== 'undefined') ? exportedAt : null;
+            document.getElementById('data-exported-at').innerText = exp ? new Date(exp).toLocaleString('en-IN') : 'Not available';
+            document.getElementById('data-count-projects').innerText = (typeof projectsData !== 'undefined') ? projectsData.length : 0;
+            const badge = document.getElementById('system-status-badge');
+            document.getElementById('data-status-label').innerText = badge ? badge.textContent.replace('SYSTEM STATUS: ', '') : '—';
+        }
+
+        function handleDataUpload() {
+            const input = document.getElementById('data-upload-input');
+            const msg = document.getElementById('data-upload-msg');
+            if (!input.files || !input.files[0]) {
+                msg.className = 'text-xs mt-3 text-red-400';
+                msg.textContent = 'Please select a data.js or JSON file first.';
+                msg.classList.remove('hidden');
+                return;
+            }
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    let text = e.target.result;
+                    // If full data.js, extract the const assignments
+                    if (text.includes('const projectsData') || text.includes('projectsData =')) {
+                        // Evaluate in a safe-ish way by extracting JSON parts
+                        const extract = (name) => {
+                            const re = new RegExp('const\\s+' + name + '\\s*=\\s*(\\[[\\s\\S]*?\\]);');
+                            const m = text.match(re);
+                            if (m) return JSON.parse(m[1]);
+                            return null;
+                        };
+                        const pd = extract('projectsData');
+                        const mvd = extract('materialVendorData');
+                        const lad = extract('labourAttendanceData');
+                        const vsd = extract('vendorScorecardData');
+                        const rfd = extract('riskFlagsData');
+                        const eaMatch = text.match(/const\s+exportedAt\s*=\s*["']([^"']+)["']/);
+                        if (pd) window.projectsData = pd;
+                        if (mvd) window.materialVendorData = mvd;
+                        if (lad) window.labourAttendanceData = lad;
+                        if (vsd) window.vendorScorecardData = vsd;
+                        if (rfd) window.riskFlagsData = rfd;
+                        if (eaMatch) window.exportedAt = eaMatch[1];
+                        else window.exportedAt = new Date().toISOString();
+                    } else {
+                        // Assume pure JSON object
+                        const obj = JSON.parse(text);
+                        if (obj.projectsData) window.projectsData = obj.projectsData;
+                        if (obj.materialVendorData) window.materialVendorData = obj.materialVendorData;
+                        if (obj.labourAttendanceData) window.labourAttendanceData = obj.labourAttendanceData;
+                        if (obj.vendorScorecardData) window.vendorScorecardData = obj.vendorScorecardData;
+                        if (obj.riskFlagsData) window.riskFlagsData = obj.riskFlagsData;
+                        window.exportedAt = obj.exportedAt || new Date().toISOString();
+                    }
+                    // Re-init everything
+                    updateSystemStatus();
+                    if (typeof initDashboard === 'function') initDashboard();
+                    renderProgressTab();
+                    renderResourceTab();
+                    renderRiskDelayTab();
+                    renderComparative();
+                    renderForecastTab();
+                    renderDataTab();
+                    msg.className = 'text-xs mt-3 text-emerald-400';
+                    msg.textContent = 'Data updated successfully. System Status set to ACTIVE. Charts refreshed.';
+                    msg.classList.remove('hidden');
+                } catch (err) {
+                    console.error(err);
+                    msg.className = 'text-xs mt-3 text-red-400';
+                    msg.textContent = 'Failed to parse file. Make sure it is a valid data.js exported by export_dashboard_data.py or matching JSON.';
+                    msg.classList.remove('hidden');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Person-level late vs on-time (synthetic; integrity-matched to site totals)
+        function renderPersonLabour() {
+            if (typeof labourWorkersData === 'undefined' || !labourWorkersData.length) {
+                console.warn('labourWorkersData not loaded');
+                return;
+            }
+            const siteSel = document.getElementById('person-site-filter');
+            if (siteSel && siteSel.options.length <= 1) {
+                const sites = [...new Set(labourWorkersData.map(w => w.site_name))].sort();
+                sites.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s; opt.textContent = s;
+                    siteSel.appendChild(opt);
+                });
+            }
+            const siteF = (siteSel && siteSel.value) || 'ALL';
+            const labelF = (document.getElementById('person-label-filter') || {}).value || 'ALL';
+            let rows = labourWorkersData.filter(w => w.days_present > 0);
+            if (siteF !== 'ALL') rows = rows.filter(w => w.site_name === siteF);
+            if (labelF !== 'ALL') rows = rows.filter(w => w.reliability_label === labelF);
+
+            const allForCounts = labourWorkersData.filter(w => w.days_present > 0 && (siteF === 'ALL' || w.site_name === siteF));
+            const habitual = allForCounts.filter(w => w.reliability_label === 'Habitual Late').length;
+            const often = allForCounts.filter(w => w.reliability_label === 'Often Late').length;
+            const ontime = allForCounts.filter(w => w.reliability_label === 'Mostly On-Time').length;
+            const el = (id, v) => { const n = document.getElementById(id); if (n) n.innerText = v; };
+            el('person-habitual', habitual);
+            el('person-often', often);
+            el('person-ontime', ontime);
+            el('person-total', allForCounts.length);
+
+            // Pie of labels
+            destroyChart('personLabels');
+            const c1 = document.getElementById('chart-person-labels');
+            if (c1) {
+                activeCharts.personLabels = new Chart(c1, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Habitual Late', 'Often Late', 'Mostly On-Time'],
+                        datasets: [{ data: [habitual, often, ontime], backgroundColor: [chartTheme().danger, chartTheme().warning, chartTheme().success] }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: chartTheme().legend } } } }
+                });
+            }
+
+            // Top late rate workers
+            const topLate = [...allForCounts].sort((a, b) => b.late_rate_pct - a.late_rate_pct).slice(0, 12);
+            destroyChart('personLateRate');
+            const c2 = document.getElementById('chart-person-late-rate');
+            if (c2) {
+                activeCharts.personLateRate = new Chart(c2, {
+                    type: 'bar',
+                    data: {
+                        labels: topLate.map(w => w.worker_name.length > 14 ? w.worker_name.slice(0, 12) + '…' : w.worker_name),
+                        datasets: [{ label: 'Late %', data: topLate.map(w => w.late_rate_pct), backgroundColor: chartTheme().danger }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { max: 100, ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                            y: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            // Worker table — sort by late rate desc
+            const sorted = [...rows].sort((a, b) => b.late_rate_pct - a.late_rate_pct).slice(0, 80);
+            const tbody = document.getElementById('person-labour-body');
+            if (tbody) {
+                tbody.innerHTML = '';
+                sorted.forEach(w => {
+                    const badge =
+                        w.reliability_label === 'Habitual Late' ? 'badge-glow badge-late-habitual' :
+                        w.reliability_label === 'Often Late' ? 'badge-glow badge-late-often' :
+                        'badge-glow badge-ontime';
+                    const tr = document.createElement('tr');
+                    tr.className = 'border-b border-gray-800 hover:bg-[#1f2937]/35';
+                    tr.innerHTML = `
+                        <td class="p-3 font-semibold text-slate-300">${w.worker_name}</td>
+                        <td class="p-3">${w.site_name}</td>
+                        <td class="p-3 text-right">${w.days_present}</td>
+                        <td class="p-3 text-right text-emerald-400">${w.days_on_time}</td>
+                        <td class="p-3 text-right text-red-400">${w.days_late}</td>
+                        <td class="p-3 text-right font-mono">${w.late_rate_pct}%</td>
+                        <td class="p-3 text-right tech-font">${w.avg_punch_in || '—'}</td>
+                        <td class="p-3"><span class="${badge}">${w.reliability_label}</span></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            // Recent late events
+            const evBody = document.getElementById('person-late-events-body');
+            if (evBody && typeof labourLateEventsData !== 'undefined') {
+                let ev = labourLateEventsData;
+                if (siteF !== 'ALL') ev = ev.filter(e => e.site_name === siteF);
+                ev = ev.slice(0, 40);
+                evBody.innerHTML = '';
+                ev.forEach(e => {
+                    const tr = document.createElement('tr');
+                    tr.className = 'border-b border-gray-800 hover:bg-[#1f2937]/35';
+                    tr.innerHTML = `
+                        <td class="p-3 tech-font">${e.date}</td>
+                        <td class="p-3">${e.worker_name}</td>
+                        <td class="p-3">${e.site_name}</td>
+                        <td class="p-3 tech-font text-red-400">${e.punch_in}</td>
+                        <td class="p-3 text-right">+${e.minutes_late} min</td>
+                    `;
+                    evBody.appendChild(tr);
+                });
+            }
+        }
+
+        // Site attendance reliability — which sites are understaffed / low attendance
+        function buildSiteStats() {
+            if (typeof labourAttendanceData === 'undefined') return [];
+            const bySite = {};
+            labourAttendanceData.forEach(r => {
+                const key = (r.site_name || 'Unknown') + '|' + (r.project_id || '');
+                if (!bySite[key]) {
+                    bySite[key] = {
+                        site_name: r.site_name || 'Unknown',
+                        project_id: r.project_id,
+                        days: 0,
+                        sumPct: 0,
+                        shortfall: 0,
+                        understaffed: 0,
+                        worstPct: 100
+                    };
+                }
+                const s = bySite[key];
+                const pct = r.attendance_pct != null ? Number(r.attendance_pct) :
+                    (r.workers_expected ? (r.workers_present / r.workers_expected) * 100 : 0);
+                s.days += 1;
+                s.sumPct += pct;
+                s.shortfall += Math.max(0, (r.workers_expected || 0) - (r.workers_present || 0));
+                if (pct < 80) s.understaffed += 1;
+                if (pct < s.worstPct) s.worstPct = pct;
+            });
+            return Object.values(bySite).map(s => {
+                const avg = s.days ? s.sumPct / s.days : 0;
+                let label = 'Healthy';
+                if (avg < 75) label = 'Chronic Low';
+                else if (avg < 80) label = 'At Risk';
+                return { ...s, avgPct: avg, label };
+            }).sort((a, b) => a.avgPct - b.avgPct); // worst first
+        }
+
+        function renderSiteReliability() {
+            const stats = buildSiteStats();
+            if (!stats.length) return;
+
+            const chronic = stats.filter(s => s.label === 'Chronic Low').length;
+            const atRisk = stats.filter(s => s.label === 'At Risk').length;
+            const totalShortfall = stats.reduce((sum, s) => sum + s.shortfall, 0);
+            const underDays = stats.reduce((sum, s) => sum + s.understaffed, 0);
+
+            const elC = document.getElementById('lab-chronic-count');
+            const elA = document.getElementById('lab-atrisk-count');
+            const elS = document.getElementById('lab-total-shortfall');
+            const elU = document.getElementById('lab-understaffed-days');
+            if (elC) elC.innerText = chronic;
+            if (elA) elA.innerText = atRisk;
+            if (elS) elS.innerText = totalShortfall.toLocaleString();
+            if (elU) elU.innerText = underDays.toLocaleString();
+
+            const filter = (document.getElementById('labour-site-filter') || {}).value || 'ALL';
+            const filtered = filter === 'ALL' ? stats : stats.filter(s => s.label === filter);
+
+            // Charts — top sites by problem
+            const top = stats.slice(0, 12);
+            const labels = top.map(s => s.site_name.length > 22 ? s.site_name.slice(0, 20) + '…' : s.site_name);
+            const avgData = top.map(s => +s.avgPct.toFixed(1));
+            const shortData = top.map(s => s.shortfall);
+            const barColors = top.map(s =>
+                s.label === 'Chronic Low' ? chartTheme().danger :
+                s.label === 'At Risk' ? chartTheme().warning : chartTheme().success
+            );
+
+            destroyChart('siteAttendance');
+            const c1 = document.getElementById('chart-site-attendance');
+            if (c1) {
+                activeCharts.siteAttendance = new Chart(c1, {
+                    type: 'bar',
+                    data: {
+                        labels,
+                        datasets: [{ label: 'Avg Attendance %', data: avgData, backgroundColor: barColors }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { max: 100, ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                            y: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            destroyChart('siteShortfall');
+            const c2 = document.getElementById('chart-site-shortfall');
+            if (c2) {
+                activeCharts.siteShortfall = new Chart(c2, {
+                    type: 'bar',
+                    data: {
+                        labels,
+                        datasets: [{ label: 'Shortfall man-days', data: shortData, backgroundColor: chartTheme().primary }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { ticks: { color: chartTheme().tick }, grid: { color: chartTheme().grid } },
+                            y: { ticks: { color: chartTheme().tick, font: { size: 9 } }, grid: { color: chartTheme().grid } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            // Table
+            const tbody = document.getElementById('site-reliability-body');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+            filtered.forEach((s, i) => {
+                const badge =
+                    s.label === 'Chronic Low' ? 'badge-glow badge-late-habitual' :
+                    s.label === 'At Risk' ? 'badge-glow badge-late-often' :
+                    'badge-glow badge-ontime';
+                const tr = document.createElement('tr');
+                tr.className = 'border-b border-gray-800 hover:bg-[#1f2937]/35';
+                tr.innerHTML = `
+                    <td class="p-3 font-mono">${i + 1}</td>
+                    <td class="p-3 font-semibold text-slate-300">${s.site_name}</td>
+                    <td class="p-3 font-mono">${s.project_id}</td>
+                    <td class="p-3 text-right">${s.days}</td>
+                    <td class="p-3 text-right font-mono ${s.avgPct < 80 ? 'text-red-400' : 'text-emerald-400'}">${s.avgPct.toFixed(1)}%</td>
+                    <td class="p-3 text-right">${s.understaffed}</td>
+                    <td class="p-3 text-right font-mono">${s.shortfall}</td>
+                    <td class="p-3 text-right font-mono">${s.worstPct.toFixed(1)}%</td>
+                    <td class="p-3"><span class="${badge}">${s.label}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Enhance switchTab to render heavy tabs on demand
+        const originalSwitchTab = switchTab;
+        switchTab = function(tabId) {
+            originalSwitchTab(tabId);
+            if (tabId === 'progress') renderProgressTab();
+            if (tabId === 'resource') renderResourceTab();
+            if (tabId === 'riskdelay') renderRiskDelayTab();
+            if (tabId === 'comparative') renderComparative();
+            if (tabId === 'forecast') renderForecastTab();
+            if (tabId === 'data') renderDataTab();
+            if (tabId === 'labour') {
+                renderSiteReliability();
+                renderPersonLabour();
+            }
+        };
+
+        // Theme: light / dark
+        function applyTheme(mode) {
+            const isLight = mode === 'light';
+            document.documentElement.classList.toggle('light', isLight);
+            // Button shows the mode you can SWITCH TO
+            const label = isLight ? 'Dark mode' : 'Light mode';
+            const btn = document.getElementById('theme-toggle');
+            const btnLogin = document.getElementById('theme-toggle-login');
+            if (btn) btn.textContent = label;
+            if (btnLogin) btnLogin.textContent = label;
+            localStorage.setItem('bt_theme', mode);
+        }
+        function toggleTheme() {
+            const current = localStorage.getItem('bt_theme') || 'dark';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+            // Re-render charts with new theme colors
+            if (dashboardInitialized) {
+                try {
+                    if (typeof initDashboard === 'function') initDashboard();
+                    if (typeof applyFilters === 'function') applyFilters();
+                    renderProgressTab();
+                    renderResourceTab();
+                    renderRiskDelayTab();
+                    renderComparative();
+                    renderForecastTab();
+                    renderSiteReliability();
+                    renderPersonLabour();
+                } catch (e) { console.warn('Theme chart refresh:', e); }
+            }
+        }
+
+        // On Load — restore session if already logged in; no re-login on refresh
+        window.addEventListener('DOMContentLoaded', () => {
+            // Apply saved theme instantly (default dark)
+            applyTheme(localStorage.getItem('bt_theme') || 'dark');
+
+            // Seed a default admin only if no users exist yet
+            const users = getUsers();
+            if (Object.keys(users).length === 0) {
+                users['admin@guptaengineers.in'] = {
+                    name: 'Admin',
+                    password: 'buildtrack',
+                    createdAt: new Date().toISOString()
+                };
+                saveUsers(users);
+            }
+
+            const loggedIn = localStorage.getItem('bt_logged_in') === '1' || sessionStorage.getItem('bt_logged_in') === '1';
+            const currentUser = (localStorage.getItem('bt_current_user') || '').toLowerCase();
+            if (loggedIn || (currentUser && users[currentUser])) {
+                // Already logged in — skip login screen (until Sign out)
+                if (currentUser && !users[currentUser]) {
+                    // Keep session even if users map was cleared
+                    localStorage.setItem('bt_logged_in', '1');
+                }
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('app-shell').classList.remove('hidden');
+                if (!dashboardInitialized) {
+                    initDashboard();
+                    dashboardInitialized = true;
+                }
+            } else {
+                document.getElementById('login-screen').classList.remove('hidden');
+                document.getElementById('app-shell').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
