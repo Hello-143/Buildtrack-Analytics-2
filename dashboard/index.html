@@ -1443,7 +1443,7 @@
             document.getElementById('exec-high-risk').innerText = highRiskCount;
 
             // Traffic lights
-            if (variancePct > 10) setTraffic('exec-cost-tl', 'r', 'Budget se upar — action needed');
+            if (variancePct > 10) setTraffic('exec-cost-tl', 'r', ' Over the Budget  — action needed');
             else if (variancePct > 0) setTraffic('exec-cost-tl', 'y', 'Slight overrun — watch');
             else setTraffic('exec-cost-tl', 'g', 'On track / under budget');
 
